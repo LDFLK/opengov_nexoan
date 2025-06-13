@@ -1,2 +1,2 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date
-1130-03_tr_01,Minister of Health,minister,Kanye West,citizen,AS_APPOINTED,2025-02-14
+transaction_id,parent,parent_type,child,child_type,rel_type,date,president
+1130-03_tr_01,Minister of Health,minister,Kanye West,citizen,AS_APPOINTED,2025-02-14,:AK

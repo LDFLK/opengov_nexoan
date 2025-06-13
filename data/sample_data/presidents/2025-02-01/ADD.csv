@@ -1,2 +1,2 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date
-1111-03_tr_01,Government of Sri Lanka,government,Anura Kumara,citizen,AS_APPOINTED,2025-02-01
+transaction_id,parent,parent_type,child,child_type,rel_type,date,president
+1111-03_tr_01,Government of Sri Lanka,government,Anura Kumara,citizen,AS_APPOINTED,2025-02-01,:AK
