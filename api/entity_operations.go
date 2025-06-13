@@ -335,7 +335,7 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 	oldName := transaction["old"].(string)
 	newName := transaction["new"].(string)
 	dateStr := transaction["date"].(string)
-	relType := transaction["type"].(string)
+	relType := "AS_MINISTER"
 	transactionID := transaction["transaction_id"]
 
 	// Parse the date

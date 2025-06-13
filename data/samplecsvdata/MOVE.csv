@@ -1,0 +1,3 @@
+transaction_id,old_parent,new_parent,child,type,date,president
+2156/15_tr_07,Minister of Education,Minister of Finance,Department of Universities,department,2019-12-31,:RW
+2156/15_tr_08,Minister of Finance,Minister of Education,Department of Budget,department,2019-12-31,:RW

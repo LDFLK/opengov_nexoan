@@ -203,8 +203,135 @@ func loadTransactions(filePath string, fileType string) ([]map[string]interface{
 		for i, value := range record {
 			transaction[header[i]] = value
 		}
+
 		// Add file type to transaction
 		transaction["file_type"] = fileType
+
+		// For ADD transactions, handle president column
+		if fileType == "ADD" {
+			// Check if parent_type is minister
+			if parentType, ok := transaction["parent_type"].(string); ok && parentType == "minister" {
+				president, ok := transaction["president"].(string)
+				if !ok || president == "" {
+					return nil, fmt.Errorf("president field is required for minister in ADD transaction")
+				}
+				// Append president to parent name
+				if parent, ok := transaction["parent"].(string); ok {
+					transaction["parent"] = parent + president
+				}
+			}
+
+			// Check if child_type is minister
+			if childType, ok := transaction["child_type"].(string); ok && childType == "minister" {
+				president, ok := transaction["president"].(string)
+				if !ok || president == "" {
+					return nil, fmt.Errorf("president field is required for minister in ADD transaction")
+				}
+				// Append president to child name
+				if child, ok := transaction["child"].(string); ok {
+					transaction["child"] = child + president
+				}
+			}
+		}
+
+		// For MERGE transactions, handle president column
+		if fileType == "MERGE" {
+			if moveType, ok := transaction["type"].(string); ok && moveType == "minister" {
+				president, ok := transaction["president"].(string)
+				if !ok || president == "" {
+					return nil, fmt.Errorf("president field is required for minister in MERGE transaction")
+				}
+				// Process old ministers array
+				if old, ok := transaction["old"].(string); ok {
+					// Remove the square brackets and split by comma
+					old = strings.Trim(old, "[]")
+					ministers := strings.Split(old, ",")
+
+					// Process each minister name
+					for i, minister := range ministers {
+						// Trim quotes and spaces
+						minister = strings.Trim(minister, "\" ")
+						ministers[i] = minister + president
+					}
+
+					// Reconstruct the array string
+					transaction["old"] = "[" + strings.Join(ministers, ",") + "]"
+				}
+
+				// Process new minister name
+				if new, ok := transaction["new"].(string); ok {
+					transaction["new"] = new + president
+				}
+			}
+		}
+
+		// For MOVE transactions, handle president column
+		if fileType == "MOVE" {
+			if moveType, ok := transaction["type"].(string); ok && moveType == "department" {
+				president, ok := transaction["president"].(string)
+				if !ok || president == "" {
+					return nil, fmt.Errorf("president field is required for department in MOVE transaction")
+				}
+				// Append president to old_parent
+				if oldParent, ok := transaction["old_parent"].(string); ok {
+					transaction["old_parent"] = oldParent + president
+				}
+				// Append president to new_parent
+				if newParent, ok := transaction["new_parent"].(string); ok {
+					transaction["new_parent"] = newParent + president
+				}
+			}
+		}
+
+		// For RENAME transactions, handle president column
+		if fileType == "RENAME" {
+			if renameType, ok := transaction["type"].(string); ok && renameType == "minister" {
+				president, ok := transaction["president"].(string)
+				if !ok || president == "" {
+					return nil, fmt.Errorf("president field is required for minister in RENAME transaction")
+				}
+				// Append president to old name
+				if old, ok := transaction["old"].(string); ok {
+					transaction["old"] = old + president
+				}
+				// Append president to new name
+				if new, ok := transaction["new"].(string); ok {
+					transaction["new"] = new + president
+				}
+			}
+		}
+
+		// For TERMINATE transactions, handle president column
+		if fileType == "TERMINATE" {
+			needsPresident := false
+			if parentType, ok := transaction["parent_type"].(string); ok && parentType == "minister" {
+				needsPresident = true
+			}
+			if childType, ok := transaction["child_type"].(string); ok && childType == "minister" {
+				needsPresident = true
+			}
+
+			if needsPresident {
+				president, ok := transaction["president"].(string)
+				if !ok || president == "" {
+					return nil, fmt.Errorf("president field is required for minister in TERMINATE transaction")
+				}
+				// Check if parent_type is minister
+				if parentType, ok := transaction["parent_type"].(string); ok && parentType == "minister" {
+					if parent, ok := transaction["parent"].(string); ok {
+						transaction["parent"] = parent + president
+					}
+				}
+
+				// Check if child_type is minister
+				if childType, ok := transaction["child_type"].(string); ok && childType == "minister" {
+					if child, ok := transaction["child"].(string); ok {
+						transaction["child"] = child + president
+					}
+				}
+			}
+		}
+
 		transactions = append(transactions, transaction)
 	}
 
