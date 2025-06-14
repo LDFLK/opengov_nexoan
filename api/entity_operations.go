@@ -182,7 +182,7 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 	}
 	childID := childResults[0].ID
 
-	// If we're terminating a minister, check for active departments
+	//If we're terminating a minister, check for active departments
 	if childType == "minister" {
 		// Get all relationships for the minister
 		relations, err := c.GetAllRelatedEntities(childID)
@@ -311,19 +311,60 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 		return fmt.Errorf("failed to create new relationship: %w", err)
 	}
 
-	// Terminate the old relationship
-	terminateTransaction := map[string]interface{}{
-		"parent":      oldParent,
-		"child":       child,
-		"date":        dateStr,
-		"parent_type": "minister",
-		"child_type":  "department",
-		"rel_type":    "AS_DEPARTMENT",
+	// Get the old minister's ID
+	oldParentResults, err := c.SearchEntities(&models.SearchCriteria{
+		Kind: &models.Kind{
+			Major: "Organisation",
+			Minor: "minister",
+		},
+		Name: oldParent,
+	})
+	if err != nil {
+		return fmt.Errorf("failed to search for old parent entity: %w", err)
+	}
+	if len(oldParentResults) == 0 {
+		return fmt.Errorf("old parent entity not found: %s", oldParent)
+	}
+	oldParentID := oldParentResults[0].ID
+
+	// Check if the relationship already has an end date
+	relations, err := c.GetRelatedEntities(oldParentID, &models.Relationship{
+		RelatedEntityID: childID,
+		Name:            "AS_DEPARTMENT",
+	})
+	if err != nil {
+		return fmt.Errorf("failed to get relationship: %w", err)
 	}
 
-	err = c.TerminateOrgEntity(terminateTransaction)
-	if err != nil {
-		return fmt.Errorf("failed to terminate old relationship: %w", err)
+	fmt.Printf("All relations for old parent %s: %+v\n", oldParentID, relations)
+	// Find the active relationship (no end time)
+	var activeRel *models.Relationship
+	for _, rel := range relations {
+		fmt.Printf("Checking relationship: %+v\n", rel)
+		if rel.RelatedEntityID == childID && rel.EndTime == "" {
+			activeRel = &rel
+			fmt.Printf("Found active relationship: %+v\n", rel)
+			break
+		}
+	}
+
+	fmt.Printf("Active relationship details: %+v\n", activeRel)
+	// Only terminate if there is an active relationship
+	if activeRel != nil {
+		// Terminate the old relationship
+		terminateTransaction := map[string]interface{}{
+			"parent":      oldParent,
+			"child":       child,
+			"date":        dateStr,
+			"parent_type": "minister",
+			"child_type":  "department",
+			"rel_type":    "AS_DEPARTMENT",
+		}
+
+		err = c.TerminateOrgEntity(terminateTransaction)
+		if err != nil {
+			return fmt.Errorf("failed to terminate old relationship: %w", err)
+		}
 	}
 
 	return nil
