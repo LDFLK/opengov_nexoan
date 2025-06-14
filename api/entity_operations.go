@@ -328,12 +328,10 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 	oldParentID := oldParentResults[0].ID
 
 	// Check if the relationship already has an end date
-	relations, err := c.GetRelatedEntities(oldParentID, &models.Relationship{
-		RelatedEntityID: childID,
-		Name:            "AS_DEPARTMENT",
-	})
+	// Get all relationships for the old minister
+	relations, err := c.GetAllRelatedEntities(oldParentID)
 	if err != nil {
-		return fmt.Errorf("failed to get relationship: %w", err)
+		return fmt.Errorf("failed to get relationships: %w", err)
 	}
 
 	fmt.Printf("All relations for old parent %s: %+v\n", oldParentID, relations)
@@ -341,7 +339,7 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 	var activeRel *models.Relationship
 	for _, rel := range relations {
 		fmt.Printf("Checking relationship: %+v\n", rel)
-		if rel.RelatedEntityID == childID && rel.EndTime == "" {
+		if rel.RelatedEntityID == childID && rel.Name == "AS_DEPARTMENT" && rel.EndTime == "" {
 			activeRel = &rel
 			fmt.Printf("Found active relationship: %+v\n", rel)
 			break

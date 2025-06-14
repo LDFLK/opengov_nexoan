@@ -357,7 +357,7 @@ func TestMoveDepartment(t *testing.T) {
 		"old_parent": "Minister of Finance, Economic and Policy Development",
 		"new_parent": "Minister of Education",
 		"child":      "Department of Policies",
-		"type":       "AS_DEPARTMENT",
+		"type":       "department",
 		"date":       "2024-01-01",
 	}
 
@@ -439,7 +439,7 @@ func TestRenameMinister(t *testing.T) {
 	transaction := map[string]interface{}{
 		"old":            "Minister of Finance, Economic and Policy Development",
 		"new":            "Minister of Finance",
-		"type":           "AS_MINISTER",
+		"type":           "minister",
 		"date":           "2024-01-01",
 		"transaction_id": "2153/13_tr_01",
 	}
@@ -804,7 +804,7 @@ func TestMoveDepartmentToNonExistentMinister(t *testing.T) {
 		"old_parent": "Minister of Finance and Education",
 		"new_parent": "Non Existent Minister",
 		"child":      "Department of Policies",
-		"type":       "AS_DEPARTMENT",
+		"type":       "department",
 		"date":       "2025-01-01",
 	}
 
