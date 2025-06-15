@@ -268,17 +268,23 @@ func loadTransactions(filePath string, fileType string) ([]map[string]interface{
 		// For MOVE transactions, handle president column
 		if fileType == "MOVE" {
 			if moveType, ok := transaction["type"].(string); ok && moveType == "department" {
-				president, ok := transaction["president"].(string)
-				if !ok || president == "" {
-					return nil, fmt.Errorf("president field is required for department in MOVE transaction")
+				// Get old parent president
+				oldParentPres, ok := transaction["old_parent_pres"].(string)
+				if !ok || oldParentPres == "" {
+					return nil, fmt.Errorf("old_parent_pres field is required for department in MOVE transaction")
 				}
-				// Append president to old_parent
+				// Get new parent president
+				newParentPres, ok := transaction["new_parent_pres"].(string)
+				if !ok || newParentPres == "" {
+					return nil, fmt.Errorf("new_parent_pres field is required for department in MOVE transaction")
+				}
+				// Append old_parent_pres to old_parent
 				if oldParent, ok := transaction["old_parent"].(string); ok {
-					transaction["old_parent"] = oldParent + president
+					transaction["old_parent"] = oldParent + oldParentPres
 				}
-				// Append president to new_parent
+				// Append new_parent_pres to new_parent
 				if newParent, ok := transaction["new_parent"].(string); ok {
-					transaction["new_parent"] = newParent + president
+					transaction["new_parent"] = newParent + newParentPres
 				}
 			}
 		}
