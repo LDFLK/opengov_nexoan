@@ -1,2 +1,2 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date
-2291-37_tr_01,"Minister of Ports, Shipping & Aviation",minister,Nimal Siripala De Silva,citizen,AS_APPOINTED,2022-08-04
+transaction_id,parent,parent_type,child,child_type,rel_type,date,president
+2291-37_tr_01,"Minister of Ports, Shipping & Aviation",minister,Nimal Siripala De Silva,citizen,AS_APPOINTED,2022-08-04,:RW

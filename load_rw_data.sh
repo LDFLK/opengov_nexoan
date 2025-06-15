@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Load Ranil's presidency
+# Load Ranil's presidency data
 ./orgchart -data $(pwd)/data/people/presidents/2022-07-20/ -init -type person
 
-# Load Ranil's Org data
+# Load Ranil's org data
 ./orgchart -data $(pwd)/data/orgchart/rw/2022-07-22/
 ./orgchart -data $(pwd)/data/orgchart/rw/2022-09-16/
 ./orgchart -data $(pwd)/data/orgchart/rw/2022-10-05/
@@ -23,3 +23,8 @@
 ./orgchart -data $(pwd)/data/orgchart/rw/2024-02-27/
 
 ./orgchart -data $(pwd)/data/orgchart/rw/2024-08-23/
+
+# Load Ranil's people data
+./orgchart -data $(pwd)/data/people/rw/2022-07-26/ -type person
+./orgchart -data $(pwd)/data/people/rw/2022-08-04/ -type person
+./orgchart -data $(pwd)/data/people/rw/2022-11-04/ -type person
