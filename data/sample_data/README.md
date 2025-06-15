@@ -1,5 +1,7 @@
 # Description of sample data
 
+_Note: To add all data, run the shell script ./load_sample_data.sh in the root directory_
+
 Presidencies:
 
 2025/01/01- 2025/01/31 President Ranil Wickremesinghe
