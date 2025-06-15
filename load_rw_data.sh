@@ -28,3 +28,8 @@
 ./orgchart -data $(pwd)/data/people/rw/2022-07-26/ -type person
 ./orgchart -data $(pwd)/data/people/rw/2022-08-04/ -type person
 ./orgchart -data $(pwd)/data/people/rw/2022-11-04/ -type person
+
+./orgchart -data $(pwd)/data/people/rw/2023-01-19/ -type person
+./orgchart -data $(pwd)/data/people/rw/2023-10-12/ -type person
+./orgchart -data $(pwd)/data/people/rw/2023-10-23/ -type person
+./orgchart -data $(pwd)/data/people/rw/2023-12-01/ -type person

@@ -334,19 +334,15 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 		return fmt.Errorf("failed to get relationships: %w", err)
 	}
 
-	fmt.Printf("All relations for old parent %s: %+v\n", oldParentID, relations)
 	// Find the active relationship (no end time)
 	var activeRel *models.Relationship
 	for _, rel := range relations {
-		fmt.Printf("Checking relationship: %+v\n", rel)
 		if rel.RelatedEntityID == childID && rel.Name == "AS_DEPARTMENT" && rel.EndTime == "" {
 			activeRel = &rel
-			fmt.Printf("Found active relationship: %+v\n", rel)
 			break
 		}
 	}
 
-	fmt.Printf("Active relationship details: %+v\n", activeRel)
 	// Only terminate if there is an active relationship
 	if activeRel != nil {
 		// Terminate the old relationship
@@ -913,7 +909,7 @@ func (c *Client) MovePerson(transaction map[string]interface{}) error {
 	oldParent := transaction["old_parent"].(string)
 	child := transaction["child"].(string)
 	dateStr := transaction["date"].(string)
-	relType := transaction["type"].(string)
+	relType := "AS_APPOINTED"
 
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))

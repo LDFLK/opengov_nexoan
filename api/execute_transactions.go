@@ -267,7 +267,7 @@ func loadTransactions(filePath string, fileType string) ([]map[string]interface{
 
 		// For MOVE transactions, handle president column
 		if fileType == "MOVE" {
-			if moveType, ok := transaction["type"].(string); ok && moveType == "department" {
+			if moveType, ok := transaction["type"].(string); ok && (moveType == "department" || moveType == "citizen") {
 				// Get old parent president
 				oldParentPres, ok := transaction["old_parent_pres"].(string)
 				if !ok || oldParentPres == "" {
