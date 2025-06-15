@@ -1,3 +1,3 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date
-2398-39_tr_01,"Minister of Finance, Economic Stabilization and National Policies",minister,Department of Project Management and Monitoring,department,AS_DEPARTMENT,2024-08-23
-2398-39_tr_02,"Minister of Finance, Economic Stabilization and National Policies",minister,Department of Information Technology Management,department,AS_DEPARTMENT,2024-08-23
+transaction_id,parent,parent_type,child,child_type,rel_type,date,president
+2398-39_tr_01,"Minister of Finance, Economic Stabilization and National Policies",minister,Department of Project Management and Monitoring,department,AS_DEPARTMENT,2024-08-23,:RW
+2398-39_tr_02,"Minister of Finance, Economic Stabilization and National Policies",minister,Department of Information Technology Management,department,AS_DEPARTMENT,2024-08-23,:RW

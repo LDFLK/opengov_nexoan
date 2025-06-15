@@ -1,4 +1,4 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date
-2398-40_tr_01,Government of Sri Lanka,government,Non Cabinet Minister of Development Projects,minister,AS_MINISTER,2024-08-23
-2398-40_tr_02,Non Cabinet Minister of Development Projects,minister,Department of Project Management and Monitoring,department,AS_DEPARTMENT,2024-08-23
-2398-40_tr_03,Non Cabinet Minister of Development Projects,minister,Department of Information Technology Management,department,AS_DEPARTMENT,2024-08-23
+transaction_id,parent,parent_type,child,child_type,rel_type,date,president
+2398-40_tr_01,Government of Sri Lanka,government,Non Cabinet Minister of Development Projects,minister,AS_MINISTER,2024-08-23,:RW
+2398-40_tr_02,Non Cabinet Minister of Development Projects,minister,Department of Project Management and Monitoring,department,AS_DEPARTMENT,2024-08-23,:RW
+2398-40_tr_03,Non Cabinet Minister of Development Projects,minister,Department of Information Technology Management,department,AS_DEPARTMENT,2024-08-23,:RW

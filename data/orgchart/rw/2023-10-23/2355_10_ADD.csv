@@ -1,2 +1,2 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date
-2355-10_tr_05,Minister of Mass Media,minister,Selacine Media Solutions (PVT) LTD,department,AS_DEPARTMENT,2023-10-23
+transaction_id,parent,parent_type,child,child_type,rel_type,date,president
+2355-10_tr_05,Minister of Mass Media,minister,Selacine Media Solutions (PVT) LTD,department,AS_DEPARTMENT,2023-10-23,:RW
