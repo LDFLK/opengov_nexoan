@@ -1,11 +1,13 @@
 #!/bin/bash
 
+# Load gazettes data
+echo "Loading gazettes data..."
+./orgchart -data $(pwd)/data/sample_data/gazettes/ -init -type document
+
 # Load Ranil Wickremesinghe's presidency data
 echo "Loading Ranil Wickremesinghe's presidency data..."
-./orgchart -data $(pwd)/data/sample_data/presidents/2025-01-01/ -init -type person
-./orgchart -data $(pwd)/data/sample_data/presidents/2025-01-31/ -type person
+./orgchart -data $(pwd)/data/sample_data/presidents/2025-01-01/ -type person
 ./orgchart -data $(pwd)/data/sample_data/presidents/2025-02-01/ -type person
-./orgchart -data $(pwd)/data/sample_data/presidents/2025-02-28/ -type person
 
 ./orgchart -data $(pwd)/data/sample_data/rw/orgchart/2025-01-03 
 ./orgchart -data $(pwd)/data/sample_data/rw/orgchart/2025-01-15

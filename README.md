@@ -53,8 +53,12 @@ The tool can be run with various options:
 # Process people data
 ./orgchart -data /path/to/data/directory -type people
 
+# Process document data
+./orgchart -data /path/to/data/directory -type document
+
 # Initialize database and process organisation data
 ./orgchart -data /path/to/data/directory -init
+
 
 # Use custom API endpoints
 ./orgchart -data /path/to/data/directory -update_endpoint http://custom:8080/entities -query_endpoint http://custom:8081/v1/entities

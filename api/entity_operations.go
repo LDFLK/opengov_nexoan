@@ -991,9 +991,9 @@ func (c *Client) MovePerson(transaction map[string]interface{}) error {
 }
 
 // Document Entity Handling
-// Unlike other entities, Documents are not terminated, but there is an aspect to a document being 
-// regarded in various states. So this needs to be thoroughly thought and represented in the system. 
-// For now we are only adding the documents and not maintaining any other states. 
+// Unlike other entities, Documents are not terminated, but there is an aspect to a document being
+// regarded in various states. So this needs to be thoroughly thought and represented in the system.
+// For now we are only adding the documents and not maintaining any other states.
 
 // AddDocumentEntity creates a new document entity and establishes its relationship with a parent entity.
 // The document type is determined by the parent entity type (Organization or Person).
