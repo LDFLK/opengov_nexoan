@@ -10,6 +10,37 @@ import (
 	"strings"
 )
 
+func (c *Client) ProcessDocumentTransactions(dataDir string, processType string) error {
+	var entityCounters = map[string]int{
+		"document": 0,
+	}
+
+	// Get all CSV files in the directory
+	files, err := os.ReadDir(dataDir)
+	if err != nil {
+		return fmt.Errorf("failed to read directory %s: %w", dataDir, err)
+	}
+
+	for _, file := range files {
+		if !file.IsDir() && strings.HasSuffix(file.Name(), ".csv") && strings.HasSuffix(file.Name(), "_ADD.csv") {
+			transactions, err := loadTransactions(filepath.Join(dataDir, file.Name()), "ADD")
+			if err != nil {
+				return fmt.Errorf("failed to load transactions from %s: %w", file.Name(), err)
+			}
+			for _, transaction := range transactions {
+				if transaction["file_type"] == "ADD" {
+					entityCounters["document"], err = c.AddDocumentEntity(transaction, entityCounters)
+					if err != nil {
+						return fmt.Errorf("failed to process add transaction %s: %w", transaction["transaction_id"], err)
+					}
+				}
+			}
+		}
+	}
+
+	return nil
+}
+
 // ProcessTransactions processes all transactions from CSV files in the specified directory
 func (c *Client) ProcessTransactions(dataDir string, processType string) error {
 	// Initialize entity counters based on process type

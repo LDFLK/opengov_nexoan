@@ -59,7 +59,7 @@ func main() {
 	initDB := flag.Bool("init", false, "Initialize the database with government node before processing transactions")
 	updateEndpoint := flag.String("update_endpoint", "http://localhost:8080/entities", "Endpoint for the Update API (default: http://localhost:8080/entities)")
 	queryEndpoint := flag.String("query_endpoint", "http://localhost:8081/v1/entities", "Endpoint for the Query API (default: http://localhost:8081/v1/entities)")
-	processType := flag.String("type", "organisation", "Type of data to process: 'organisation' or 'person' (default: organisation)")
+	processType := flag.String("type", "organisation", "Type of data to process: 'organisation' or 'person' or 'document' (default: organisation)")
 
 	// Custom usage message
 	flag.Usage = func() {
@@ -88,8 +88,8 @@ func main() {
 	}
 
 	// Validate process type
-	if *processType != "organisation" && *processType != "person" {
-		fmt.Fprintf(os.Stderr, "Error: Invalid process type. Must be 'organisation' or 'person'\n\n")
+	if *processType != "organisation" && *processType != "person" && *processType != "document" {
+		fmt.Fprintf(os.Stderr, "Error: Invalid process type. Must be 'organisation' or 'person' or 'document'\n\n")
 		flag.Usage()
 		os.Exit(1)
 	}
@@ -120,7 +120,12 @@ func main() {
 
 	// Process transactions
 	fmt.Printf("Processing %s transactions from directory: %s\n", *processType, absDataDir)
-	err = client.ProcessTransactions(absDataDir, *processType)
+	if *processType == "document" {
+		err = client.ProcessDocumentTransactions(absDataDir, *processType)
+	} else {
+		err = client.ProcessTransactions(absDataDir, *processType)
+	}
+
 	if err != nil {
 		log.Fatalf("Failed to process transactions: %v", err)
 	}
