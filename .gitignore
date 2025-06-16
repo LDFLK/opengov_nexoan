@@ -1,12 +1,15 @@
 /.vscode
 /update_orgchart.py
-orgchart
+/orgchart
 
 data/.DS_Store
 data/people/.DS_Store
 data/people/akd/.DS_Store
+data/orgchart/.DS_Store
+
 
 .DS_Store
 data/documents/.DS_Store
 data/documents/akd/.DS_Store
 data/documents/rw/.DS_Store
+

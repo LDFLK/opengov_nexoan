@@ -1,2 +1,2 @@
-transaction_id,old_parent,new_parent,child,type,date
-1120-02_tr_01,Minister of Health,Minister of Defence,Sri Lanka Medical Council,department,2025-02-18
+transaction_id,old_parent,old_parent_pres,new_parent,new_parent_pres,child,type,date,president
+1120-02_tr_01,Minister of Health,:AK,Minister of Defence,:AK,Sri Lanka Medical Council,department,2025-02-18,:AK

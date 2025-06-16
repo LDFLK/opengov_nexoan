@@ -1,3 +1,3 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date
-1130-01_tr_01,Minister of Health,minister,Sanjiva Weerawarana,citizen,AS_APPOINTED,2025-02-14
-1130-02_tr_02,Minister of Finance and Economy,minister,Ranil Wickremesinghe,citizen,AS_APPOINTED,2025-02-14
+transaction_id,parent,parent_type,child,child_type,rel_type,date,president
+1131-00_tr_02,Minister of Health,minister,Sanjiva Weerawarana,citizen,AS_APPOINTED,2025-02-14,:AK
+1131-00_tr_03,Minister of Finance and Economy,minister,Ranil Wickremesinghe,citizen,AS_APPOINTED,2025-02-14,:AK

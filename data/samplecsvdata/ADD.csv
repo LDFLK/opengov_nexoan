@@ -1,0 +1,7 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date,president
+2156/15_tr_01,Government of Sri Lanka,government,Minister of Education,minister,AS_MINISTER,2019-12-31,:RW
+2156/15_tr_02,Government of Sri Lanka,government,Minister of Finance,minister,AS_MINISTER,2019-12-31,:RW
+2156/15_tr_03,Minister of Education,minister,Department of Schools,department,AS_DEPARTMENT,2019-12-31,:RW
+2156/15_tr_04,Minister of Education,minister,Department of Universities,department,AS_DEPARTMENT,2019-12-31,:RW
+2156/15_tr_05,Minister of Finance,minister,Department of Taxes,department,AS_DEPARTMENT,2019-12-31,:RW
+2156/15_tr_06,Minister of Finance,minister,Department of Budget,department,AS_DEPARTMENT,2019-12-31,:RW

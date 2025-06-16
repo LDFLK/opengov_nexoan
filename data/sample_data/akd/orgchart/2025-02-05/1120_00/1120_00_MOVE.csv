@@ -1,0 +1,7 @@
+transaction_id,old_parent,old_parent_pres,new_parent,new_parent_pres,child,type,date
+1120-00_tr_05,Minister of Defence,:RW,Minister of Defence,:AK,Sri Lanka Army,department,2025-02-05
+1120-00_tr_06,Minister of Defence,:RW,Minister of Defence,:AK,Sri Lanka Navy,department,2025-02-05
+1120-00_tr_07,Minister of Health,:RW,Minister of Health,:AK,Sri Lanka Medical Council,department,2025-02-05
+1120-00_tr_08,Minister of Health,:RW,Minister of Health,:AK,Department of Ayurveda,department,2025-02-05
+1120-00_tr_09,Minister of Finance,:RW,Minister of Finance and Economy,:AK,Department of National Budget,department,2025-02-05
+1120-00_tr_10,Minister of Defence,:RW,Minister of Finance and Economy,:AK,General Treasury,department,2025-02-05

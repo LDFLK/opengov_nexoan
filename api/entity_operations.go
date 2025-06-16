@@ -182,7 +182,7 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 	}
 	childID := childResults[0].ID
 
-	// If we're terminating a minister, check for active departments
+	//If we're terminating a minister, check for active departments
 	if childType == "minister" {
 		// Get all relationships for the minister
 		relations, err := c.GetAllRelatedEntities(childID)
@@ -311,19 +311,54 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 		return fmt.Errorf("failed to create new relationship: %w", err)
 	}
 
-	// Terminate the old relationship
-	terminateTransaction := map[string]interface{}{
-		"parent":      oldParent,
-		"child":       child,
-		"date":        dateStr,
-		"parent_type": "minister",
-		"child_type":  "department",
-		"rel_type":    "AS_DEPARTMENT",
+	// Get the old minister's ID
+	oldParentResults, err := c.SearchEntities(&models.SearchCriteria{
+		Kind: &models.Kind{
+			Major: "Organisation",
+			Minor: "minister",
+		},
+		Name: oldParent,
+	})
+	if err != nil {
+		return fmt.Errorf("failed to search for old parent entity: %w", err)
+	}
+	if len(oldParentResults) == 0 {
+		return fmt.Errorf("old parent entity not found: %s", oldParent)
+	}
+	oldParentID := oldParentResults[0].ID
+
+	// Check if the relationship already has an end date
+	// Get all relationships for the old minister
+	relations, err := c.GetAllRelatedEntities(oldParentID)
+	if err != nil {
+		return fmt.Errorf("failed to get relationships: %w", err)
 	}
 
-	err = c.TerminateOrgEntity(terminateTransaction)
-	if err != nil {
-		return fmt.Errorf("failed to terminate old relationship: %w", err)
+	// Find the active relationship (no end time)
+	var activeRel *models.Relationship
+	for _, rel := range relations {
+		if rel.RelatedEntityID == childID && rel.Name == "AS_DEPARTMENT" && rel.EndTime == "" {
+			activeRel = &rel
+			break
+		}
+	}
+
+	// Only terminate if there is an active relationship
+	if activeRel != nil {
+		// Terminate the old relationship
+		terminateTransaction := map[string]interface{}{
+			"parent":      oldParent,
+			"child":       child,
+			"date":        dateStr,
+			"parent_type": "minister",
+			"child_type":  "department",
+			"rel_type":    "AS_DEPARTMENT",
+		}
+
+		err = c.TerminateOrgEntity(terminateTransaction)
+		if err != nil {
+			return fmt.Errorf("failed to terminate old relationship: %w", err)
+		}
 	}
 
 	return nil
@@ -335,7 +370,7 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 	oldName := transaction["old"].(string)
 	newName := transaction["new"].(string)
 	dateStr := transaction["date"].(string)
-	relType := transaction["type"].(string)
+	relType := "AS_MINISTER"
 	transactionID := transaction["transaction_id"]
 
 	// Parse the date
@@ -698,7 +733,6 @@ func (c *Client) AddPersonEntity(transaction map[string]interface{}, entityCount
 	}
 
 	var childID string
-	entityCounter := 0
 	if len(personResults) == 1 {
 		// Person exists, use existing ID
 		childID = personResults[0].ID
@@ -709,8 +743,8 @@ func (c *Client) AddPersonEntity(transaction map[string]interface{}, entityCount
 		}
 
 		prefix := fmt.Sprintf("%s_%s", transactionID[:7], strings.ToLower(childType[:3]))
-		entityCounter := entityCounters[childType] + 1
-		newEntityID := fmt.Sprintf("%s_%d", prefix, entityCounter)
+		entityCounters[childType]++ // Increment the counter
+		newEntityID := fmt.Sprintf("%s_%d", prefix, entityCounters[childType])
 
 		// Create the new child entity
 		childEntity := &models.Entity{
@@ -766,7 +800,7 @@ func (c *Client) AddPersonEntity(transaction map[string]interface{}, entityCount
 		return 0, fmt.Errorf("failed to update parent entity: %w", err)
 	}
 
-	return entityCounter, nil
+	return entityCounters[childType], nil
 }
 
 // TerminatePersonEntity terminates a specific relationship between Person type entity and another entity at a given date
@@ -875,7 +909,7 @@ func (c *Client) MovePerson(transaction map[string]interface{}) error {
 	oldParent := transaction["old_parent"].(string)
 	child := transaction["child"].(string)
 	dateStr := transaction["date"].(string)
-	relType := transaction["type"].(string)
+	relType := "AS_APPOINTED"
 
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))

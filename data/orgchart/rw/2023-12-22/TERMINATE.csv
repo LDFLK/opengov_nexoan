@@ -1,2 +1,2 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date
-2363-75_tr_03,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,S W R D Bandaranaike National Memorial Foundation,department,AS_DEPARTMENT,2023-12-22
+transaction_id,parent,parent_type,child,child_type,rel_type,date,president
+2363-75_tr_03,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,S W R D Bandaranaike National Memorial Foundation,department,AS_DEPARTMENT,2023-12-22,:RW

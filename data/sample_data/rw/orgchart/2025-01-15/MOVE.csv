@@ -1,2 +1,2 @@
-transaction_id,old_parent,new_parent,child,type,date
-1113-03_tr_01,Minister of Finance,Minister of Defence,General Treasury,department,2025-01-15
+transaction_id,old_parent,old_parent_pres,new_parent,new_parent_pres,child,type,date
+1113-03_tr_01,Minister of Finance,:RW,Minister of Defence,:RW,General Treasury,department,2025-01-15
