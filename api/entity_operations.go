@@ -529,6 +529,148 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 	return newMinisterCounter, nil
 }
 
+// RenameDepartment renames a department and transfers all its people relationships to the new department
+func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCounters map[string]int) (int, error) {
+	// Extract details from the transaction
+	oldName := transaction["old"].(string)
+	newName := transaction["new"].(string)
+	dateStr := transaction["date"].(string)
+	relType := "AS_DEPARTMENT"
+	transactionID := transaction["transaction_id"].(string)
+
+	// Parse the date
+	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
+	if err != nil {
+		return 0, fmt.Errorf("failed to parse date: %w", err)
+	}
+	dateISO := date.Format(time.RFC3339)
+
+	// Get the old department's ID
+	oldDepartmentResults, err := c.SearchEntities(&models.SearchCriteria{
+		Kind: &models.Kind{
+			Major: "Organisation",
+			Minor: "department",
+		},
+		Name: oldName,
+	})
+	if err != nil {
+		return 0, fmt.Errorf("failed to search for old department: %w", err)
+	}
+	if len(oldDepartmentResults) == 0 {
+		return 0, fmt.Errorf("old department not found: %s", oldName)
+	}
+	oldDepartmentID := oldDepartmentResults[0].ID
+
+	// Find the minister that has a relationship with this department
+	ministerResults, err := c.SearchEntities(&models.SearchCriteria{
+		Kind: &models.Kind{
+			Major: "Organisation",
+			Minor: "minister",
+		},
+	})
+	if err != nil {
+		return 0, fmt.Errorf("failed to search for ministers: %w", err)
+	}
+
+	// Find the minister that has an active relationship with this department
+	var ministerID string
+	var ministerName string
+	for _, minister := range ministerResults {
+		relations, err := c.GetAllRelatedEntities(minister.ID)
+		if err != nil {
+			return 0, fmt.Errorf("failed to get minister's relationships: %w", err)
+		}
+
+		// Check if there's an active relationship
+		for _, rel := range relations {
+			if rel.Name == "AS_DEPARTMENT" && rel.RelatedEntityID == oldDepartmentID && rel.EndTime == "" {
+				ministerID = minister.ID
+				ministerName = minister.Name
+				break
+			}
+		}
+		if ministerID != "" {
+			break
+		}
+	}
+
+	if ministerID == "" {
+		return 0, fmt.Errorf("no active minister relationship found for department: %s", oldName)
+	}
+
+	// Create new department under the same minister
+	addEntityTransaction := map[string]interface{}{
+		"parent":         ministerName,
+		"child":          newName,
+		"date":           dateStr,
+		"parent_type":    "minister",
+		"child_type":     "department",
+		"rel_type":       relType,
+		"transaction_id": transactionID,
+	}
+
+	// Create the new department
+	newDepartmentCounter, err := c.AddOrgEntity(addEntityTransaction, entityCounters)
+	if err != nil {
+		return 0, fmt.Errorf("failed to create new department: %w", err)
+	}
+
+	// Get the new department's ID
+	newDepartmentResults, err := c.SearchEntities(&models.SearchCriteria{
+		Kind: &models.Kind{
+			Major: "Organisation",
+			Minor: "department",
+		},
+		Name: newName,
+	})
+	if err != nil {
+		return 0, fmt.Errorf("failed to search for new department: %w", err)
+	}
+	if len(newDepartmentResults) == 0 {
+		return 0, fmt.Errorf("new department not found: %s", newName)
+	}
+	newDepartmentID := newDepartmentResults[0].ID
+
+	// Terminate the old department's relationship with minister
+	terminateMinisterTransaction := map[string]interface{}{
+		"parent":      ministerName,
+		"child":       oldName,
+		"date":        dateStr,
+		"parent_type": "minister",
+		"child_type":  "department",
+		"rel_type":    relType,
+	}
+
+	err = c.TerminateOrgEntity(terminateMinisterTransaction)
+	if err != nil {
+		return 0, fmt.Errorf("failed to terminate old department's minister relationship: %w", err)
+	}
+
+	// Create RENAMED_TO relationship
+	renameRelationship := &models.Entity{
+		ID: oldDepartmentID,
+		Relationships: []models.RelationshipEntry{
+			{
+				Key: fmt.Sprintf("%s_%s", oldDepartmentID, newDepartmentID),
+				Value: models.Relationship{
+					RelatedEntityID: newDepartmentID,
+					StartTime:       dateISO,
+					EndTime:         "",
+					ID:              fmt.Sprintf("%s_%s", oldDepartmentID, newDepartmentID),
+					Name:            "RENAMED_TO",
+				},
+			},
+		},
+	}
+
+	_, err = c.UpdateEntity(oldDepartmentID, renameRelationship)
+	if err != nil {
+		return 0, fmt.Errorf("failed to create RENAMED_TO relationship: %w", err)
+	}
+
+	return newDepartmentCounter, nil
+}
+
 // MergeMinisters merges multiple ministers into a new minister
 func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounters map[string]int) (int, error) {
 	// Extract details from the transaction
@@ -1129,7 +1271,7 @@ func (c *Client) AddDocumentEntity(transaction map[string]interface{}, entityCou
 					StartTime:       dateISO,
 					EndTime:         "",
 					ID:              fmt.Sprintf("%s_%s", parentID, childID),
-					Name:            childType,
+					Name:            "AS_DOCUMENT",
 				},
 			},
 		},

@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Load Ranil and Anura's people and presidency gazettes
-./orgchart -data $(pwd)/data/documents/rw/person/ -type document
+./orgchart -data $(pwd)/data/documents/rw/person/ -init -type document
 
 # Load Ranil and Anura's org gazettes
 ./orgchart -data $(pwd)/data/documents/rw/organisation/ -type document
 
 # Load Ranil's presidency data
-./orgchart -data $(pwd)/data/people/presidents/2022-07-20/ -init -type person
+./orgchart -data $(pwd)/data/people/rw/2022-07-20/ -type person
 
 # Load Ranil's org data
 ./orgchart -data $(pwd)/data/orgchart/rw/2022-07-22/

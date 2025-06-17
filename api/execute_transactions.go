@@ -189,11 +189,21 @@ func (c *Client) ProcessTransactions(dataDir string, processType string) error {
 
 		case "RENAME":
 			if processType == "organisation" {
-				newCounter, err := c.RenameMinister(transaction, entityCounters)
+				var newCounter int
+				var err error
+				if transaction["type"] == "minister" {
+					newCounter, err = c.RenameMinister(transaction, entityCounters)
+				} else if transaction["type"] == "department" {
+					newCounter, err = c.RenameDepartment(transaction, entityCounters)
+				}
 				if err != nil {
 					return fmt.Errorf("failed to process rename transaction %s: %w", transaction["transaction_id"], err)
 				}
-				entityCounters["minister"] = newCounter
+				if transaction["type"] == "minister" {
+					entityCounters["minister"] = newCounter
+				} else if transaction["type"] == "department" {
+					entityCounters["department"] = newCounter
+				}
 				fmt.Printf("Processed Rename transaction: %s\n", transaction["transaction_id"])
 			}
 
