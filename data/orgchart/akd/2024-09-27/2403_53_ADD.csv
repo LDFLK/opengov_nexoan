@@ -1,0 +1,18 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date,president
+2403/53_tr_01,Government of Sri Lanka,government,Minister of Defence,minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_02,Government of Sri Lanka,government,"Minister of Finance, Economic Development, Policy Formulation, Planning and Tourism",minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_03,Government of Sri Lanka,government,Minister of Energy,minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_04,Government of Sri Lanka,government,"Minister of Agriculture, Lands, Livestock, Irrigation, Fisheries and Aquatic Resources",minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_05,Government of Sri Lanka,government,"Minister of Justice, Public Administration, Home Affairs, Provincial Councils, Local Government and Labour",minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_06,Government of Sri Lanka,government,"Minister of Education, Science and Technology",minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_07,Government of Sri Lanka,government,"Minister of Women, Child and Youth Affairs and Sports",minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_08,Government of Sri Lanka,government,"Minister of Trade, Commerce, Food Security, Co-operative Development, Industry and Entrepreneurship Development",minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_09,Government of Sri Lanka,government,Minister of Health,minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_10,Government of Sri Lanka,government,"Minister of Buddhasasana, Religious and Cultural Affairs, National Integration, Social Security, and Mass Media",minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_11,Government of Sri Lanka,government,"Minister of Transport, Highways, Ports and Civil Aviation",minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_12,Government of Sri Lanka,government,Minister of Public Security,minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_13,Government of Sri Lanka,government,Minister of Foreign Affairs,minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_14,Government of Sri Lanka,government,"Minister of Environment, Wildlife, Forest Resources, Water Supply, Plantation and Community Infrastructure",minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_15,Government of Sri Lanka,government,"Minister of Rural and Urban Development, Housing and Construction",minister,AS_MINISTER,2024-09-27,:AK
+2403/53_tr_16,"Minister of Finance, Economic Development, Policy Formulation, Planning and Tourism",minister,Public Debt Management Office,department,AS_DEPARTMENT,2024-09-27,:AK
+2403/53_tr_17,"Minister of Agriculture, Lands, Livestock, Irrigation, Fisheries and Aquatic Resources",minister,State Fertilizer Company Ltd.,department,AS_DEPARTMENT,2024-09-27,:AK
