@@ -6,3 +6,7 @@
 
 # Load Anura's first cabinet release
 ./orgchart -data $(pwd)/data/orgchart/akd/2024-09-27/
+
+./orgchart -data $(pwd)/data/people/akd/2024-09-25/ -type person
+
+# Data for 2024-11-25 is not ready yet
