@@ -1,3 +1,0 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date
-2160-12_tr_01,Government of Sri Lanka,government,New Minister,minister,AS_MINISTER,2020-01-01
-2160-12_tr_31,Minister of Defence,minister,New Department,department,AS_DEPARTMENT,2020-01-01
