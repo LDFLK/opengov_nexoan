@@ -476,3 +476,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2403-03_tr_475,Government of Sri Lanka,government,Minister of Labour and Foreign Employment,minister,AS_MINISTER,2024-09-23,:RW
 2403-03_tr_476,Government of Sri Lanka,government,Minister of Public Security,minister,AS_MINISTER,2024-09-23,:RW
 2403-03_tr_477,Government of Sri Lanka,government,"Minister of Trade, Commerce and Food Security",minister,AS_MINISTER,2024-09-23,:RW
+2403-03_tr_478,Government of Sri Lanka,government,State Minister of Higher Education,minister,AS_MINISTER,2024-09-23,:RW
+2403-03_tr_479,Government of Sri Lanka,government,Non Cabinet Minister of State Plantation Enterprises Reforms,minister,AS_MINISTER,2024-09-23,:RW
+2403-03_tr_480,Government of Sri Lanka,government,State Minister of Sports and Youth Affairs,minister,AS_MINISTER,2024-09-23,:RW
+2403-03_tr_481,Government of Sri Lanka,government,Non Cabinet Minister of Development Projects,minister,AS_MINISTER,2024-09-23,:RW
