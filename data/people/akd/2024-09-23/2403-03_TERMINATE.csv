@@ -1,30 +1,30 @@
 transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2403-03_tr_02,Government of Sri Lanka,government,Ranil Wickremesinghe,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_03,"Minister of Ports, Shipping and Aviation",,Nimal Siripala De Silva,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_04,Minister of Education,,Achchige Don Susil Premajayanth,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_05,Minister of Wildlife and Forest Resources Conservation,,Vanniarachchi Pavithra Devi,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_06,Minister of Urban Development and Housing,,Prasanna Ranatunga,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_07,Minister of Environment,,Keheliya Rambukwella,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_08,Minister of Public Security,,Tiran Alles,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_09,Non Cabinet Minister of State Plantation Enterprises Reforms,,Ranjith Siyambalapitiya,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_10,"Minister of Finance, Economic Stabilization and National Policies",,Dinesh Chandra Rupasingha Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_11,Minister of Investment Promotion,,Dinesh Chandra Rupasingha Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_12,Minister of Transport and Highways,,Bandula Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_13,"Minister of Justice, Prisons Affairs and Constitutional Reforms",,Wijayadasa Rajapaksha,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_14,Minister of Foreign Affairs,,M U M Ali Sabri,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_15,Minister of Sports and Youth Affairs,,Nalaka Jude Hareen Fernando,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_16,"Minister of Trade, Commerce and Food Security",,Kachchakaduge Nalin Ruwanjiwa Fernando,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_17,Minister of Agriculture and Plantation Industries,,Mahinda Amaraweera,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_18,Minister of Technology,,Dinesh Chandra Rupasingha Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_19,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",,Dinesh Chandra Rupasingha Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_20,Minister of Mass Media,,Bandula Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_21,Minister of Tourism and Lands,,Nalaka Jude Hareen Fernando,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_22,"Minister of Buddhasasana, Religious and Cultural Affairs",,Vidura Wikramanayaka,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_23,Minister of Irrigation,,Vanniarachchi Pavithra Devi,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_24,Minister of Water Supply and Estate Infrastructure Development,,Jeevan Thondaman,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_25,"Minister of Women, Child Affairs and Social Empowerment",,Dinesh Chandra Rupasingha Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_26,Minister of Fisheries,,Douglas Devananda,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_27,Minister of Health,,Ramesh Pathirana,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_28,Minister of Industries,,Ramesh Pathirana,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_29,Minister of Power and Energy,,Kanchana Wijesekera,citizen,AS_APPOINTED,2024-09-23,:RW
-2403-03_tr_30,Minister of Labour and Foreign Employment,,Maligaspe Koralege Nalin Manusha Nanayakkara,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_03,"Minister of Ports, Shipping and Aviation",minister,Nimal Siripala De Silva,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_04,Minister of Education,minister,Achchige Don Susil Premajayanth,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_05,Minister of Wildlife and Forest Resources Conservation,minister,Vanniarachchi Pavithra Devi,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_06,Minister of Urban Development and Housing,minister,Prasanna Ranatunga,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_07,Minister of Environment,minister,Keheliya Rambukwella,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_08,Minister of Public Security,minister,Tiran Alles,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_09,Non Cabinet Minister of State Plantation Enterprises Reforms,minister,Ranjith Siyambalapitiya,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_10,"Minister of Finance, Economic Stabilization and National Policies",minister,Dinesh Chandra Rupasingha Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_11,Minister of Investment Promotion,minister,Dinesh Chandra Rupasingha Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_12,Minister of Transport and Highways,minister,Bandula Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_13,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Wijayadasa Rajapaksha,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_14,Minister of Foreign Affairs,minister,M U M Ali Sabri,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_15,Minister of Sports and Youth Affairs,minister,Nalaka Jude Hareen Fernando,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_16,"Minister of Trade, Commerce and Food Security",minister,Kachchakaduge Nalin Ruwanjiwa Fernando,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_17,Minister of Agriculture and Plantation Industries,minister,Mahinda Amaraweera,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_18,Minister of Technology,minister,Dinesh Chandra Rupasingha Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_19,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Dinesh Chandra Rupasingha Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_20,Minister of Mass Media,minister,Bandula Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_21,Minister of Tourism and Lands,minister,Nalaka Jude Hareen Fernando,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_22,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,Vidura Wikramanayaka,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_23,Minister of Irrigation,minister,Vanniarachchi Pavithra Devi,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_24,Minister of Water Supply and Estate Infrastructure Development,minister,Jeevan Thondaman,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_25,"Minister of Women, Child Affairs and Social Empowerment",minister,Dinesh Chandra Rupasingha Gunawardena,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_26,Minister of Fisheries,minister,Douglas Devananda,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_27,Minister of Health,minister,Ramesh Pathirana,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_28,Minister of Industries,minister,Ramesh Pathirana,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_29,Minister of Power and Energy,minister,Kanchana Wijesekera,citizen,AS_APPOINTED,2024-09-23,:RW
+2403-03_tr_30,Minister of Labour and Foreign Employment,minister,Maligaspe Koralege Nalin Manusha Nanayakkara,citizen,AS_APPOINTED,2024-09-23,:RW
