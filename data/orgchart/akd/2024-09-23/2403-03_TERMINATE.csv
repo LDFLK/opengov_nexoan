@@ -67,7 +67,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2403-03_tr_66,"Minister of Finance, Economic Stabilization and National Policies",minister,Public Service Mutual Provident Fund,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_67,"Minister of Finance, Economic Stabilization and National Policies",minister,"Strike, Riot, Civil Commotion and Terrorism Fund",department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_68,"Minister of Finance, Economic Stabilization and National Policies",minister,National Insurance Trust Fund,department,AS_DEPARTMENT,2024-09-23,:RW
-2403-03_tr_69,"Minister of Finance, Economic Stabilization and National Policies",minister,Employees’ Trust Fund,department,AS_DEPARTMENT,2024-09-23,:RW
+2403-03_tr_69,"Minister of Finance, Economic Stabilization and National Policies",minister,Employees' Trust Fund,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_70,"Minister of Finance, Economic Stabilization and National Policies",minister,Lady Lochore Fund,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_71,"Minister of Finance, Economic Stabilization and National Policies",minister,Department of Telecommunications,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_72,"Minister of Finance, Economic Stabilization and National Policies",minister,Wildlife Trust,department,AS_DEPARTMENT,2024-09-23,:RW
@@ -98,7 +98,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2403-03_tr_97,Minister of Technology,minister,Data Protection Authority of Sri Lanka,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_98,Minister of Technology,minister,Centre of Excellence for Robotic Applications,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_99,"Minister of Women, Child Affairs and Social Empowerment",minister,National Committee on Women,department,AS_DEPARTMENT,2024-09-23,:RW
-2403-03_tr_100,"Minister of Women, Child Affairs and Social Empowerment",minister,Sri Lanka Women’s Bureau,department,AS_DEPARTMENT,2024-09-23,:RW
+2403-03_tr_100,"Minister of Women, Child Affairs and Social Empowerment",minister,Sri Lanka Women's Bureau,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_101,"Minister of Women, Child Affairs and Social Empowerment",minister,Department of Probation and Childcare Services,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_102,"Minister of Women, Child Affairs and Social Empowerment",minister,National Child Protection Authority,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_103,"Minister of Women, Child Affairs and Social Empowerment",minister,National Secretariat for Early Childhood Development,department,AS_DEPARTMENT,2024-09-23,:RW
@@ -133,10 +133,10 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2403-03_tr_132,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Official Languages Commission,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_133,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,National Human Resources Development Council of Sri Lanka,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_134,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,National Institute of Language Education and Training,department,AS_DEPARTMENT,2024-09-23,:RW
-2403-03_tr_135,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Public Service Pensioners’ Trust Fund,department,AS_DEPARTMENT,2024-09-23,:RW
+2403-03_tr_135,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Public Service Pensioners' Trust Fund,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_136,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Local Government Service Pension Fund,department,AS_DEPARTMENT,2024-09-23,:RW
-2403-03_tr_137,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Local Government Widows’ and Orphans’ Pension Fund,department,AS_DEPARTMENT,2024-09-23,:RW
-2403-03_tr_138,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Local Government Widowers’ and Orphans’ Pension Fund,department,AS_DEPARTMENT,2024-09-23,:RW
+2403-03_tr_137,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Local Government Widows' and Orphans' Pension Fund,department,AS_DEPARTMENT,2024-09-23,:RW
+2403-03_tr_138,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Local Government Widowers' and Orphans' Pension Fund,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_139,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,All District Secretariats and Divisional Secretariats,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_140,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Department of Registrar General,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_141,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Sri Lanka Institute of Local Government,department,AS_DEPARTMENT,2024-09-23,:RW
@@ -152,7 +152,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2403-03_tr_151,Minister of Education,minister,Department of Educational Publications,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_152,Minister of Education,minister,National Library and Documentation Services Board,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_153,Minister of Education,minister,National Colleges of Education,department,AS_DEPARTMENT,2024-09-23,:RW
-2403-03_tr_154,Minister of Education,minister,Teachers’ College,department,AS_DEPARTMENT,2024-09-23,:RW
+2403-03_tr_154,Minister of Education,minister,Teachers' College,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_155,Minister of Education,minister,UNESCO National Commission of Sri Lanka,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_156,Minister of Education,minister,Sri Lanka Publication Development Bureau,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_157,Minister of Education,minister,State Printing Corporation,department,AS_DEPARTMENT,2024-09-23,:RW
@@ -168,7 +168,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2403-03_tr_167,Minister of Education,minister,Ceylon German Technical Training Institute,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_168,Minister of Education,minister,Department of Technical Education and Training,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_169,Minister of Education,minister,National Institute of Fundamental Studies,department,AS_DEPARTMENT,2024-09-23,:RW
-2403-03_tr_170,Minister of Education,minister,Sri Lanka Inventors’ Commission,department,AS_DEPARTMENT,2024-09-23,:RW
+2403-03_tr_170,Minister of Education,minister,Sri Lanka Inventors' Commission,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_171,Minister of Education,minister,National Engineering Research And Development Centre,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_172,Minister of Education,minister,National Research Council,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_173,Minister of Education,minister,Tertiary and Vocational Education Commission,department,AS_DEPARTMENT,2024-09-23,:RW
@@ -250,8 +250,8 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2403-03_tr_249,Minister of Wildlife and Forest Resources Conservation,minister,Department of Wildlife Conservation,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_250,Minister of Wildlife and Forest Resources Conservation,minister,Department of National Zoological Gardens,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_251,Minister of Wildlife and Forest Resources Conservation,minister,State Timber Corporation,department,AS_DEPARTMENT,2024-09-23,:RW
-2403-03_tr_252,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Attorney General’s Department,department,AS_DEPARTMENT,2024-09-23,:RW
-2403-03_tr_253,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Legal Draftsman’s Department,department,AS_DEPARTMENT,2024-09-23,:RW
+2403-03_tr_252,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Attorney General's Department,department,AS_DEPARTMENT,2024-09-23,:RW
+2403-03_tr_253,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Legal Draftsman's Department,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_254,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Department of Debt Conciliation Board,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_255,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Department of Government Analyst,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_256,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Office of the Registrar of the Supreme Court,department,AS_DEPARTMENT,2024-09-23,:RW
@@ -269,7 +269,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2403-03_tr_268,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Department of Prisons,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_269,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Community Based Correction Department,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_270,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Training Schools for Youthful Offenders,department,AS_DEPARTMENT,2024-09-23,:RW
-2403-03_tr_271,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Rehabilitation Commissioner General’s Office,department,AS_DEPARTMENT,2024-09-23,:RW
+2403-03_tr_271,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Rehabilitation Commissioner General's Office,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_272,Minister of Tourism and Lands,minister,Sri Lanka Tourism Promotion Bureau,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_273,Minister of Tourism and Lands,minister,Sri Lanka Tourism Development Authority,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_274,Minister of Tourism and Lands,minister,Sri Lanka Institute of Tourism and Hotel Management,department,AS_DEPARTMENT,2024-09-23,:RW
@@ -377,7 +377,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2403-03_tr_376,Minister of Labour and Foreign Employment,minister,Department of Labour,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_377,Minister of Labour and Foreign Employment,minister,National Institute of Labour Studies,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_378,Minister of Labour and Foreign Employment,minister,National Institute for Occupational Safety and Health,department,AS_DEPARTMENT,2024-09-23,:RW
-2403-03_tr_379,Minister of Labour and Foreign Employment,minister,Office of the Commissioner of Workmen’s Compensation,department,AS_DEPARTMENT,2024-09-23,:RW
+2403-03_tr_379,Minister of Labour and Foreign Employment,minister,Office of the Commissioner of Workmen's Compensation,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_380,Minister of Labour and Foreign Employment,minister,National Productivity Secretariat,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_381,Minister of Labour and Foreign Employment,minister,Shrama Vasana Fund,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_382,Minister of Labour and Foreign Employment,minister,Department of Manpower and Employment,department,AS_DEPARTMENT,2024-09-23,:RW
@@ -400,7 +400,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2403-03_tr_399,"Minister of Trade, Commerce and Food Security",minister,Department of Cooperative Development (Registrar of Cooperative Societies),department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_400,"Minister of Trade, Commerce and Food Security",minister,Cooperative Employees Commission,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_401,"Minister of Trade, Commerce and Food Security",minister,National Institute of Cooperative Development,department,AS_DEPARTMENT,2024-09-23,:RW
-2403-03_tr_402,"Minister of Trade, Commerce and Food Security",minister,Food Commissioner’s Department,department,AS_DEPARTMENT,2024-09-23,:RW
+2403-03_tr_402,"Minister of Trade, Commerce and Food Security",minister,Food Commissioner's Department,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_403,Non Cabinet Minister of State Plantation Enterprises Reforms,minister,Janatha Estate Development Board,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_404,Non Cabinet Minister of State Plantation Enterprises Reforms,minister,Kalubovitiyana Tea Factory Ltd.,department,AS_DEPARTMENT,2024-09-23,:RW
 2403-03_tr_405,Non Cabinet Minister of State Plantation Enterprises Reforms,minister,Sri Lanka State Plantation Corporation,department,AS_DEPARTMENT,2024-09-23,:RW

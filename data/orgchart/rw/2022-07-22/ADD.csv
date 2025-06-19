@@ -103,7 +103,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2289-43_tr_102,"Minister of Finance, Economic Stabilization and National Policies",minister,Public Service Mutual Provident Fund,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_103,"Minister of Finance, Economic Stabilization and National Policies",minister,"Strike, Riot, Civil Commotion and Terrorism Fund",department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_104,"Minister of Finance, Economic Stabilization and National Policies",minister,National Insurance Trust Fund,department,AS_DEPARTMENT,2022-07-22,:RW
-2289-43_tr_105,"Minister of Finance, Economic Stabilization and National Policies",minister,Employees’ Trust Fund,department,AS_DEPARTMENT,2022-07-22,:RW
+2289-43_tr_105,"Minister of Finance, Economic Stabilization and National Policies",minister,Employees' Trust Fund,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_106,"Minister of Finance, Economic Stabilization and National Policies",minister,Lady Lochore Fund,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_107,"Minister of Finance, Economic Stabilization and National Policies",minister,Board of Investment of Sri Lanka,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_108,"Minister of Finance, Economic Stabilization and National Policies",minister,Colombo Port City Economic Commission,department,AS_DEPARTMENT,2022-07-22,:RW
@@ -122,7 +122,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2289-43_tr_121,Minister of Technology,minister,Industrial Technology Institute,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_122,Minister of Technology,minister,Sri Lanka Standards Institute,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_123,"Minister of Women, Child Affairs and Social Empowerment",minister,National Committee on Women,department,AS_DEPARTMENT,2022-07-22,:RW
-2289-43_tr_124,"Minister of Women, Child Affairs and Social Empowerment",minister,Sri Lanka Women’s Bureau,department,AS_DEPARTMENT,2022-07-22,:RW
+2289-43_tr_124,"Minister of Women, Child Affairs and Social Empowerment",minister,Sri Lanka Women's Bureau,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_125,"Minister of Women, Child Affairs and Social Empowerment",minister,Department of Probation and Childcare Services,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_126,"Minister of Women, Child Affairs and Social Empowerment",minister,National Child Protection Authority,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_127,"Minister of Women, Child Affairs and Social Empowerment",minister,National Secretariat for Early Childhood Development,department,AS_DEPARTMENT,2022-07-22,:RW
@@ -153,10 +153,10 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2289-43_tr_152,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Official Languages Commission,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_153,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,National Human Resources Development Council of Sri Lanka,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_154,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,National Institute of Language Education and Training,department,AS_DEPARTMENT,2022-07-22,:RW
-2289-43_tr_155,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Public Service Pensioners’ Trust Fund,department,AS_DEPARTMENT,2022-07-22,:RW
+2289-43_tr_155,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Public Service Pensioners' Trust Fund,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_156,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Local Government Service Pension Fund,department,AS_DEPARTMENT,2022-07-22,:RW
-2289-43_tr_157,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Local Government Widows’ and Orphans’ Pension Fund,department,AS_DEPARTMENT,2022-07-22,:RW
-2289-43_tr_158,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Local Government Widowers’ and Orphans’ Pension Fund,department,AS_DEPARTMENT,2022-07-22,:RW
+2289-43_tr_157,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Local Government Widows' and Orphans' Pension Fund,department,AS_DEPARTMENT,2022-07-22,:RW
+2289-43_tr_158,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Local Government Widowers' and Orphans' Pension Fund,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_159,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,All District Secretariats and Divisional Secretariats,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_160,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Department of Registrar General,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_161,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,Sri Lanka Institute of Local Government,department,AS_DEPARTMENT,2022-07-22,:RW
@@ -172,7 +172,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2289-43_tr_171,Minister of Education,minister,Department of Educational Publications,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_172,Minister of Education,minister,National Library and Documentation Services Board,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_173,Minister of Education,minister,National Colleges of Education,department,AS_DEPARTMENT,2022-07-22,:RW
-2289-43_tr_174,Minister of Education,minister,Teachers’ College,department,AS_DEPARTMENT,2022-07-22,:RW
+2289-43_tr_174,Minister of Education,minister,Teachers' College,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_175,Minister of Education,minister,UNESCO National Commission of Sri Lanka,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_176,Minister of Education,minister,Sri Lanka Publication Development Bureau,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_177,Minister of Education,minister,State Printing Corporation,department,AS_DEPARTMENT,2022-07-22,:RW
@@ -188,7 +188,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2289-43_tr_187,Minister of Education,minister,Ceylon German Technical Training Institute,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_188,Minister of Education,minister,Department of Technical Education and Training,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_189,Minister of Education,minister,National Institute of Fundamental Studies,department,AS_DEPARTMENT,2022-07-22,:RW
-2289-43_tr_190,Minister of Education,minister,Sri Lanka Inventors’ Commission,department,AS_DEPARTMENT,2022-07-22,:RW
+2289-43_tr_190,Minister of Education,minister,Sri Lanka Inventors' Commission,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_191,Minister of Education,minister,National Engineering Research And Development Centre,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_192,Minister of Education,minister,National Research Council,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_193,Minister of Education,minister,Tertiary and Vocational Education Commission,department,AS_DEPARTMENT,2022-07-22,:RW
@@ -284,8 +284,8 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2289-43_tr_283,Minister of Wildlife and Forest Resources Conservation,minister,Department of Wildlife Conservation,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_284,Minister of Wildlife and Forest Resources Conservation,minister,Department of National Zoological Gardens,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_285,Minister of Wildlife and Forest Resources Conservation,minister,State Timber Corporation,department,AS_DEPARTMENT,2022-07-22,:RW
-2289-43_tr_286,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Attorney General’s Department,department,AS_DEPARTMENT,2022-07-22,:RW
-2289-43_tr_287,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Legal Draftsman’s Department,department,AS_DEPARTMENT,2022-07-22,:RW
+2289-43_tr_286,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Attorney General's Department,department,AS_DEPARTMENT,2022-07-22,:RW
+2289-43_tr_287,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Legal Draftsman's Department,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_288,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Department of Debt Conciliation Board,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_289,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Department of Government Analyst,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_290,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Office of the Registrar of the Supreme Court,department,AS_DEPARTMENT,2022-07-22,:RW
@@ -303,7 +303,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2289-43_tr_302,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Department of Prisons,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_303,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Community Based Correction Department,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_304,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Training Schools for Youthful Offenders,department,AS_DEPARTMENT,2022-07-22,:RW
-2289-43_tr_305,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Rehabilitation Commissioner General’s Office,department,AS_DEPARTMENT,2022-07-22,:RW
+2289-43_tr_305,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,Rehabilitation Commissioner General's Office,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_306,Minister of Tourism and Lands,minister,Sri Lanka Tourism Promotion Bureau,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_307,Minister of Tourism and Lands,minister,Sri Lanka Tourism Development Authority,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_308,Minister of Tourism and Lands,minister,Sri Lanka Institute of Tourism and Hotel Management,department,AS_DEPARTMENT,2022-07-22,:RW
@@ -452,7 +452,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2289-43_tr_451,Minister of Labour and Foreign Employment,minister,Department of Labour,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_452,Minister of Labour and Foreign Employment,minister,National Institute of Labour Studies,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_453,Minister of Labour and Foreign Employment,minister,National Institute for Occupational Safety and Health,department,AS_DEPARTMENT,2022-07-22,:RW
-2289-43_tr_454,Minister of Labour and Foreign Employment,minister,Office of the Commissioner of Workmen’s Compensation,department,AS_DEPARTMENT,2022-07-22,:RW
+2289-43_tr_454,Minister of Labour and Foreign Employment,minister,Office of the Commissioner of Workmen's Compensation,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_455,Minister of Labour and Foreign Employment,minister,National Productivity Secretariat,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_456,Minister of Labour and Foreign Employment,minister,Shrama Vasana Fund,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_457,Minister of Labour and Foreign Employment,minister,Department of Manpower and Employment,department,AS_DEPARTMENT,2022-07-22,:RW
@@ -474,4 +474,4 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,president
 2289-43_tr_473,"Minister of Trade, Commerce and Food Security",minister,Department of Cooperative Development (Registrar of Cooperative Societies),department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_474,"Minister of Trade, Commerce and Food Security",minister,Cooperative Employees Commission,department,AS_DEPARTMENT,2022-07-22,:RW
 2289-43_tr_475,"Minister of Trade, Commerce and Food Security",minister,National Institute of Cooperative Development,department,AS_DEPARTMENT,2022-07-22,:RW
-2289-43_tr_476,"Minister of Trade, Commerce and Food Security",minister,Food Commissioner’s Department,department,AS_DEPARTMENT,2022-07-22,:RW
+2289-43_tr_476,"Minister of Trade, Commerce and Food Security",minister,Food Commissioner's Department,department,AS_DEPARTMENT,2022-07-22,:RW
