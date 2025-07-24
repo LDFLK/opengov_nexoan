@@ -589,6 +589,7 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 			"parent_type": "minister",
 			"child_type":  "department",
 			"rel_type":    "AS_DEPARTMENT",
+			"president":   oldPresidentName,
 		}
 
 		err = c.TerminateOrgEntity(terminateTransaction)
@@ -633,6 +634,7 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 		"child_type":     "minister",
 		"rel_type":       relType,
 		"transaction_id": transactionID,
+		"president":      presidentName,
 	}
 
 	// Create the new minister
@@ -664,7 +666,7 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 		}
 	}
 
-	// Transfer each active department to the new minister
+	// Transfer each active department to the new minister using MoveDepartment
 	for _, rel := range oldActiveRelations {
 		// Get the department name using its ID
 		departmentResults, err := c.SearchEntities(&models.SearchCriteria{
@@ -678,41 +680,19 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 			return 0, fmt.Errorf("failed to find department with ID: %s", rel.RelatedEntityID)
 		}
 
-		// Create new relationship between new minister and department
-		newRelationship := &models.Entity{
-			ID: newMinisterID,
-			Relationships: []models.RelationshipEntry{
-				{
-					Key: fmt.Sprintf("%s_%s", newMinisterID, rel.RelatedEntityID),
-					Value: models.Relationship{
-						RelatedEntityID: rel.RelatedEntityID,
-						StartTime:       dateISO,
-						EndTime:         "",
-						ID:              fmt.Sprintf("%s_%s", newMinisterID, rel.RelatedEntityID),
-						Name:            "AS_DEPARTMENT",
-					},
-				},
-			},
+		// Use MoveDepartment to move the department from old minister to new minister
+		moveTransaction := map[string]interface{}{
+			"old_parent":         oldName,
+			"new_parent":         newName,
+			"child":              departmentResults[0].Name,
+			"date":               dateStr,
+			"new_president_name": presidentName,
+			"old_president_name": presidentName,
 		}
 
-		_, err = c.UpdateEntity(newMinisterID, newRelationship)
+		err = c.MoveDepartment(moveTransaction)
 		if err != nil {
-			return 0, fmt.Errorf("failed to create new department relationship: %w", err)
-		}
-
-		// Terminate the old relationship
-		terminateTransaction := map[string]interface{}{
-			"parent":      oldName,
-			"child":       departmentResults[0].Name,
-			"date":        dateStr,
-			"parent_type": "minister",
-			"child_type":  "department",
-			"rel_type":    "AS_DEPARTMENT",
-		}
-
-		err = c.TerminateOrgEntity(terminateTransaction)
-		if err != nil {
-			return 0, fmt.Errorf("failed to terminate old department relationship: %w", err)
+			return 0, fmt.Errorf("failed to move department: %w", err)
 		}
 	}
 
