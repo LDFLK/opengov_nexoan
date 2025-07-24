@@ -13,13 +13,13 @@ func (c *Client) CreateGovernmentNode() (*models.Entity, error) {
 	// Create the government entity
 	governmentEntity := &models.Entity{
 		ID:      "gov_01",
-		Created: "2024-01-01T00:00:00Z",
+		Created: "1978-09-07T00:00:00Z",
 		Kind: models.Kind{
 			Major: "Organisation",
 			Minor: "government",
 		},
 		Name: models.TimeBasedValue{
-			StartTime: "2024-01-01T00:00:00Z",
+			StartTime: "1978-09-07T00:00:00Z",
 			Value:     "Government of Sri Lanka",
 		},
 	}
@@ -119,29 +119,88 @@ func (c *Client) AddOrgEntity(transaction map[string]interface{}, entityCounters
 	entityCounter := entityCounters[childType] + 1
 	newEntityID := fmt.Sprintf("%s_%d", prefix, entityCounter)
 
-	// Get the parent entity ID
-	majorType := "Organisation"
-	if parentType == "president" || parentType == "citizen" {
-		majorType = "Person"
-	}
-	searchCriteria := &models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: majorType,
-			Minor: parentType,
-		},
-		Name: parent,
-	}
+	// Get the parent entity ID based on the child type
+	var parentID string
 
-	searchResults, err := c.SearchEntities(searchCriteria)
-	if err != nil {
-		return 0, fmt.Errorf("failed to search for parent entity: %w", err)
-	}
+	if childType == "minister" {
+		// For ministers, parent should be a president (Person type)
+		if parentType != "president" {
+			return 0, fmt.Errorf("minister must be attached to a president, got parent_type: %s", parentType)
+		}
 
-	if len(searchResults) == 0 {
-		return 0, fmt.Errorf("parent entity not found: %s", parent)
-	}
+		// Removed below: for now if a president creates the same minister again it will create a new entity
+		// Check if minister already exists under this president
+		// _, err := c.GetMinisterByPresident(parent, child, dateISO)
+		// if err == nil {
+		// 	// Minister already exists, return error
+		// 	return 0, fmt.Errorf("minister '%s' already exists under president '%s'", child, parent)
+		// }
 
-	parentID := searchResults[0].ID
+		// Get the president entity
+		searchCriteria := &models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: "Person",
+				Minor: "president",
+			},
+			Name: parent,
+		}
+
+		searchResults, err := c.SearchEntities(searchCriteria)
+		if err != nil {
+			return 0, fmt.Errorf("failed to search for parent president entity: %w", err)
+		}
+
+		if len(searchResults) == 0 {
+			return 0, fmt.Errorf("parent president entity not found: %s", parent)
+		}
+
+		parentID = searchResults[0].ID
+
+	} else if childType == "department" {
+		// For departments, parent should be a minister, but we need to verify it's the correct minister
+		if parentType != "minister" {
+			return 0, fmt.Errorf("department must be attached to a minister, got parent_type: %s", parentType)
+		}
+
+		// Get president name from transaction
+		presidentName, ok := transaction["president"].(string)
+		if !ok {
+			return 0, fmt.Errorf("president name is required when adding a department")
+		}
+
+		// Use GetMinisterByPresident to ensure we get the correct minister under the correct president
+		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		if err != nil {
+			return 0, fmt.Errorf("failed to get parent minister entity: %w", err)
+		}
+
+		parentID = ministerEntity.ID
+
+	} else {
+		// For other entity types, use the original logic
+		majorType := "Organisation"
+		if parentType == "president" || parentType == "citizen" {
+			majorType = "Person"
+		}
+		searchCriteria := &models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: majorType,
+				Minor: parentType,
+			},
+			Name: parent,
+		}
+
+		searchResults, err := c.SearchEntities(searchCriteria)
+		if err != nil {
+			return 0, fmt.Errorf("failed to search for parent entity: %w", err)
+		}
+
+		if len(searchResults) == 0 {
+			return 0, fmt.Errorf("parent entity not found: %s", parent)
+		}
+
+		parentID = searchResults[0].ID
+	}
 
 	// Create the new child entity
 	childEntity := &models.Entity{
