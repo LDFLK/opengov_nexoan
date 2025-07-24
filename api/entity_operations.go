@@ -274,45 +274,144 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 	}
 	dateISO := date.Format(time.RFC3339)
 
-	// Get the parent entity ID
-	parentMajorType := "Organisation"
-	if parentType == "president" || parentType == "citizen" {
-		parentMajorType = "Person"
-	}
-	searchCriteria := &models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: parentMajorType,
-			Minor: parentType,
-		},
-		Name: parent,
+	// Get the parent and child entity IDs based on their types
+	var parentID, childID string
+
+	// Handle parent entity retrieval
+	if parentType == "president" {
+		// Parent is a president (Person type)
+		searchCriteria := &models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: "Person",
+				Minor: "president",
+			},
+			Name: parent,
+		}
+
+		parentResults, err := c.SearchEntities(searchCriteria)
+		if err != nil {
+			return fmt.Errorf("failed to search for parent president entity: %w", err)
+		}
+		if len(parentResults) == 0 {
+			return fmt.Errorf("parent president entity not found: %s", parent)
+		}
+		parentID = parentResults[0].ID
+
+	} else if parentType == "minister" {
+		// Parent is a minister, need president context to get the correct minister
+		presidentName, ok := transaction["president"].(string)
+		if !ok {
+			return fmt.Errorf("president name is required when terminating minister relationships")
+		}
+
+		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		if err != nil {
+			return fmt.Errorf("failed to get parent minister entity: %w", err)
+		}
+		parentID = ministerEntity.ID
+
+	} else {
+		// For other parent types, use the original logic
+		parentMajorType := "Organisation"
+		if parentType == "citizen" {
+			parentMajorType = "Person"
+		}
+		searchCriteria := &models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: parentMajorType,
+				Minor: parentType,
+			},
+			Name: parent,
+		}
+
+		parentResults, err := c.SearchEntities(searchCriteria)
+		if err != nil {
+			return fmt.Errorf("failed to search for parent entity: %w", err)
+		}
+		if len(parentResults) == 0 {
+			return fmt.Errorf("parent entity not found: %s", parent)
+		}
+		parentID = parentResults[0].ID
 	}
 
-	parentResults, err := c.SearchEntities(searchCriteria)
-	if err != nil {
-		return fmt.Errorf("failed to search for parent entity: %w", err)
-	}
-	if len(parentResults) == 0 {
-		return fmt.Errorf("parent entity not found: %s", parent)
-	}
-	parentID := parentResults[0].ID
+	// Handle child entity retrieval
+	if childType == "minister" {
+		// Child is a minister, need president context to get the correct minister
+		presidentName, ok := transaction["president"].(string)
+		if !ok {
+			return fmt.Errorf("president name is required when terminating minister relationships")
+		}
 
-	// Get the child entity ID
-	childMajorType := "Organisation"
-	if childType == "president" || childType == "citizen" {
-		childMajorType = "Person"
-	}
+		ministerEntity, err := c.GetMinisterByPresident(presidentName, child, dateISO)
+		if err != nil {
+			return fmt.Errorf("failed to get child minister entity: %w", err)
+		}
+		childID = ministerEntity.ID
 
-	searchCriteria.Kind.Major = childMajorType
-	searchCriteria.Kind.Minor = childType
-	searchCriteria.Name = child
-	childResults, err := c.SearchEntities(searchCriteria)
-	if err != nil {
-		return fmt.Errorf("failed to search for child entity: %w", err)
+	} else if childType == "department" {
+		// Child is a department, need to find it under the correct minister
+		presidentName, ok := transaction["president"].(string)
+		if !ok {
+			return fmt.Errorf("president name is required when terminating department relationships")
+		}
+
+		// First get the minister that should have this department
+		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		if err != nil {
+			return fmt.Errorf("failed to get minister for department termination: %w", err)
+		}
+
+		// Then find the department under this minister
+		departmentRelations, err := c.GetRelatedEntities(ministerEntity.ID, &models.Relationship{
+			Name: "AS_DEPARTMENT",
+		})
+		if err != nil {
+			return fmt.Errorf("failed to get minister's department relationships: %w", err)
+		}
+
+		// Find the department with the matching name
+		var foundDepartmentID string
+		for _, rel := range departmentRelations {
+			if rel.EndTime == "" { // Only active relationships
+				departmentResults, err := c.SearchEntities(&models.SearchCriteria{ID: rel.RelatedEntityID})
+				if err != nil || len(departmentResults) == 0 {
+					continue
+				}
+				if departmentResults[0].Name == child {
+					foundDepartmentID = rel.RelatedEntityID
+					break
+				}
+			}
+		}
+
+		if foundDepartmentID == "" {
+			return fmt.Errorf("department '%s' not found under minister '%s'", child, parent)
+		}
+		childID = foundDepartmentID
+
+	} else {
+		// For other child types, use the original logic
+		childMajorType := "Organisation"
+		if childType == "president" || childType == "citizen" {
+			childMajorType = "Person"
+		}
+
+		searchCriteria := &models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: childMajorType,
+				Minor: childType,
+			},
+			Name: child,
+		}
+		childResults, err := c.SearchEntities(searchCriteria)
+		if err != nil {
+			return fmt.Errorf("failed to search for child entity: %w", err)
+		}
+		if len(childResults) == 0 {
+			return fmt.Errorf("child entity not found: %s", child)
+		}
+		childID = childResults[0].ID
 	}
-	if len(childResults) == 0 {
-		return fmt.Errorf("child entity not found: %s", child)
-	}
-	childID := childResults[0].ID
 
 	//If we're terminating a minister, check for active departments
 	if childType == "minister" {
