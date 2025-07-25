@@ -921,6 +921,7 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 		"child_type":     "minister",
 		"rel_type":       "AS_MINISTER",
 		"transaction_id": transactionID,
+		"president":      presidentName,
 	}
 
 	newMinisterCounter, err := c.AddOrgEntity(addEntityTransaction, entityCounters)
@@ -946,14 +947,21 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 
 		// 2. Move old minister's departments to new minister
 		oldRelations, err := c.GetRelatedEntities(oldMinisterID, &models.Relationship{
-			Name:    "AS_DEPARTMENT",
-			EndTime: "",
+			Name: "AS_DEPARTMENT",
 		})
 		if err != nil {
 			return 0, fmt.Errorf("failed to get old minister's relationships: %w", err)
 		}
 
+		// Manually filter only active relationships (EndTime == "")
+		var oldActiveRelations []models.Relationship
 		for _, rel := range oldRelations {
+			if rel.EndTime == "" {
+				oldActiveRelations = append(oldActiveRelations, rel)
+			}
+		}
+
+		for _, rel := range oldActiveRelations {
 			// Get the department name using its ID
 			departmentResults, err := c.SearchEntities(&models.SearchCriteria{
 				ID: rel.RelatedEntityID,
@@ -989,6 +997,7 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 			"parent_type": "president",
 			"child_type":  "minister",
 			"rel_type":    "AS_MINISTER",
+			"president":   presidentName,
 		}
 
 		err = c.TerminateOrgEntity(terminateGovTransaction)
