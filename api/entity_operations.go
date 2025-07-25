@@ -744,6 +744,10 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 	dateStr := transaction["date"].(string)
 	relType := "AS_DEPARTMENT"
 	transactionID := transaction["transaction_id"].(string)
+	presidentName, ok := transaction["president"].(string)
+	if !ok {
+		return 0, fmt.Errorf("president name is required when renaming a department")
+	}
 
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
@@ -768,7 +772,8 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 	}
 	oldDepartmentID := oldDepartmentResults[0].ID
 
-	// Find the minister that has a relationship with this department
+	// Find the minister that has an active relationship with this department
+	// We need to search through all ministers to find which one has this department
 	ministerResults, err := c.SearchEntities(&models.SearchCriteria{
 		Kind: &models.Kind{
 			Major: "Organisation",
@@ -779,7 +784,6 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 		return 0, fmt.Errorf("failed to search for ministers: %w", err)
 	}
 
-	// Find the minister that has an active relationship with this department
 	var ministerID string
 	var ministerName string
 	for _, minister := range ministerResults {
@@ -805,6 +809,12 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 		return 0, fmt.Errorf("no active minister relationship found for department: %s", oldName)
 	}
 
+	// Verify that this minister is under the correct president
+	_, err = c.GetMinisterByPresident(presidentName, ministerName, dateISO)
+	if err != nil {
+		return 0, fmt.Errorf("minister '%s' not found under president '%s'", ministerName, presidentName)
+	}
+
 	// Create new department under the same minister
 	addEntityTransaction := map[string]interface{}{
 		"parent":         ministerName,
@@ -814,6 +824,7 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 		"child_type":     "department",
 		"rel_type":       relType,
 		"transaction_id": transactionID,
+		"president":      presidentName,
 	}
 
 	// Create the new department
@@ -846,6 +857,7 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 		"parent_type": "minister",
 		"child_type":  "department",
 		"rel_type":    relType,
+		"president":   presidentName,
 	}
 
 	err = c.TerminateOrgEntity(terminateMinisterTransaction)
