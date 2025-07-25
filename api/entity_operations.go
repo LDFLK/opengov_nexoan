@@ -1043,6 +1043,16 @@ func (c *Client) AddPersonEntity(transaction map[string]interface{}, entityCount
 	relType := transaction["rel_type"].(string)
 	transactionID := transaction["transaction_id"].(string)
 
+	// Get president name if parent is a minister -> currently only supports adding people to ministers
+	var presidentName string
+	if parentType == "minister" {
+		var ok bool
+		presidentName, ok = transaction["president"].(string)
+		if !ok {
+			return 0, fmt.Errorf("president name is required when adding a person to a minister")
+		}
+	}
+
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
 	if err != nil {
@@ -1051,24 +1061,36 @@ func (c *Client) AddPersonEntity(transaction map[string]interface{}, entityCount
 	dateISO := date.Format(time.RFC3339)
 
 	// Get the parent entity ID
-	searchCriteria := &models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: parentType,
-		},
-		Name: parent,
-	}
+	var parentID string
 
-	searchResults, err := c.SearchEntities(searchCriteria)
-	if err != nil {
-		return 0, fmt.Errorf("failed to search for parent entity: %w", err)
-	}
+	if parentType == "minister" {
+		// Parent is a minister, need president context to get the correct minister
+		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		if err != nil {
+			return 0, fmt.Errorf("failed to get parent minister entity: %w", err)
+		}
+		parentID = ministerEntity.ID
+	} else {
+		// For other parent types, use the original logic
+		searchCriteria := &models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: "Organisation",
+				Minor: parentType,
+			},
+			Name: parent,
+		}
 
-	if len(searchResults) == 0 {
-		return 0, fmt.Errorf("parent entity not found: %s", parent)
-	}
+		searchResults, err := c.SearchEntities(searchCriteria)
+		if err != nil {
+			return 0, fmt.Errorf("failed to search for parent entity: %w", err)
+		}
 
-	parentID := searchResults[0].ID
+		if len(searchResults) == 0 {
+			return 0, fmt.Errorf("parent entity not found: %s", parent)
+		}
+
+		parentID = searchResults[0].ID
+	}
 
 	// Check if person already exists (search across all person types)
 	personSearchCriteria := &models.SearchCriteria{
