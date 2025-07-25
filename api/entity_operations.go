@@ -1190,6 +1190,16 @@ func (c *Client) TerminatePersonEntity(transaction map[string]interface{}) error
 	childType := transaction["child_type"].(string)
 	relType := transaction["rel_type"].(string)
 
+	// Get president name if parent is a minister -> currently only supports terminating relationships with ministers
+	var presidentName string
+	if parentType == "minister" {
+		var ok bool
+		presidentName, ok = transaction["president"].(string)
+		if !ok {
+			return fmt.Errorf("president name is required when terminating relationships with ministers")
+		}
+	}
+
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
 	if err != nil {
@@ -1198,21 +1208,33 @@ func (c *Client) TerminatePersonEntity(transaction map[string]interface{}) error
 	dateISO := date.Format(time.RFC3339)
 
 	// Get the parent entity ID
-	searchCriteria := &models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: parentType,
-		},
-		Name: parent,
+	var parentID string
+
+	if parentType == "minister" {
+		// Parent is a minister, need president context to get the correct minister
+		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		if err != nil {
+			return fmt.Errorf("failed to get parent minister entity: %w", err)
+		}
+		parentID = ministerEntity.ID
+	} else {
+		// For other parent types, use the original logic
+		searchCriteria := &models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: "Organisation",
+				Minor: parentType,
+			},
+			Name: parent,
+		}
+		parentResults, err := c.SearchEntities(searchCriteria)
+		if err != nil {
+			return fmt.Errorf("failed to search for parent entity: %w", err)
+		}
+		if len(parentResults) == 0 {
+			return fmt.Errorf("parent entity not found: %s", parent)
+		}
+		parentID = parentResults[0].ID
 	}
-	parentResults, err := c.SearchEntities(searchCriteria)
-	if err != nil {
-		return fmt.Errorf("failed to search for parent entity: %w", err)
-	}
-	if len(parentResults) == 0 {
-		return fmt.Errorf("parent entity not found: %s", parent)
-	}
-	parentID := parentResults[0].ID
 
 	// Get the child entity ID
 	childSearchCriteria := &models.SearchCriteria{
@@ -1232,21 +1254,28 @@ func (c *Client) TerminatePersonEntity(transaction map[string]interface{}) error
 	}
 	childID := childResults[0].ID
 
-	// Get the specific relationship that is still active (no end date) -> this should give us the relationship(s) active for dateISO
+	// Get the specific relationship that is still active (no end date)
 	relations, err := c.GetRelatedEntities(parentID, &models.Relationship{
 		RelatedEntityID: childID,
 		Name:            relType,
-		EndTime:         "",
 	})
 	if err != nil {
 		return fmt.Errorf("failed to get relationship: %w", err)
 	}
 
 	// FIXME: Is it possible to have more than one active relationship? For orgchart case only it won't happen
+	// Manually filter only active relationships (EndTime == "")
+	var activeRelations []models.Relationship
+	for _, rel := range relations {
+		if rel.EndTime == "" {
+			activeRelations = append(activeRelations, rel)
+		}
+	}
+
 	// Find the active relationship (no end time)
 	var activeRel *models.Relationship
-	if len(relations) > 0 {
-		activeRel = &relations[0]
+	if len(activeRelations) > 0 {
+		activeRel = &activeRelations[0]
 	}
 
 	if activeRel == nil {
