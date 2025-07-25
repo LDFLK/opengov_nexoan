@@ -254,8 +254,6 @@ func (c *Client) GetRelatedEntities(entityID string, query *models.Relationship)
 		return nil, fmt.Errorf("failed to marshal query: %w", err)
 	}
 
-	fmt.Printf("GetRelatedEntities json: %+v\n", query)
-
 	// URL encode the entity ID to handle special characters like slashes
 	encodedID := url.QueryEscape(entityID)
 

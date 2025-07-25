@@ -704,6 +704,7 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 		"parent_type": "president",
 		"child_type":  "minister",
 		"rel_type":    relType,
+		"president":   presidentName,
 	}
 
 	err = c.TerminateOrgEntity(terminatePresTransaction)
