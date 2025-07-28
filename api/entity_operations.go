@@ -164,8 +164,8 @@ func (c *Client) AddOrgEntity(transaction map[string]interface{}, entityCounters
 
 		// Get president name from transaction
 		presidentName, ok := transaction["president"].(string)
-		if !ok {
-			return 0, fmt.Errorf("president name is required when adding a department")
+		if !ok || presidentName == "" {
+			return 0, fmt.Errorf("president name is required and must be a non-empty string when adding a department")
 		}
 
 		// Use GetMinisterByPresident to ensure we get the correct minister under the correct president
@@ -300,8 +300,8 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 	} else if parentType == "minister" {
 		// Parent is a minister, need president context to get the correct minister
 		presidentName, ok := transaction["president"].(string)
-		if !ok {
-			return fmt.Errorf("president name is required when terminating minister relationships")
+		if !ok || presidentName == "" {
+			return fmt.Errorf("president name is required and must be a non-empty string when terminating minister relationships")
 		}
 
 		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
@@ -336,11 +336,8 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 
 	// Handle child entity retrieval
 	if childType == "minister" {
-		// Child is a minister, need president context to get the correct minister
-		presidentName, ok := transaction["president"].(string)
-		if !ok {
-			return fmt.Errorf("president name is required when terminating minister relationships")
-		}
+		// Child is a minister, parent is the president's name
+		presidentName := parent // parent contains the president's name
 
 		ministerEntity, err := c.GetMinisterByPresident(presidentName, child, dateISO)
 		if err != nil {
@@ -351,8 +348,8 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 	} else if childType == "department" {
 		// Child is a department, need to find it under the correct minister
 		presidentName, ok := transaction["president"].(string)
-		if !ok {
-			return fmt.Errorf("president name is required when terminating department relationships")
+		if !ok || presidentName == "" {
+			return fmt.Errorf("president name is required and must be a non-empty string when terminating department relationships")
 		}
 
 		// First get the minister that should have this department
@@ -490,8 +487,17 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 	oldParent := transaction["old_parent"].(string)
 	child := transaction["child"].(string)
 	dateStr := transaction["date"].(string)
-	newPresidentName := transaction["new_president_name"].(string)
-	oldPresidentName := transaction["old_president_name"].(string)
+
+	// Validate president names are provided
+	newPresidentName, ok := transaction["new_president_name"].(string)
+	if !ok || newPresidentName == "" {
+		return fmt.Errorf("new_president_name is required and must be a non-empty string")
+	}
+
+	oldPresidentName, ok := transaction["old_president_name"].(string)
+	if !ok || oldPresidentName == "" {
+		return fmt.Errorf("old_president_name is required and must be a non-empty string")
+	}
 
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
@@ -609,7 +615,12 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 	dateStr := transaction["date"].(string)
 	relType := "AS_MINISTER"
 	transactionID := transaction["transaction_id"]
-	presidentName := transaction["president"].(string)
+
+	// Validate president name is provided
+	presidentName, ok := transaction["president"].(string)
+	if !ok || presidentName == "" {
+		return 0, fmt.Errorf("president name is required and must be a non-empty string")
+	}
 
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
@@ -704,7 +715,6 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 		"parent_type": "president",
 		"child_type":  "minister",
 		"rel_type":    relType,
-		"president":   presidentName,
 	}
 
 	err = c.TerminateOrgEntity(terminatePresTransaction)
@@ -746,8 +756,8 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 	relType := "AS_DEPARTMENT"
 	transactionID := transaction["transaction_id"].(string)
 	presidentName, ok := transaction["president"].(string)
-	if !ok {
-		return 0, fmt.Errorf("president name is required when renaming a department")
+	if !ok || presidentName == "" {
+		return 0, fmt.Errorf("president name is required and must be a non-empty string when renaming a department")
 	}
 
 	// Parse the date
@@ -898,7 +908,12 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 	newMinister := transaction["new"].(string)
 	dateStr := transaction["date"].(string)
 	transactionID := transaction["transaction_id"].(string)
-	presidentName := transaction["president"].(string)
+
+	// Validate president name is provided
+	presidentName, ok := transaction["president"].(string)
+	if !ok || presidentName == "" {
+		return 0, fmt.Errorf("president name is required and must be a non-empty string")
+	}
 
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
@@ -999,7 +1014,6 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 			"parent_type": "president",
 			"child_type":  "minister",
 			"rel_type":    "AS_MINISTER",
-			"president":   presidentName,
 		}
 
 		err = c.TerminateOrgEntity(terminateGovTransaction)
@@ -1050,8 +1064,8 @@ func (c *Client) AddPersonEntity(transaction map[string]interface{}, entityCount
 	if parentType == "minister" {
 		var ok bool
 		presidentName, ok = transaction["president"].(string)
-		if !ok {
-			return 0, fmt.Errorf("president name is required when adding a person to a minister")
+		if !ok || presidentName == "" {
+			return 0, fmt.Errorf("president name is required and must be a non-empty string when adding a person to a minister")
 		}
 	}
 
@@ -1197,8 +1211,8 @@ func (c *Client) TerminatePersonEntity(transaction map[string]interface{}) error
 	if parentType == "minister" {
 		var ok bool
 		presidentName, ok = transaction["president"].(string)
-		if !ok {
-			return fmt.Errorf("president name is required when terminating relationships with ministers")
+		if !ok || presidentName == "" {
+			return fmt.Errorf("president name is required and must be a non-empty string when terminating relationships with ministers")
 		}
 	}
 
@@ -1315,7 +1329,12 @@ func (c *Client) MovePerson(transaction map[string]interface{}) error {
 	child := transaction["child"].(string)
 	dateStr := transaction["date"].(string)
 	relType := "AS_APPOINTED"
-	presidentName := transaction["president"].(string)
+
+	// Validate president name is provided
+	presidentName, ok := transaction["president"].(string)
+	if !ok || presidentName == "" {
+		return fmt.Errorf("president name is required and must be a non-empty string")
+	}
 
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
