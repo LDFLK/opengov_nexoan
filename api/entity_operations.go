@@ -907,8 +907,9 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 	}
 	dateISO := date.Format(time.RFC3339)
 
-	// Parse old ministers list
-	oldMinisters := strings.Split(strings.Trim(oldMinistersStr, "[]"), ",")
+	// Parse old ministers list - use semicolons as separators to avoid comma conflicts
+	trimmedStr := strings.Trim(oldMinistersStr, "[]")
+	oldMinisters := strings.Split(trimmedStr, ";")
 	for i := range oldMinisters {
 		oldMinisters[i] = strings.TrimSpace(oldMinisters[i])
 	}

@@ -144,6 +144,11 @@ func TestCreatePeople(t *testing.T) {
 			"transaction_id": tc.transactionID,
 		}
 
+		// Add president field if parent is a minister
+		if tc.parentType == "minister" {
+			transaction["president"] = "Ranil Wickremesinghe"
+		}
+
 		// Use AddEntity to create the person
 		_, err := client.AddPersonEntity(transaction, personEntityCounters)
 		assert.NoError(t, err)
@@ -434,6 +439,7 @@ func TestTerminatePerson(t *testing.T) {
 		childType     string
 		relType       string
 		date          string
+		president     string
 	}{
 		{
 			transactionID: "2127-12_tr_01",
@@ -443,6 +449,7 @@ func TestTerminatePerson(t *testing.T) {
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 	}
 
@@ -459,6 +466,7 @@ func TestTerminatePerson(t *testing.T) {
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
 			"transaction_id": tc.transactionID,
+			"president":      tc.president,
 		}
 
 		// Use AddEntity to create the minister
@@ -518,6 +526,7 @@ func TestTerminatePerson(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 	}
 
@@ -534,6 +543,7 @@ func TestTerminatePerson(t *testing.T) {
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
 			"transaction_id": tc.transactionID,
+			"president":      tc.president,
 		}
 
 		// Use AddEntity to create the person
@@ -651,8 +661,8 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 	}{
 		{
 			transactionID: "2127/13_tr_01",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "president",
 			child:         "Minister of Science and Technology",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
@@ -661,8 +671,8 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 		},
 		{
 			transactionID: "2127/13_tr_02",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "president",
 			child:         "Minister of Sports and Youth Affairs",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
@@ -671,8 +681,8 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 		},
 		{
 			transactionID: "2127/13_tr_03",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "president",
 			child:         "Minister of Tourism and Culture",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
@@ -902,8 +912,8 @@ func TestMovePerson(t *testing.T) {
 	}{
 		{
 			transactionID: "2127/14_tr_01",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "president",
 			child:         "Minister of Agriculture and Food Security",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
@@ -912,8 +922,8 @@ func TestMovePerson(t *testing.T) {
 		},
 		{
 			transactionID: "2127/14_tr_02",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "president",
 			child:         "Minister of Environment and Climate Change",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
@@ -1107,8 +1117,8 @@ func TestSwapMultiplePeople(t *testing.T) {
 	}{
 		{
 			transactionID: "2127/15_tr_01",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "president",
 			child:         "Minister of Foreign Affairs and International Trade",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
@@ -1117,8 +1127,8 @@ func TestSwapMultiplePeople(t *testing.T) {
 		},
 		{
 			transactionID: "2127/15_tr_02",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "president",
 			child:         "Minister of Justice and Law and Order",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
@@ -1127,8 +1137,8 @@ func TestSwapMultiplePeople(t *testing.T) {
 		},
 		{
 			transactionID: "2127/15_tr_03",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "president",
 			child:         "Minister of Education and Vocational Development",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
