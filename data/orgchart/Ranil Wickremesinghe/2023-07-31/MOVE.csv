@@ -1,3 +1,3 @@
-transaction_id,old_parent,new_parent,child,type,date,old_parent_pres,new_parent_pres
-2343-05_tr_01,Minister of Transport and Highways,"Minister of Finance, Economic Stabilization and National Policies",Sahasya Investment Ltd.,department,2023-07-31,:RW,:RW
-2343-05_tr_02,Minister of Urban Development and Housing,"Minister of Finance, Economic Stabilization and National Policies",National Equipment and Machinery Organization,department,2023-07-31,:RW,:RW
+transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_president_name
+2343-05_tr_01,Minister of Transport and Highways,"Minister of Finance, Economic Stabilization and National Policies",Sahasya Investment Ltd.,department,2023-07-31,Ranil Wickremesinghe,Ranil Wickremesinghe
+2343-05_tr_02,Minister of Urban Development and Housing,"Minister of Finance, Economic Stabilization and National Policies",National Equipment and Machinery Organization,department,2023-07-31,Ranil Wickremesinghe,Ranil Wickremesinghe

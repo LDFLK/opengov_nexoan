@@ -1,5 +1,5 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date,president
-2403-38_tr_01,Government of Sri Lanka,government,Minister of Defence,minister,AS_MINISTER,2024-09-25,:AK
-2403-38_tr_02,Government of Sri Lanka,government,"Minister of Finance, Economic Development, Policy Formulation, Planning and Tourism",minister,AS_MINISTER,2024-09-25,:AK
-2403-38_tr_03,Government of Sri Lanka,government,Minister of Energy,minister,AS_MINISTER,2024-09-25,:AK
-2403-38_tr_04,Government of Sri Lanka,government,"Minister of Agriculture, Lands, Livestock, Irrigation, Fisheries and Aquatic Resources",minister,AS_MINISTER,2024-09-25,:AK
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2403-38_tr_01,Anura Kumara,president,Minister of Defence,minister,AS_MINISTER,2024-09-25
+2403-38_tr_02,Anura Kumara,government,"Minister of Finance, Economic Development, Policy Formulation, Planning and Tourism",minister,AS_MINISTER,2024-09-25
+2403-38_tr_03,Anura Kumara,government,Minister of Energy,minister,AS_MINISTER,2024-09-25
+2403-38_tr_04,Anura Kumara,government,"Minister of Agriculture, Lands, Livestock, Irrigation, Fisheries and Aquatic Resources",minister,AS_MINISTER,2024-09-25

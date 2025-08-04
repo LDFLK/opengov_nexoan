@@ -1,2 +1,2 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date,president
-2373-22_tr_01,Government of Sri Lanka,government,State Minister of Sports and Youth Affairs,minister,AS_MINISTER,2024-02-27,:RW
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2373-22_tr_01,Ranil Wickremesinghe,president,State Minister of Sports and Youth Affairs,minister,AS_MINISTER,2024-02-27

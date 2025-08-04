@@ -306,7 +306,6 @@ func TestTerminateMinister(t *testing.T) {
 		"parent_type": "president",
 		"child_type":  "minister",
 		"rel_type":    "AS_MINISTER",
-		"president":   "Ranil Wickremesinghe",
 	}
 
 	// Terminate the minister relationship
@@ -875,7 +874,6 @@ func TestTerminateNonExistentMinister(t *testing.T) {
 		"parent_type": "president",
 		"child_type":  "minister",
 		"rel_type":    "AS_MINISTER",
-		"president":   "Ranil Wickremesinghe",
 	}
 
 	// Attempt to terminate the non-existent minister
@@ -945,7 +943,6 @@ func TestTerminateMinisterWithChildren(t *testing.T) {
 		"parent_type": "president",
 		"child_type":  "minister",
 		"rel_type":    "AS_MINISTER",
-		"president":   "Ranil Wickremesinghe",
 	}
 
 	// fmt.Printf("Debug: Attempting to terminate minister with transaction: %+v\n", terminateTransaction)

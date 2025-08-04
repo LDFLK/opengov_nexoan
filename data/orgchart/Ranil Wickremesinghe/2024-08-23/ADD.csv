@@ -1,2 +1,2 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date,president
-2398-39_tr_01,Government of Sri Lanka,government,Non Cabinet Minister of Development Projects,minister,AS_MINISTER,2024-08-23,:RW
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2398-39_tr_01,Ranil Wickremesinghe,president,Non Cabinet Minister of Development Projects,minister,AS_MINISTER,2024-08-23

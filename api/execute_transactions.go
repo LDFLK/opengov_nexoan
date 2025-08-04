@@ -52,7 +52,8 @@ func (c *Client) ProcessTransactions(dataDir string, processType string) error {
 		}
 	} else if processType == "person" {
 		entityCounters = map[string]int{
-			"citizen": 0,
+			"citizen":   0,
+			"president": 0,
 		}
 	} else {
 		return fmt.Errorf("invalid process type: %s", processType)
@@ -128,10 +129,10 @@ func (c *Client) ProcessTransactions(dataDir string, processType string) error {
 			// Check if the transaction type matches the process type
 			childType := transaction["child_type"].(string)
 			if (processType == "organisation" && (childType == "minister" || childType == "department")) ||
-				(processType == "person" && childType == "citizen") {
+				(processType == "person" && (childType == "citizen" || childType == "president")) {
 				var err error
 
-				if processType == "person" && childType == "citizen" {
+				if processType == "person" && (childType == "citizen" || childType == "president") {
 					entityCounters[childType], err = c.AddPersonEntity(transaction, entityCounters)
 				} else {
 					entityCounters[childType], err = c.AddOrgEntity(transaction, entityCounters)

@@ -1,4 +1,4 @@
-transaction_id,old_parent,new_parent,child,type,date,old_parent_pres,new_parent_pres
-2297-78_tr_01,"Minister of Finance, Economic Stabilization and National Policies",Minister of Investment Promotion,Sri Lanka Export Development Board,department,2022-09-16,:RW,:RW
-2297-78_tr_02,"Minister of Finance, Economic Stabilization and National Policies",Minister of Investment Promotion,Board of Investment of Sri Lanka,department,2022-09-16,:RW,:RW
-2297-78_tr_03,"Minister of Finance, Economic Stabilization and National Policies",Minister of Investment Promotion,Colombo Port City Economic Commission,department,2022-09-16,:RW,:RW
+transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_president_name
+2297-78_tr_01,"Minister of Finance, Economic Stabilization and National Policies",Minister of Investment Promotion,Sri Lanka Export Development Board,department,2022-09-16,Ranil Wickremesinghe,Ranil Wickremesinghe
+2297-78_tr_02,"Minister of Finance, Economic Stabilization and National Policies",Minister of Investment Promotion,Board of Investment of Sri Lanka,department,2022-09-16,Ranil Wickremesinghe,Ranil Wickremesinghe
+2297-78_tr_03,"Minister of Finance, Economic Stabilization and National Policies",Minister of Investment Promotion,Colombo Port City Economic Commission,department,2022-09-16,Ranil Wickremesinghe,Ranil Wickremesinghe

@@ -1,12 +1,12 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date,president
-2403-39_tr_01,Government of Sri Lanka,government,"Minister of Justice, Public Administration, Home Affairs, Provincial Councils, Local Government and Labour",minister,AS_MINISTER,2024-09-25,:AK
-2403-39_tr_02,Government of Sri Lanka,government,"Minister of Education, Science and Technology",minister,AS_MINISTER,2024-09-25,:AK
-2403-39_tr_03,Government of Sri Lanka,government,"Minister of Women, Child and Youth Affairs and Sports",minister,AS_MINISTER,2024-09-25,:AK
-2403-39_tr_04,Government of Sri Lanka,government,"Minister of Trade, Commerce, Food Security, Co-operative Development, Industry and Entrepreneurship Development",minister,AS_MINISTER,2024-09-25,:AK
-2403-39_tr_05,Government of Sri Lanka,government,Minister of Health,minister,AS_MINISTER,2024-09-25,:AK
-2403-39_tr_06,Government of Sri Lanka,government,"Minister of Buddhasasana, Religious and Cultural Affairs, National Integration, Social Security, and Mass Media",minister,AS_MINISTER,2024-09-25,:AK
-2403-39_tr_07,Government of Sri Lanka,government,"Minister of Transport, Highways, Ports and Civil Aviation",minister,AS_MINISTER,2024-09-25,:AK
-2403-39_tr_08,Government of Sri Lanka,government,Minister of Public Security,minister,AS_MINISTER,2024-09-25,:AK
-2403-39_tr_09,Government of Sri Lanka,government,Minister of Foreign Affairs,minister,AS_MINISTER,2024-09-25,:AK
-2403-39_tr_10,Government of Sri Lanka,government,"Minister of Environment, Wildlife, Forest Resources, Water Supply, Plantation and Community Infrastructure",minister,AS_MINISTER,2024-09-25,:AK
-2403-39_tr_11,Government of Sri Lanka,government,"Minister of Rural and Urban Development, Housing and Construction",minister,AS_MINISTER,2024-09-25,:AK
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2403-39_tr_01,Anura Kumara,president,"Minister of Justice, Public Administration, Home Affairs, Provincial Councils, Local Government and Labour",minister,AS_MINISTER,2024-09-25
+2403-39_tr_02,Anura Kumara,president,"Minister of Education, Science and Technology",minister,AS_MINISTER,2024-09-25
+2403-39_tr_03,Anura Kumara,president,"Minister of Women, Child and Youth Affairs and Sports",minister,AS_MINISTER,2024-09-25
+2403-39_tr_04,Anura Kumara,president,"Minister of Trade, Commerce, Food Security, Co-operative Development, Industry and Entrepreneurship Development",minister,AS_MINISTER,2024-09-25
+2403-39_tr_05,Anura Kumara,president,Minister of Health,minister,AS_MINISTER,2024-09-25
+2403-39_tr_06,Anura Kumara,president,"Minister of Buddhasasana, Religious and Cultural Affairs, National Integration, Social Security, and Mass Media",minister,AS_MINISTER,2024-09-25
+2403-39_tr_07,Anura Kumara,president,"Minister of Transport, Highways, Ports and Civil Aviation",minister,AS_MINISTER,2024-09-25
+2403-39_tr_08,Anura Kumara,president,Minister of Public Security,minister,AS_MINISTER,2024-09-25
+2403-39_tr_09,Anura Kumara,president,Minister of Foreign Affairs,minister,AS_MINISTER,2024-09-25
+2403-39_tr_10,Anura Kumara,president,"Minister of Environment, Wildlife, Forest Resources, Water Supply, Plantation and Community Infrastructure",minister,AS_MINISTER,2024-09-25
+2403-39_tr_11,Anura Kumara,president,"Minister of Rural and Urban Development, Housing and Construction",minister,AS_MINISTER,2024-09-25
