@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Load Ranil's people and presidency gazettes
-./orgchart -data $(pwd)/data/documents/rw/person/ -init -type document
+./orgchart -data "$(pwd)/data/documents/Ranil Wickremesinghe/person/" -init -type document
 
 # Load Ranil's org gazettes
-./orgchart -data $(pwd)/data/documents/rw/organisation/ -type document
+./orgchart -data $(pwd)/data/documents/Ranil Wickremesinghe/organisation/ -type document
 
 # Load Ranil's presidency data
 ./orgchart -data "$(pwd)/data/people/Ranil Wickremesinghe/2022-07-20/" -type person

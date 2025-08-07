@@ -33,28 +33,81 @@ func (c *Client) CreateGovernmentNode() (*models.Entity, error) {
 	return createdEntity, nil
 }
 
-// GetMinisterByPresident retrieves a minister entity by president name and minister name
-func (c *Client) GetMinisterByPresident(presidentName, ministerName, dateISO string) (*models.Entity, error) {
-	// Get the president entity ID
+// GetPresidentByGovernment retrieves a president entity (citizen with AS_PRESIDENT relationship to government) by name
+func (c *Client) GetPresidentByGovernment(presidentName string) (*models.Entity, error) {
+	// Get the president entity ID - presidents are citizens with AS_PRESIDENT relationship to government
 	presidentResults, err := c.SearchEntities(&models.SearchCriteria{
 		Kind: &models.Kind{
 			Major: "Person",
-			Minor: "president",
+			Minor: "citizen",
 		},
 		Name: presidentName,
 	})
+
 	if err != nil {
 		return nil, fmt.Errorf("failed to search for president entity: %w", err)
 	}
 	if len(presidentResults) == 0 {
 		return nil, fmt.Errorf("president entity not found: %s", presidentName)
 	}
-	presidentID := presidentResults[0].ID
+
+	// Find the president by checking if they have AS_PRESIDENT relationship to government
+	for _, president := range presidentResults {
+		// Get government node
+		governmentResults, err := c.SearchEntities(&models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: "Organisation",
+				Minor: "government",
+			},
+		})
+		if err != nil || len(governmentResults) == 0 {
+			continue
+		}
+
+		// Check if this citizen has AS_PRESIDENT relationship to government
+		presidentRelations, err := c.GetRelatedEntities(governmentResults[0].ID, &models.Relationship{
+			Name:            "AS_PRESIDENT",
+			RelatedEntityID: president.ID,
+		})
+		if err != nil {
+			continue
+		}
+
+		// If there are any AS_PRESIDENT relationships (active or not), return the president
+		if len(presidentRelations) > 0 {
+			// Convert SearchResult to Entity
+			entity := &models.Entity{
+				ID:         president.ID,
+				Kind:       president.Kind,
+				Created:    president.Created,
+				Terminated: president.Terminated,
+				Name: models.TimeBasedValue{
+					Value: president.Name,
+				},
+				Metadata:      []models.MetadataEntry{},
+				Attributes:    []models.AttributeEntry{},
+				Relationships: []models.RelationshipEntry{},
+			}
+			return entity, nil
+		}
+	}
+
+	return nil, fmt.Errorf("president entity not found or not active: %s", presidentName)
+}
+
+// GetMinisterByPresident retrieves a minister entity by president name and minister name
+func (c *Client) GetMinisterByPresident(presidentName, ministerName, dateISO string) (*models.Entity, error) {
+	// Get the president entity using the helper function
+	presidentEntity, err := c.GetPresidentByGovernment(presidentName)
+	if err != nil {
+		return nil, err
+	}
+	presidentID := presidentEntity.ID
 
 	// Get all minister relationships for the president
 	presidentRelations, err := c.GetRelatedEntities(presidentID, &models.Relationship{
-		Name:     "AS_MINISTER",
-		ActiveAt: dateISO,
+		Name: "AS_MINISTER",
+		//ActiveAt: dateISO,
 	})
 	if err != nil {
 		return nil, fmt.Errorf("failed to get president's relationships: %w", err)
@@ -123,8 +176,8 @@ func (c *Client) AddOrgEntity(transaction map[string]interface{}, entityCounters
 	var parentID string
 
 	if childType == "minister" {
-		// For ministers, parent should be a president (Person type)
-		if parentType != "president" {
+		// For ministers, parent should be a president (Person type) - presidents are citizens with AS_PRESIDENT relationship
+		if parentType != "president" && parentType != "citizen" {
 			return 0, fmt.Errorf("minister must be attached to a president, got parent_type: %s", parentType)
 		}
 
@@ -137,24 +190,11 @@ func (c *Client) AddOrgEntity(transaction map[string]interface{}, entityCounters
 		// }
 
 		// Get the president entity
-		searchCriteria := &models.SearchCriteria{
-			Kind: &models.Kind{
-				Major: "Person",
-				Minor: "president",
-			},
-			Name: parent,
-		}
-
-		searchResults, err := c.SearchEntities(searchCriteria)
+		presidentEntity, err := c.GetPresidentByGovernment(parent)
 		if err != nil {
-			return 0, fmt.Errorf("failed to search for parent president entity: %w", err)
+			return 0, fmt.Errorf("failed to get parent president entity: %w", err)
 		}
-
-		if len(searchResults) == 0 {
-			return 0, fmt.Errorf("parent president entity not found: %s", parent)
-		}
-
-		parentID = searchResults[0].ID
+		parentID = presidentEntity.ID
 
 	} else if childType == "department" {
 		// For departments, parent should be a minister, but we need to verify it's the correct minister
@@ -179,7 +219,7 @@ func (c *Client) AddOrgEntity(transaction map[string]interface{}, entityCounters
 	} else {
 		// For other entity types, use the original logic
 		majorType := "Organisation"
-		if parentType == "president" || parentType == "citizen" {
+		if parentType == "citizen" {
 			majorType = "Person"
 		}
 		searchCriteria := &models.SearchCriteria{
@@ -279,23 +319,12 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 
 	// Handle parent entity retrieval
 	if parentType == "president" {
-		// Parent is a president (Person type)
-		searchCriteria := &models.SearchCriteria{
-			Kind: &models.Kind{
-				Major: "Person",
-				Minor: "president",
-			},
-			Name: parent,
-		}
-
-		parentResults, err := c.SearchEntities(searchCriteria)
+		// Parent is a president - use the helper function
+		presidentEntity, err := c.GetPresidentByGovernment(parent)
 		if err != nil {
-			return fmt.Errorf("failed to search for parent president entity: %w", err)
+			return fmt.Errorf("failed to get parent president entity: %w", err)
 		}
-		if len(parentResults) == 0 {
-			return fmt.Errorf("parent president entity not found: %s", parent)
-		}
-		parentID = parentResults[0].ID
+		parentID = presidentEntity.ID
 
 	} else if parentType == "minister" {
 		// Parent is a minister, need president context to get the correct minister
@@ -389,7 +418,7 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 	} else {
 		// For other child types, use the original logic
 		childMajorType := "Organisation"
-		if childType == "president" || childType == "citizen" {
+		if childType == "citizen" {
 			childMajorType = "Person"
 		}
 
@@ -1011,7 +1040,7 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 			"parent":      presidentName,
 			"child":       oldMinister,
 			"date":        dateStr,
-			"parent_type": "president",
+			"parent_type": "citizen",
 			"child_type":  "minister",
 			"rel_type":    "AS_MINISTER",
 		}
@@ -1238,7 +1267,7 @@ func (c *Client) TerminatePersonEntity(transaction map[string]interface{}) error
 		searchCriteria := &models.SearchCriteria{
 			Kind: &models.Kind{
 				Major: "Organisation",
-				Minor: parentType,
+				//Minor: parentType,
 			},
 			Name: parent,
 		}
@@ -1423,36 +1452,18 @@ func (c *Client) MoveMinister(transaction map[string]interface{}) error {
 	dateISO := date.Format(time.RFC3339)
 
 	// --- Get the new president (parent) entity ID ---
-	newParentResults, err := c.SearchEntities(&models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Person",
-			Minor: "president",
-		},
-		Name: newParent,
-	})
+	newPresidentEntity, err := c.GetPresidentByGovernment(newParent)
 	if err != nil {
-		return fmt.Errorf("failed to search for new president entity: %w", err)
+		return fmt.Errorf("failed to get new president entity: %w", err)
 	}
-	if len(newParentResults) == 0 {
-		return fmt.Errorf("new president entity not found: %s", newParent)
-	}
-	newParentID := newParentResults[0].ID
+	newParentID := newPresidentEntity.ID
 
 	// --- Get the old president (parent) entity ID ---
-	oldParentResults, err := c.SearchEntities(&models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Person",
-			Minor: "president",
-		},
-		Name: oldParent,
-	})
+	oldPresidentEntity, err := c.GetPresidentByGovernment(oldParent)
 	if err != nil {
-		return fmt.Errorf("failed to search for old president entity: %w", err)
+		return fmt.Errorf("failed to get old president entity: %w", err)
 	}
-	if len(oldParentResults) == 0 {
-		return fmt.Errorf("old president entity not found: %s", oldParent)
-	}
-	oldParentID := oldParentResults[0].ID
+	oldParentID := oldPresidentEntity.ID
 
 	// Get the minister (child) entity ID connected to the old president
 	ministerEntity, err := c.GetMinisterByPresident(oldParent, child, dateISO)
@@ -1487,15 +1498,18 @@ func (c *Client) MoveMinister(transaction map[string]interface{}) error {
 	oldPresidentRelations, err := c.GetRelatedEntities(oldParentID, &models.Relationship{
 		Name:            "AS_MINISTER",
 		RelatedEntityID: childID,
-		EndTime:         "",
 	})
 	if err != nil {
 		return fmt.Errorf("failed to get relationship between old president and minister: %w", err)
 	}
 
+	// Manually filter for active relationships (EndTime == "")
 	var activeRel *models.Relationship
-	if len(oldPresidentRelations) > 0 {
-		activeRel = &oldPresidentRelations[0]
+	for _, rel := range oldPresidentRelations {
+		if rel.EndTime == "" {
+			activeRel = &rel
+			break
+		}
 	}
 
 	// Only terminate if there is an active relationship

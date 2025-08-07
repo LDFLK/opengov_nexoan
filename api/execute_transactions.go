@@ -52,8 +52,7 @@ func (c *Client) ProcessTransactions(dataDir string, processType string) error {
 		}
 	} else if processType == "person" {
 		entityCounters = map[string]int{
-			"citizen":   0,
-			"president": 0,
+			"citizen": 0,
 		}
 	} else {
 		return fmt.Errorf("invalid process type: %s", processType)
@@ -129,10 +128,10 @@ func (c *Client) ProcessTransactions(dataDir string, processType string) error {
 			// Check if the transaction type matches the process type
 			childType := transaction["child_type"].(string)
 			if (processType == "organisation" && (childType == "minister" || childType == "department")) ||
-				(processType == "person" && (childType == "citizen" || childType == "president")) {
+				(processType == "person" && childType == "citizen") {
 				var err error
 
-				if processType == "person" && (childType == "citizen" || childType == "president") {
+				if processType == "person" && childType == "citizen" {
 					entityCounters[childType], err = c.AddPersonEntity(transaction, entityCounters)
 				} else {
 					entityCounters[childType], err = c.AddOrgEntity(transaction, entityCounters)
@@ -221,14 +220,14 @@ func (c *Client) ProcessTransactions(dataDir string, processType string) error {
 func extractPresidentNameFromPath(filePath string) (string, error) {
 	pathParts := strings.Split(filepath.ToSlash(filePath), "/")
 	for i, part := range pathParts {
-		if part == "orgchart" || part == "people" {
+		if part == "orgchart" || part == "people" || part == "documents" {
 			if i+1 < len(pathParts) {
 				return pathParts[i+1], nil
 			}
 			return "", fmt.Errorf("president name not found after '%s' in path: %s", part, filePath)
 		}
 	}
-	return "", fmt.Errorf("neither 'orgchart' nor 'people' found in path: %s", filePath)
+	return "", fmt.Errorf("neither 'orgchart' nor 'people' nor 'documents' found in path: %s", filePath)
 }
 
 // loadTransactions reads and processes transactions from a CSV file

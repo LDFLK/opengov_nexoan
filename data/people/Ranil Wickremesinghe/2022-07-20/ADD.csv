@@ -1,2 +1,2 @@
 transaction_id,parent,parent_type,child,child_type,rel_type,date
-2289-34_tr_01,Government of Sri Lanka,government,Ranil Wickremesinghe,president,AS_APPOINTED,2022-07-20
+2289-34_tr_01,Government of Sri Lanka,government,Ranil Wickremesinghe,citizen,AS_PRESIDENT,2022-07-20

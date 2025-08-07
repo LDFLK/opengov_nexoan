@@ -29,13 +29,13 @@ func TestMain(m *testing.M) {
 	fmt.Printf("Successfully created government node with ID: %s\n", government.ID)
 
 	// Create president node
-	entityCounters := map[string]int{"president": 0}
+	entityCounters := map[string]int{"citizen": 0}
 	presidentTransaction := map[string]interface{}{
 		"parent":         "Government of Sri Lanka",
 		"child":          "Ranil Wickremesinghe",
 		"date":           "2019-12-01",
 		"parent_type":    "government",
-		"child_type":     "president",
+		"child_type":     "citizen",
 		"rel_type":       "AS_PRESIDENT",
 		"transaction_id": "2152-12_tr_01",
 	}
@@ -71,7 +71,7 @@ func TestCreateMinisters(t *testing.T) {
 		{
 			transactionID: "2153-12_tr_01",
 			parent:        "Ranil Wickremesinghe",
-			parentType:    "president",
+			parentType:    "citizen",
 			child:         "Minister of Defence",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
@@ -80,7 +80,7 @@ func TestCreateMinisters(t *testing.T) {
 		{
 			transactionID: "2153-12_tr_02",
 			parent:        "Ranil Wickremesinghe",
-			parentType:    "president",
+			parentType:    "citizen",
 			child:         "Minister of Finance, Economic and Policy Development",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
@@ -303,7 +303,7 @@ func TestTerminateMinister(t *testing.T) {
 		"parent":      "Ranil Wickremesinghe",
 		"child":       "Minister of Defence",
 		"date":        "2024-01-01",
-		"parent_type": "president",
+		"parent_type": "citizen",
 		"child_type":  "minister",
 		"rel_type":    "AS_MINISTER",
 	}
@@ -312,16 +312,36 @@ func TestTerminateMinister(t *testing.T) {
 	err := client.TerminateOrgEntity(transaction)
 	assert.NoError(t, err)
 
-	// Find the president to verify the relationship
+	// Find the president to verify the relationship - presidents are citizens with AS_PRESIDENT relationship
 	presResults, err := client.SearchEntities(&models.SearchCriteria{
 		Kind: &models.Kind{
 			Major: "Person",
-			Minor: "president",
+			Minor: "citizen",
 		},
 		Name: "Ranil Wickremesinghe",
 	})
 	assert.NoError(t, err)
 	assert.Len(t, presResults, 1)
+
+	// Get government node to check AS_PRESIDENT relationship
+	governmentResults, err := client.SearchEntities(&models.SearchCriteria{
+		Kind: &models.Kind{
+			Major: "Organisation",
+			Minor: "government",
+		},
+	})
+	assert.NoError(t, err)
+	assert.Len(t, governmentResults, 1)
+
+	// Verify this citizen has AS_PRESIDENT relationship to government
+	presidentRelations, err := client.GetRelatedEntities(governmentResults[0].ID, &models.Relationship{
+		Name:            "AS_PRESIDENT",
+		RelatedEntityID: presResults[0].ID,
+	})
+	assert.NoError(t, err)
+	assert.Len(t, presidentRelations, 1, "Should find AS_PRESIDENT relationship")
+	assert.Equal(t, "", presidentRelations[0].EndTime, "AS_PRESIDENT relationship should be active")
+
 	presID := presResults[0].ID
 
 	// Find the minister
@@ -357,7 +377,7 @@ func TestMoveDepartment(t *testing.T) {
 		"parent":         "Ranil Wickremesinghe",
 		"child":          "Minister of Education",
 		"date":           "2024-01-01",
-		"parent_type":    "president",
+		"parent_type":    "citizen",
 		"child_type":     "minister",
 		"rel_type":       "AS_MINISTER",
 		"transaction_id": "2153/12_tr_06",
@@ -514,7 +534,7 @@ func TestRenameMinister(t *testing.T) {
 	presidentResults, err := client.SearchEntities(&models.SearchCriteria{
 		Kind: &models.Kind{
 			Major: "Person",
-			Minor: "president",
+			Minor: "citizen",
 		},
 		Name: "Ranil Wickremesinghe",
 	})
@@ -785,7 +805,7 @@ func TestMergeMinisters(t *testing.T) {
 	presidentResults, err := client.SearchEntities(&models.SearchCriteria{
 		Kind: &models.Kind{
 			Major: "Person",
-			Minor: "president",
+			Minor: "citizen",
 		},
 		Name: "Ranil Wickremesinghe",
 	})
@@ -871,7 +891,7 @@ func TestTerminateNonExistentMinister(t *testing.T) {
 		"parent":      "Ranil Wickremesinghe",
 		"child":       "Non Existent Minister",
 		"date":        "2025-01-01",
-		"parent_type": "president",
+		"parent_type": "citizen",
 		"child_type":  "minister",
 		"rel_type":    "AS_MINISTER",
 	}
@@ -893,7 +913,7 @@ func TestTerminateMinisterWithChildren(t *testing.T) {
 		"parent":         "Ranil Wickremesinghe",
 		"child":          "Minister to Terminate",
 		"date":           "2025-01-01",
-		"parent_type":    "president",
+		"parent_type":    "citizen",
 		"child_type":     "minister",
 		"rel_type":       "AS_MINISTER",
 		"transaction_id": "2154-14_tr_01",
@@ -940,7 +960,7 @@ func TestTerminateMinisterWithChildren(t *testing.T) {
 		"parent":      "Ranil Wickremesinghe",
 		"child":       "Minister to Terminate",
 		"date":        "2025-01-02",
-		"parent_type": "president",
+		"parent_type": "citizen",
 		"child_type":  "minister",
 		"rel_type":    "AS_MINISTER",
 	}
@@ -1001,7 +1021,7 @@ func TestCreateDuplicateMinister(t *testing.T) {
 		"parent":         "Ranil Wickremesinghe",
 		"child":          "Duplicate Minister",
 		"date":           "2025-01-01",
-		"parent_type":    "president",
+		"parent_type":    "citizen",
 		"child_type":     "minister",
 		"rel_type":       "AS_MINISTER",
 		"transaction_id": "2154/15_tr_01",
@@ -1021,7 +1041,7 @@ func TestCreateDuplicateMinister(t *testing.T) {
 		"parent":         "Ranil Wickremesinghe",
 		"child":          "Duplicate Minister",
 		"date":           "2025-01-02",
-		"parent_type":    "president",
+		"parent_type":    "citizen",
 		"child_type":     "minister",
 		"rel_type":       "AS_MINISTER",
 		"transaction_id": "2154/15_tr_02",
