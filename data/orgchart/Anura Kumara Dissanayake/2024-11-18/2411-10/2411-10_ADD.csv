@@ -1,0 +1,9 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2411-10_tr_01,Anura Kumara Dissanayake,citizen,"Minister of Fisheries, Aquatic and Ocean Resources",minister,AS_MINISTER,2024-11-18
+2411-10_tr_02,Anura Kumara Dissanayake,citizen,"Minister of Public Administration, Provincial Councils and Local Government",minister,AS_MINISTER,2024-11-18
+2411-10_tr_03,Anura Kumara Dissanayake,citizen,Minister of Labour,minister,AS_MINISTER,2024-11-18
+2411-10_tr_04,Anura Kumara Dissanayake,citizen,Minister of Science and Technology,minister,AS_MINISTER,2024-11-18
+2411-10_tr_05,Anura Kumara Dissanayake,citizen,"Minister of Rural Development, Social Security and Community Empowerment",minister,AS_MINISTER,2024-11-18
+2411-10_tr_06,Anura Kumara Dissanayake,citizen,Minister of Industry and Entrepreneurship Development,minister,AS_MINISTER,2024-11-18
+2411-10_tr_07,Anura Kumara Dissanayake,citizen,Minister of Plantation and Community Infrastructure,minister,AS_MINISTER,2024-11-18
+2411-10_tr_08,Anura Kumara Dissanayake,citizen,Minister of Youth Affairs and Sports,minister,AS_MINISTER,2024-11-18

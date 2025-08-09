@@ -551,8 +551,7 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 
 	// Get the department (child) entity ID connected to the old minister
 	departmentRelations, err := c.GetRelatedEntities(oldParentID, &models.Relationship{
-		Name:     "AS_DEPARTMENT",
-		ActiveAt: dateISO,
+		Name: "AS_DEPARTMENT",
 	})
 	if err != nil {
 		return fmt.Errorf("failed to get department relationships for old minister: %w", err)

@@ -1,33 +1,33 @@
 transaction_id,parent,parent_type,child,child_type,rel_type,date
-2289-43_tr_01,Ranil Wickremesinghe,president,Minister of Defence,minister,AS_MINISTER,2022-07-22
-2289-43_tr_02,Ranil Wickremesinghe,president,"Minister of Finance, Economic Stabilization and National Policies",minister,AS_MINISTER,2022-07-22
-2289-43_tr_03,Ranil Wickremesinghe,president,Minister of Technology,minister,AS_MINISTER,2022-07-22
-2289-43_tr_04,Ranil Wickremesinghe,president,"Minister of Women, Child Affairs and Social Empowerment",minister,AS_MINISTER,2022-07-22
-2289-43_tr_05,Ranil Wickremesinghe,president,"Minister of Ports, Shipping and Aviation",minister,AS_MINISTER,2022-07-22
-2289-43_tr_06,Ranil Wickremesinghe,president,Minister of Investment Promotion,minister,AS_MINISTER,2022-07-22
-2289-43_tr_07,Ranil Wickremesinghe,president,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,AS_MINISTER,2022-07-22
-2289-43_tr_08,Ranil Wickremesinghe,president,Minister of Fisheries,minister,AS_MINISTER,2022-07-22
-2289-43_tr_09,Ranil Wickremesinghe,president,Minister of Education,minister,AS_MINISTER,2022-07-22
-2289-43_tr_10,Ranil Wickremesinghe,president,Minister of Transport and Highways,minister,AS_MINISTER,2022-07-22
-2289-43_tr_11,Ranil Wickremesinghe,president,Minister of Mass Media,minister,AS_MINISTER,2022-07-22
-2289-43_tr_12,Ranil Wickremesinghe,president,Minister of Health,minister,AS_MINISTER,2022-07-22
-2289-43_tr_13,Ranil Wickremesinghe,president,Minister of Water Supply,minister,AS_MINISTER,2022-07-22
-2289-43_tr_14,Ranil Wickremesinghe,president,Minister of Agriculture,minister,AS_MINISTER,2022-07-22
-2289-43_tr_15,Ranil Wickremesinghe,president,Minister of Wildlife and Forest Resources Conservation,minister,AS_MINISTER,2022-07-22
-2289-43_tr_16,Ranil Wickremesinghe,president,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,AS_MINISTER,2022-07-22
-2289-43_tr_17,Ranil Wickremesinghe,president,Minister of Tourism and Lands,minister,AS_MINISTER,2022-07-22
-2289-43_tr_18,Ranil Wickremesinghe,president,Minister of Plantation Industries,minister,AS_MINISTER,2022-07-22
-2289-43_tr_19,Ranil Wickremesinghe,president,Minister of Industries,minister,AS_MINISTER,2022-07-22
-2289-43_tr_20,Ranil Wickremesinghe,president,Minister of Urban Development and Housing,minister,AS_MINISTER,2022-07-22
-2289-43_tr_21,Ranil Wickremesinghe,president,Minister of Foreign Affairs,minister,AS_MINISTER,2022-07-22
-2289-43_tr_22,Ranil Wickremesinghe,president,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,AS_MINISTER,2022-07-22
-2289-43_tr_23,Ranil Wickremesinghe,president,Minister of Power and Energy,minister,AS_MINISTER,2022-07-22
-2289-43_tr_24,Ranil Wickremesinghe,president,Minister of Environment,minister,AS_MINISTER,2022-07-22
-2289-43_tr_25,Ranil Wickremesinghe,president,Minister of Sports and Youth Affairs,minister,AS_MINISTER,2022-07-22
-2289-43_tr_26,Ranil Wickremesinghe,president,Minister of Irrigation,minister,AS_MINISTER,2022-07-22
-2289-43_tr_27,Ranil Wickremesinghe,president,Minister of Labour and Foreign Employment,minister,AS_MINISTER,2022-07-22
-2289-43_tr_28,Ranil Wickremesinghe,president,Minister of Public Security,minister,AS_MINISTER,2022-07-22
-2289-43_tr_29,Ranil Wickremesinghe,president,"Minister of Trade, Commerce and Food Security",minister,AS_MINISTER,2022-07-22
+2289-43_tr_01,Ranil Wickremesinghe,citizen,Minister of Defence,minister,AS_MINISTER,2022-07-22
+2289-43_tr_02,Ranil Wickremesinghe,citizen,"Minister of Finance, Economic Stabilization and National Policies",minister,AS_MINISTER,2022-07-22
+2289-43_tr_03,Ranil Wickremesinghe,citizen,Minister of Technology,minister,AS_MINISTER,2022-07-22
+2289-43_tr_04,Ranil Wickremesinghe,citizen,"Minister of Women, Child Affairs and Social Empowerment",minister,AS_MINISTER,2022-07-22
+2289-43_tr_05,Ranil Wickremesinghe,citizen,"Minister of Ports, Shipping and Aviation",minister,AS_MINISTER,2022-07-22
+2289-43_tr_06,Ranil Wickremesinghe,citizen,Minister of Investment Promotion,minister,AS_MINISTER,2022-07-22
+2289-43_tr_07,Ranil Wickremesinghe,citizen,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",minister,AS_MINISTER,2022-07-22
+2289-43_tr_08,Ranil Wickremesinghe,citizen,Minister of Fisheries,minister,AS_MINISTER,2022-07-22
+2289-43_tr_09,Ranil Wickremesinghe,citizen,Minister of Education,minister,AS_MINISTER,2022-07-22
+2289-43_tr_10,Ranil Wickremesinghe,citizen,Minister of Transport and Highways,minister,AS_MINISTER,2022-07-22
+2289-43_tr_11,Ranil Wickremesinghe,citizen,Minister of Mass Media,minister,AS_MINISTER,2022-07-22
+2289-43_tr_12,Ranil Wickremesinghe,citizen,Minister of Health,minister,AS_MINISTER,2022-07-22
+2289-43_tr_13,Ranil Wickremesinghe,citizen,Minister of Water Supply,minister,AS_MINISTER,2022-07-22
+2289-43_tr_14,Ranil Wickremesinghe,citizen,Minister of Agriculture,minister,AS_MINISTER,2022-07-22
+2289-43_tr_15,Ranil Wickremesinghe,citizen,Minister of Wildlife and Forest Resources Conservation,minister,AS_MINISTER,2022-07-22
+2289-43_tr_16,Ranil Wickremesinghe,citizen,"Minister of Justice, Prisons Affairs and Constitutional Reforms",minister,AS_MINISTER,2022-07-22
+2289-43_tr_17,Ranil Wickremesinghe,citizen,Minister of Tourism and Lands,minister,AS_MINISTER,2022-07-22
+2289-43_tr_18,Ranil Wickremesinghe,citizen,Minister of Plantation Industries,minister,AS_MINISTER,2022-07-22
+2289-43_tr_19,Ranil Wickremesinghe,citizen,Minister of Industries,minister,AS_MINISTER,2022-07-22
+2289-43_tr_20,Ranil Wickremesinghe,citizen,Minister of Urban Development and Housing,minister,AS_MINISTER,2022-07-22
+2289-43_tr_21,Ranil Wickremesinghe,citizen,Minister of Foreign Affairs,minister,AS_MINISTER,2022-07-22
+2289-43_tr_22,Ranil Wickremesinghe,citizen,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,AS_MINISTER,2022-07-22
+2289-43_tr_23,Ranil Wickremesinghe,citizen,Minister of Power and Energy,minister,AS_MINISTER,2022-07-22
+2289-43_tr_24,Ranil Wickremesinghe,citizen,Minister of Environment,minister,AS_MINISTER,2022-07-22
+2289-43_tr_25,Ranil Wickremesinghe,citizen,Minister of Sports and Youth Affairs,minister,AS_MINISTER,2022-07-22
+2289-43_tr_26,Ranil Wickremesinghe,citizen,Minister of Irrigation,minister,AS_MINISTER,2022-07-22
+2289-43_tr_27,Ranil Wickremesinghe,citizen,Minister of Labour and Foreign Employment,minister,AS_MINISTER,2022-07-22
+2289-43_tr_28,Ranil Wickremesinghe,citizen,Minister of Public Security,minister,AS_MINISTER,2022-07-22
+2289-43_tr_29,Ranil Wickremesinghe,citizen,"Minister of Trade, Commerce and Food Security",minister,AS_MINISTER,2022-07-22
 2289-43_tr_30,Minister of Defence,minister,Office of the Chief of Defence Staff,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_31,Minister of Defence,minister,Sri Lanka Army,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_32,Minister of Defence,minister,Sri Lanka Navy,department,AS_DEPARTMENT,2022-07-22

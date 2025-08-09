@@ -265,7 +265,15 @@ func loadTransactions(filePath string, fileType string) ([]map[string]interface{
 		for i, value := range record {
 			transaction[header[i]] = value
 		}
-		transaction["president"] = presidentName
+
+		// Use president from transaction if provided and not empty, otherwise use the one from path
+		if presidentFromTransaction, exists := transaction["president"]; exists && presidentFromTransaction != "" {
+			// President is already in the transaction, keep it
+		} else {
+			// Use the president name extracted from the file path
+			transaction["president"] = presidentName
+		}
+
 		transaction["file_type"] = fileType
 		transactions = append(transactions, transaction)
 	}
