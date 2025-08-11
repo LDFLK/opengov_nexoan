@@ -94,6 +94,37 @@ The tool processes transaction files that define:
 3. **Personnel**: People appointed to various positions
 4. **Relationships**: Hierarchical and appointment relationships between entities
 
+### Directory Structure and President Name Extraction
+
+The tool automatically extracts the president's name from the directory structure. The directory path must follow this pattern:
+
+```
+data/
+├── orgchart/
+│   └── PresidentName/
+│       └── Date/
+│           └── transaction_files.csv
+├── people/
+│   └── PresidentName/
+│       └── Date/
+│           └── transaction_files.csv
+└── documents/
+    └── PresidentName/
+        └── Date/
+            └── transaction_files.csv
+```
+
+**Important**: The directory name immediately after `orgchart/`, `people/`, or `documents/` is used as the president's name for all transactions in that directory tree.
+
+**Example Directory Structure**:
+```
+data/orgchart/Ranil Wickremesinghe/2024-09-27/2403_53_ADD.csv
+data/people/Anura Kumara Dissanayake/2024-09-23/2403-03_ADD.csv
+data/documents/Maithripala Sirisena/2018-11-01/2095_17_ADD.csv
+```
+
+**Note**: If a CSV file contains a `president` column with a value, that value will be used instead of the directory-derived name. If the `president` column is empty or missing, the system falls back to using the president name from the directory structure. (This is useful when you are creating csv files for moving between presidents and need to specify two different president names or a president name different from the current president's)
+
 ### Transaction File Naming Convention
 
 Transaction files must follow a specific naming convention:
