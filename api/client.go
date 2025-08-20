@@ -281,28 +281,28 @@ func (c *Client) GetRelatedEntities(entityID string, query *models.Relationship)
 }
 
 // GetAllRelatedEntities gets all related entity IDs without filters
-func (c *Client) GetAllRelatedEntities(entityID string) ([]models.Relationship, error) {
-	// URL encode the entity ID to handle special characters like slashes
-	encodedID := url.QueryEscape(entityID)
+// func (c *Client) GetAllRelatedEntities(entityID string) ([]models.Relationship, error) {
+// 	// URL encode the entity ID to handle special characters like slashes
+// 	encodedID := url.QueryEscape(entityID)
 
-	resp, err := c.httpClient.Post(
-		fmt.Sprintf("%s/%s/allrelations", c.queryURL, encodedID),
-		"application/json",
-		nil,
-	)
-	if err != nil {
-		return nil, fmt.Errorf("failed to get all related entities: %w", err)
-	}
-	defer resp.Body.Close()
+// 	resp, err := c.httpClient.Post(
+// 		fmt.Sprintf("%s/%s/allrelations", c.queryURL, encodedID),
+// 		"application/json",
+// 		nil,
+// 	)
+// 	if err != nil {
+// 		return nil, fmt.Errorf("failed to get all related entities: %w", err)
+// 	}
+// 	defer resp.Body.Close()
 
-	if resp.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("unexpected status code: %d", resp.StatusCode)
-	}
+// 	if resp.StatusCode != http.StatusOK {
+// 		return nil, fmt.Errorf("unexpected status code: %d", resp.StatusCode)
+// 	}
 
-	var relations []models.Relationship
-	if err := json.NewDecoder(resp.Body).Decode(&relations); err != nil {
-		return nil, fmt.Errorf("failed to decode response: %w", err)
-	}
+// 	var relations []models.Relationship
+// 	if err := json.NewDecoder(resp.Body).Decode(&relations); err != nil {
+// 		return nil, fmt.Errorf("failed to decode response: %w", err)
+// 	}
 
-	return relations, nil
-}
+// 	return relations, nil
+// }

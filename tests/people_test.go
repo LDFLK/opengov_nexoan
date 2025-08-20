@@ -28,18 +28,18 @@ func TestCreatePeople(t *testing.T) {
 		date          string
 	}{
 		{
-			transactionID: "2157/12_tr_01",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			transactionID: "2157-12_tr_01",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Irrigation and Water Resources and Disaster Management",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2018-11-01",
 		},
 		{
-			transactionID: "2157/12_tr_02",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			transactionID: "2157-12_tr_02",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Skills Development & Vocational Training",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
@@ -59,8 +59,7 @@ func TestCreatePeople(t *testing.T) {
 			"parent_type":    tc.parentType,
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
-			"transaction_id": tc.transactionID,
-		}
+			"transaction_id": tc.transactionID}
 
 		// Use AddEntity to create the minister
 		_, err := client.AddOrgEntity(transaction, ministerEntityCounters)
@@ -86,7 +85,7 @@ func TestCreatePeople(t *testing.T) {
 		// Verify the relationship was created by checking parent's relationships
 		parentResults, err := client.SearchEntities(&models.SearchCriteria{
 			Kind: &models.Kind{
-				Major: "Organisation",
+				Major: "Person",
 				Minor: tc.parentType,
 			},
 			Name: tc.parent,
@@ -111,7 +110,7 @@ func TestCreatePeople(t *testing.T) {
 		date          string
 	}{
 		{
-			transactionID: "2095/17_tr_01",
+			transactionID: "2095-17_tr_01",
 			parent:        "Minister of Irrigation and Water Resources and Disaster Management",
 			parentType:    "minister",
 			child:         "Duminda Dissanayake",
@@ -120,7 +119,7 @@ func TestCreatePeople(t *testing.T) {
 			date:          "2018-11-01",
 		},
 		{
-			transactionID: "2095/17_tr_02",
+			transactionID: "2095-17_tr_02",
 			parent:        "Minister of Skills Development & Vocational Training",
 			parentType:    "minister",
 			child:         "Dayasiri Jayasekara",
@@ -143,6 +142,11 @@ func TestCreatePeople(t *testing.T) {
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
 			"transaction_id": tc.transactionID,
+		}
+
+		// Add president field if parent is a minister
+		if tc.parentType == "minister" {
+			transaction["president"] = "Ranil Wickremesinghe"
 		}
 
 		// Use AddEntity to create the person
@@ -202,45 +206,45 @@ func TestCreatePeopleWithManyMinisters(t *testing.T) {
 		date          string
 	}{
 		{
-			transactionID: "2157/13_tr_01",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			transactionID: "2157-13_tr_01",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Defence and Urban Development",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2018-11-01",
 		},
 		{
-			transactionID: "2157/13_tr_02",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			transactionID: "2157-13_tr_02",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Health and Indigenous Medicine",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2018-11-01",
 		},
 		{
-			transactionID: "2157/13_tr_03",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			transactionID: "2157-13_tr_03",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Education and Lifelong Learning",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2018-11-01",
 		},
 		{
-			transactionID: "2157/13_tr_04",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			transactionID: "2157-13_tr_04",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Finance and Economic Development",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2018-11-01",
 		},
 		{
-			transactionID: "2157/13_tr_05",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			transactionID: "2157-13_tr_05",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Transport and Civil Aviation",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
@@ -287,7 +291,7 @@ func TestCreatePeopleWithManyMinisters(t *testing.T) {
 		// Verify the relationship was created by checking parent's relationships
 		parentResults, err := client.SearchEntities(&models.SearchCriteria{
 			Kind: &models.Kind{
-				Major: "Organisation",
+				Major: "Person",
 				Minor: tc.parentType,
 			},
 			Name: tc.parent,
@@ -310,6 +314,7 @@ func TestCreatePeopleWithManyMinisters(t *testing.T) {
 		childType     string
 		relType       string
 		date          string
+		president     string
 	}{
 		{
 			transactionID: "2095/20_tr_01",
@@ -319,6 +324,7 @@ func TestCreatePeopleWithManyMinisters(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2018-12-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2095/20_tr_02",
@@ -328,6 +334,7 @@ func TestCreatePeopleWithManyMinisters(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2018-12-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2095/20_tr_03",
@@ -337,6 +344,7 @@ func TestCreatePeopleWithManyMinisters(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2018-12-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2095/20_tr_04",
@@ -346,6 +354,7 @@ func TestCreatePeopleWithManyMinisters(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2018-12-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2095/20_tr_04",
@@ -355,6 +364,7 @@ func TestCreatePeopleWithManyMinisters(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2018-12-01",
+			president:     "Ranil Wickremesinghe",
 		},
 	}
 
@@ -371,6 +381,7 @@ func TestCreatePeopleWithManyMinisters(t *testing.T) {
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
 			"transaction_id": tc.transactionID,
+			"president":      tc.president,
 		}
 
 		// Use AddEntity to create the person
@@ -428,15 +439,17 @@ func TestTerminatePerson(t *testing.T) {
 		childType     string
 		relType       string
 		date          string
+		president     string
 	}{
 		{
-			transactionID: "2127/12_tr_01",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			transactionID: "2127-12_tr_01",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Health and Space Exploration",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 	}
 
@@ -453,6 +466,7 @@ func TestTerminatePerson(t *testing.T) {
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
 			"transaction_id": tc.transactionID,
+			"president":      tc.president,
 		}
 
 		// Use AddEntity to create the minister
@@ -479,7 +493,7 @@ func TestTerminatePerson(t *testing.T) {
 		// Verify the relationship was created by checking parent's relationships
 		parentResults, err := client.SearchEntities(&models.SearchCriteria{
 			Kind: &models.Kind{
-				Major: "Organisation",
+				Major: "Person",
 				Minor: tc.parentType,
 			},
 			Name: tc.parent,
@@ -502,15 +516,17 @@ func TestTerminatePerson(t *testing.T) {
 		childType     string
 		relType       string
 		date          string
+		president     string
 	}{
 		{
-			transactionID: "2065/17_tr_01",
+			transactionID: "2065-17_tr_01",
 			parent:        "Minister of Health and Space Exploration",
 			parentType:    "minister",
 			child:         "Sanath Abeywardena",
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 	}
 
@@ -527,6 +543,7 @@ func TestTerminatePerson(t *testing.T) {
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
 			"transaction_id": tc.transactionID,
+			"president":      tc.president,
 		}
 
 		// Use AddEntity to create the person
@@ -576,6 +593,7 @@ func TestTerminatePerson(t *testing.T) {
 		"parent_type": "minister",
 		"child_type":  "citizen",
 		"rel_type":    "AS_APPOINTED",
+		"president":   "Ranil Wickremesinghe",
 	}
 
 	// Terminate the person relationship
@@ -607,15 +625,16 @@ func TestTerminatePerson(t *testing.T) {
 	personID := personResults[0].ID
 
 	// Verify the relationship is terminated
-	allRelations, err := client.GetAllRelatedEntities(ministerID)
+	allRelations, err := client.GetRelatedEntities(ministerID, &models.Relationship{
+		RelatedEntityID: personID,
+		Name:            "AS_APPOINTED",
+	})
 	assert.NoError(t, err)
 	found := false
 	for _, rel := range allRelations {
-		if rel.RelatedEntityID == personID && rel.Name == "AS_APPOINTED" {
-			assert.Equal(t, "2019-11-01T00:00:00Z", rel.EndTime)
-			found = true
-			break
-		}
+		assert.Equal(t, "2019-11-01T00:00:00Z", rel.EndTime)
+		found = true
+		break
 	}
 	assert.True(t, found, "Should find the terminated relationship")
 }
@@ -638,33 +657,37 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 		childType     string
 		relType       string
 		date          string
+		president     string
 	}{
 		{
 			transactionID: "2127/13_tr_01",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Science and Technology",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2127/13_tr_02",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Sports and Youth Affairs",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2127/13_tr_03",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Tourism and Culture",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 	}
 
@@ -681,6 +704,7 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
 			"transaction_id": tc.transactionID,
+			"president":      tc.president,
 		}
 
 		// Use AddEntity to create the minister
@@ -715,6 +739,7 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 		childType     string
 		relType       string
 		date          string
+		president     string
 	}{
 		{
 			transactionID: "2065/18_tr_01",
@@ -724,6 +749,7 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2065/18_tr_02",
@@ -733,6 +759,7 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2065/18_tr_03",
@@ -742,6 +769,7 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 	}
 
@@ -757,6 +785,7 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
 			"transaction_id": tc.transactionID,
+			"president":      tc.president,
 		}
 
 		_, err := client.AddPersonEntity(transaction, personEntityCounters)
@@ -800,6 +829,7 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 			"parent_type": "minister",
 			"child_type":  "citizen",
 			"rel_type":    "AS_APPOINTED",
+			"president":   "Ranil Wickremesinghe",
 		}
 
 		// Terminate the relationship
@@ -819,15 +849,17 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 		ministerID := ministerResults[0].ID
 
 		// Verify the relationship is terminated
-		allRelations, err := client.GetAllRelatedEntities(ministerID)
+		allRelations, err := client.GetRelatedEntities(ministerID, &models.Relationship{
+			RelatedEntityID: personID,
+			Name:            "AS_APPOINTED",
+		})
+
 		assert.NoError(t, err)
 		found := false
 		for _, rel := range allRelations {
-			if rel.RelatedEntityID == personID && rel.Name == "AS_APPOINTED" {
-				assert.Equal(t, tc.date+"T00:00:00Z", rel.EndTime)
-				found = true
-				break
-			}
+			assert.Equal(t, tc.date+"T00:00:00Z", rel.EndTime)
+			found = true
+			break
 		}
 		assert.True(t, found, "Should find the terminated relationship with %s", tc.ministerName)
 	}
@@ -844,15 +876,16 @@ func TestTerminateMultipleMinistersForPerson(t *testing.T) {
 	assert.Len(t, tourismResults, 1)
 	tourismID := tourismResults[0].ID
 
-	tourismRelations, err := client.GetAllRelatedEntities(tourismID)
+	tourismRelations, err := client.GetRelatedEntities(tourismID, &models.Relationship{
+		RelatedEntityID: personID,
+		Name:            "AS_APPOINTED",
+	})
 	assert.NoError(t, err)
 	var found bool
 	for _, rel := range tourismRelations {
-		if rel.RelatedEntityID == personID && rel.Name == "AS_APPOINTED" {
-			assert.Equal(t, "", rel.EndTime, "Tourism minister relationship should still be active")
-			found = true
-			break
-		}
+		assert.Equal(t, "", rel.EndTime, "Tourism minister relationship should still be active")
+		found = true
+		break
 	}
 	assert.True(t, found, "Should find the active relationship with Tourism minister")
 }
@@ -875,24 +908,27 @@ func TestMovePerson(t *testing.T) {
 		childType     string
 		relType       string
 		date          string
+		president     string
 	}{
 		{
 			transactionID: "2127/14_tr_01",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Agriculture and Food Security",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2127/14_tr_02",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Environment and Climate Change",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 	}
 
@@ -909,6 +945,7 @@ func TestMovePerson(t *testing.T) {
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
 			"transaction_id": tc.transactionID,
+			"president":      tc.president,
 		}
 
 		// Use AddEntity to create the minister
@@ -943,6 +980,7 @@ func TestMovePerson(t *testing.T) {
 		childType     string
 		relType       string
 		date          string
+		president     string
 	}{
 		{
 			transactionID: "2065/19_tr_01",
@@ -952,6 +990,7 @@ func TestMovePerson(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2019-11-01",
+			president:     "Ranil Wickremesinghe",
 		},
 	}
 
@@ -967,6 +1006,7 @@ func TestMovePerson(t *testing.T) {
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
 			"transaction_id": tc.transactionID,
+			"president":      tc.president,
 		}
 
 		_, err := client.AddPersonEntity(transaction, personEntityCounters)
@@ -992,6 +1032,7 @@ func TestMovePerson(t *testing.T) {
 		"child":      personName,
 		"type":       "AS_APPOINTED",
 		"date":       "2020-01-01",
+		"president":  "Ranil Wickremesinghe",
 	}
 
 	// Move the person
@@ -1011,15 +1052,17 @@ func TestMovePerson(t *testing.T) {
 	oldMinisterID := oldMinisterResults[0].ID
 
 	// Verify the old relationship is terminated
-	oldRelations, err := client.GetAllRelatedEntities(oldMinisterID)
+	oldRelations, err := client.GetRelatedEntities(oldMinisterID, &models.Relationship{
+		RelatedEntityID: personID,
+		Name:            "AS_APPOINTED",
+	})
+
 	assert.NoError(t, err)
 	found := false
 	for _, rel := range oldRelations {
-		if rel.RelatedEntityID == personID && rel.Name == "AS_APPOINTED" {
-			assert.Equal(t, "2020-01-01T00:00:00Z", rel.EndTime)
-			found = true
-			break
-		}
+		assert.Equal(t, "2020-01-01T00:00:00Z", rel.EndTime)
+		found = true
+		break
 	}
 	assert.True(t, found, "Should find the terminated old relationship")
 
@@ -1036,16 +1079,18 @@ func TestMovePerson(t *testing.T) {
 	newMinisterID := newMinisterResults[0].ID
 
 	// Verify the new relationship exists
-	newRelations, err := client.GetAllRelatedEntities(newMinisterID)
+	newRelations, err := client.GetRelatedEntities(newMinisterID, &models.Relationship{
+		RelatedEntityID: personID,
+		Name:            "AS_APPOINTED",
+	})
+
 	assert.NoError(t, err)
 	found = false
 	for _, rel := range newRelations {
-		if rel.RelatedEntityID == personID && rel.Name == "AS_APPOINTED" {
-			assert.Equal(t, "2020-01-01T00:00:00Z", rel.StartTime)
-			assert.Equal(t, "", rel.EndTime) // Should be active (no end time)
-			found = true
-			break
-		}
+		assert.Equal(t, "2020-01-01T00:00:00Z", rel.StartTime)
+		assert.Equal(t, "", rel.EndTime) // Should be active (no end time)
+		found = true
+		break
 	}
 	assert.True(t, found, "Should find the new relationship")
 }
@@ -1068,33 +1113,37 @@ func TestSwapMultiplePeople(t *testing.T) {
 		childType     string
 		relType       string
 		date          string
+		president     string
 	}{
 		{
 			transactionID: "2127/15_tr_01",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Foreign Affairs and International Trade",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2020-01-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2127/15_tr_02",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Justice and Law and Order",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2020-01-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2127/15_tr_03",
-			parent:        "Government of Sri Lanka",
-			parentType:    "government",
+			parent:        "Ranil Wickremesinghe",
+			parentType:    "citizen",
 			child:         "Minister of Education and Vocational Development",
 			childType:     "minister",
 			relType:       "AS_MINISTER",
 			date:          "2020-01-01",
+			president:     "Ranil Wickremesinghe",
 		},
 	}
 
@@ -1110,6 +1159,7 @@ func TestSwapMultiplePeople(t *testing.T) {
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
 			"transaction_id": tc.transactionID,
+			"president":      tc.president,
 		}
 
 		_, err := client.AddOrgEntity(transaction, ministerEntityCounters)
@@ -1140,6 +1190,7 @@ func TestSwapMultiplePeople(t *testing.T) {
 		childType     string
 		relType       string
 		date          string
+		president     string
 	}{
 		{
 			transactionID: "2068/20_tr_01",
@@ -1149,6 +1200,7 @@ func TestSwapMultiplePeople(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2020-01-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2068/20_tr_02",
@@ -1158,6 +1210,7 @@ func TestSwapMultiplePeople(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2020-01-01",
+			president:     "Ranil Wickremesinghe",
 		},
 		{
 			transactionID: "2068/20_tr_03",
@@ -1167,6 +1220,7 @@ func TestSwapMultiplePeople(t *testing.T) {
 			childType:     "citizen",
 			relType:       "AS_APPOINTED",
 			date:          "2020-01-01",
+			president:     "Ranil Wickremesinghe",
 		},
 	}
 
@@ -1182,6 +1236,7 @@ func TestSwapMultiplePeople(t *testing.T) {
 			"child_type":     tc.childType,
 			"rel_type":       tc.relType,
 			"transaction_id": tc.transactionID,
+			"president":      tc.president,
 		}
 
 		_, err := client.AddPersonEntity(transaction, personEntityCounters)
@@ -1211,24 +1266,28 @@ func TestSwapMultiplePeople(t *testing.T) {
 		newParent string
 		person    string
 		date      string
+		president string
 	}{
 		{
 			oldParent: "Minister of Foreign Affairs and International Trade",
 			newParent: "Minister of Justice and Law and Order",
 			person:    "Alice Brown",
 			date:      "2021-01-01",
+			president: "Ranil Wickremesinghe",
 		},
 		{
 			oldParent: "Minister of Justice and Law and Order",
 			newParent: "Minister of Education and Vocational Development",
 			person:    "Bob Wilson",
 			date:      "2021-01-01",
+			president: "Ranil Wickremesinghe",
 		},
 		{
 			oldParent: "Minister of Education and Vocational Development",
 			newParent: "Minister of Foreign Affairs and International Trade",
 			person:    "Carol Davis",
 			date:      "2021-01-01",
+			president: "Ranil Wickremesinghe",
 		},
 	}
 
@@ -1240,6 +1299,7 @@ func TestSwapMultiplePeople(t *testing.T) {
 			"child":      move.person,
 			"type":       "AS_APPOINTED",
 			"date":       move.date,
+			"president":  move.president,
 		}
 
 		err := client.MovePerson(transaction)
@@ -1274,7 +1334,8 @@ func TestSwapMultiplePeople(t *testing.T) {
 		ministerID := ministerResults[0].ID
 
 		// Get all relationships
-		relations, err := client.GetAllRelatedEntities(ministerID)
+		relations, err := client.GetRelatedEntities(ministerID, &models.Relationship{})
+
 		assert.NoError(t, err)
 
 		// Verify the current active relationship

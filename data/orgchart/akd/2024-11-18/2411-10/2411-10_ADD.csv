@@ -1,9 +1,0 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date,president
-2411-10_tr_01,Government of Sri Lanka,government,"Minister of Fisheries, Aquatic and Ocean Resources",minister,AS_MINISTER,2024-11-18,:AK
-2411-10_tr_02,Government of Sri Lanka,government,"Minister of Public Administration, Provincial Councils and Local Government",minister,AS_MINISTER,2024-11-18,:AK
-2411-10_tr_03,Government of Sri Lanka,government,Minister of Labour,minister,AS_MINISTER,2024-11-18,:AK
-2411-10_tr_04,Government of Sri Lanka,government,Minister of Science and Technology,minister,AS_MINISTER,2024-11-18,:AK
-2411-10_tr_05,Government of Sri Lanka,government,"Minister of Rural Development, Social Security and Community Empowerment",minister,AS_MINISTER,2024-11-18,:AK
-2411-10_tr_06,Government of Sri Lanka,government,Minister of Industry and Entrepreneurship Development,minister,AS_MINISTER,2024-11-18,:AK
-2411-10_tr_07,Government of Sri Lanka,government,Minister of Plantation and Community Infrastructure,minister,AS_MINISTER,2024-11-18,:AK
-2411-10_tr_08,Government of Sri Lanka,government,Minister of Youth Affairs and Sports,minister,AS_MINISTER,2024-11-18,:AK

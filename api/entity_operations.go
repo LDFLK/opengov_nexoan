@@ -13,13 +13,13 @@ func (c *Client) CreateGovernmentNode() (*models.Entity, error) {
 	// Create the government entity
 	governmentEntity := &models.Entity{
 		ID:      "gov_01",
-		Created: "2024-01-01T00:00:00Z",
+		Created: "1978-09-07T00:00:00Z",
 		Kind: models.Kind{
 			Major: "Organisation",
 			Minor: "government",
 		},
 		Name: models.TimeBasedValue{
-			StartTime: "2024-01-01T00:00:00Z",
+			StartTime: "1978-09-07T00:00:00Z",
 			Value:     "Government of Sri Lanka",
 		},
 	}
@@ -31,6 +31,117 @@ func (c *Client) CreateGovernmentNode() (*models.Entity, error) {
 	}
 
 	return createdEntity, nil
+}
+
+// GetPresidentByGovernment retrieves a president entity (citizen with AS_PRESIDENT relationship to government) by name
+func (c *Client) GetPresidentByGovernment(presidentName string) (*models.Entity, error) {
+	// Get the president entity ID - presidents are citizens with AS_PRESIDENT relationship to government
+	presidentResults, err := c.SearchEntities(&models.SearchCriteria{
+		Kind: &models.Kind{
+			Major: "Person",
+			Minor: "citizen",
+		},
+		Name: presidentName,
+	})
+
+	if err != nil {
+		return nil, fmt.Errorf("failed to search for president entity: %w", err)
+	}
+	if len(presidentResults) == 0 {
+		return nil, fmt.Errorf("president entity not found: %s", presidentName)
+	}
+
+	// Find the president by checking if they have AS_PRESIDENT relationship to government
+	for _, president := range presidentResults {
+		// Get government node
+		governmentResults, err := c.SearchEntities(&models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: "Organisation",
+				Minor: "government",
+			},
+		})
+		if err != nil || len(governmentResults) == 0 {
+			continue
+		}
+
+		// Check if this citizen has AS_PRESIDENT relationship to government
+		presidentRelations, err := c.GetRelatedEntities(governmentResults[0].ID, &models.Relationship{
+			Name:            "AS_PRESIDENT",
+			RelatedEntityID: president.ID,
+		})
+		if err != nil {
+			continue
+		}
+
+		// If there are any AS_PRESIDENT relationships (active or not), return the president
+		if len(presidentRelations) > 0 {
+			// Convert SearchResult to Entity
+			entity := &models.Entity{
+				ID:         president.ID,
+				Kind:       president.Kind,
+				Created:    president.Created,
+				Terminated: president.Terminated,
+				Name: models.TimeBasedValue{
+					Value: president.Name,
+				},
+				Metadata:      []models.MetadataEntry{},
+				Attributes:    []models.AttributeEntry{},
+				Relationships: []models.RelationshipEntry{},
+			}
+			return entity, nil
+		}
+	}
+
+	return nil, fmt.Errorf("president entity not found or not active: %s", presidentName)
+}
+
+// GetMinisterByPresident retrieves a minister entity by president name and minister name
+func (c *Client) GetMinisterByPresident(presidentName, ministerName, dateISO string) (*models.Entity, error) {
+	// Get the president entity using the helper function
+	presidentEntity, err := c.GetPresidentByGovernment(presidentName)
+	if err != nil {
+		return nil, err
+	}
+	presidentID := presidentEntity.ID
+
+	// Get all minister relationships for the president
+	presidentRelations, err := c.GetRelatedEntities(presidentID, &models.Relationship{
+		Name: "AS_MINISTER",
+		//ActiveAt: dateISO,
+	})
+	if err != nil {
+		return nil, fmt.Errorf("failed to get president's relationships: %w", err)
+	}
+
+	// Find the minister with the specified name
+	for _, rel := range presidentRelations {
+		// Fetch the related entity (minister)
+		ministerResults, err := c.SearchEntities(&models.SearchCriteria{
+			ID: rel.RelatedEntityID,
+		})
+		if err != nil || len(ministerResults) == 0 {
+			continue
+		}
+		minister := ministerResults[0]
+		if minister.Kind.Minor == "minister" && minister.Name == ministerName {
+			// Convert SearchResult to Entity
+			entity := &models.Entity{
+				ID:         minister.ID,
+				Kind:       minister.Kind,
+				Created:    minister.Created,
+				Terminated: minister.Terminated,
+				Name: models.TimeBasedValue{
+					Value: minister.Name,
+				},
+				Metadata:      []models.MetadataEntry{},
+				Attributes:    []models.AttributeEntry{},
+				Relationships: []models.RelationshipEntry{},
+			}
+			return entity, nil
+		}
+	}
+
+	return nil, fmt.Errorf("minister '%s' not found under president '%s'", ministerName, presidentName)
 }
 
 // AddOrgEntity creates a new entity and establishes its relationship with a parent entity.
@@ -61,25 +172,75 @@ func (c *Client) AddOrgEntity(transaction map[string]interface{}, entityCounters
 	entityCounter := entityCounters[childType] + 1
 	newEntityID := fmt.Sprintf("%s_%d", prefix, entityCounter)
 
-	// Get the parent entity ID
-	searchCriteria := &models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: parentType,
-		},
-		Name: parent,
-	}
+	// Get the parent entity ID based on the child type
+	var parentID string
 
-	searchResults, err := c.SearchEntities(searchCriteria)
-	if err != nil {
-		return 0, fmt.Errorf("failed to search for parent entity: %w", err)
-	}
+	if childType == "minister" {
+		// For ministers, parent should be a president (Person type) - presidents are citizens with AS_PRESIDENT relationship
+		if parentType != "president" && parentType != "citizen" {
+			return 0, fmt.Errorf("minister must be attached to a president, got parent_type: %s", parentType)
+		}
 
-	if len(searchResults) == 0 {
-		return 0, fmt.Errorf("parent entity not found: %s", parent)
-	}
+		// Removed below: for now if a president creates the same minister again it will create a new entity
+		// Check if minister already exists under this president
+		// _, err := c.GetMinisterByPresident(parent, child, dateISO)
+		// if err == nil {
+		// 	// Minister already exists, return error
+		// 	return 0, fmt.Errorf("minister '%s' already exists under president '%s'", child, parent)
+		// }
 
-	parentID := searchResults[0].ID
+		// Get the president entity
+		presidentEntity, err := c.GetPresidentByGovernment(parent)
+		if err != nil {
+			return 0, fmt.Errorf("failed to get parent president entity: %w", err)
+		}
+		parentID = presidentEntity.ID
+
+	} else if childType == "department" {
+		// For departments, parent should be a minister, but we need to verify it's the correct minister
+		if parentType != "minister" {
+			return 0, fmt.Errorf("department must be attached to a minister, got parent_type: %s", parentType)
+		}
+
+		// Get president name from transaction
+		presidentName, ok := transaction["president"].(string)
+		if !ok || presidentName == "" {
+			return 0, fmt.Errorf("president name is required and must be a non-empty string when adding a department")
+		}
+
+		// Use GetMinisterByPresident to ensure we get the correct minister under the correct president
+		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		if err != nil {
+			return 0, fmt.Errorf("failed to get parent minister entity: %w", err)
+		}
+
+		parentID = ministerEntity.ID
+
+	} else {
+		// For other entity types, use the original logic
+		majorType := "Organisation"
+		if parentType == "citizen" {
+			majorType = "Person"
+		}
+		searchCriteria := &models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: majorType,
+				Minor: parentType,
+			},
+			Name: parent,
+		}
+
+		searchResults, err := c.SearchEntities(searchCriteria)
+		if err != nil {
+			return 0, fmt.Errorf("failed to search for parent entity: %w", err)
+		}
+
+		if len(searchResults) == 0 {
+			return 0, fmt.Errorf("parent entity not found: %s", parent)
+		}
+
+		parentID = searchResults[0].ID
+	}
 
 	// Create the new child entity
 	childEntity := &models.Entity{
@@ -153,48 +314,154 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 	}
 	dateISO := date.Format(time.RFC3339)
 
-	// Get the parent entity ID
-	searchCriteria := &models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: parentType,
-		},
-		Name: parent,
-	}
-	parentResults, err := c.SearchEntities(searchCriteria)
-	if err != nil {
-		return fmt.Errorf("failed to search for parent entity: %w", err)
-	}
-	if len(parentResults) == 0 {
-		return fmt.Errorf("parent entity not found: %s", parent)
-	}
-	parentID := parentResults[0].ID
+	// Get the parent and child entity IDs based on their types
+	var parentID, childID string
 
-	// Get the child entity ID
-	searchCriteria.Kind.Minor = childType
-	searchCriteria.Name = child
-	childResults, err := c.SearchEntities(searchCriteria)
-	if err != nil {
-		return fmt.Errorf("failed to search for child entity: %w", err)
+	// Handle parent entity retrieval
+	if parentType == "president" {
+		// Parent is a president - use the helper function
+		presidentEntity, err := c.GetPresidentByGovernment(parent)
+		if err != nil {
+			return fmt.Errorf("failed to get parent president entity: %w", err)
+		}
+		parentID = presidentEntity.ID
+
+	} else if parentType == "minister" {
+		// Parent is a minister, need president context to get the correct minister
+		presidentName, ok := transaction["president"].(string)
+		if !ok || presidentName == "" {
+			return fmt.Errorf("president name is required and must be a non-empty string when terminating minister relationships")
+		}
+
+		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		if err != nil {
+			return fmt.Errorf("failed to get parent minister entity: %w", err)
+		}
+		parentID = ministerEntity.ID
+
+	} else {
+		// For other parent types, use the original logic
+		parentMajorType := "Organisation"
+		if parentType == "citizen" {
+			parentMajorType = "Person"
+		}
+		searchCriteria := &models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: parentMajorType,
+				Minor: parentType,
+			},
+			Name: parent,
+		}
+
+		parentResults, err := c.SearchEntities(searchCriteria)
+		if err != nil {
+			return fmt.Errorf("failed to search for parent entity: %w", err)
+		}
+		if len(parentResults) == 0 {
+			return fmt.Errorf("parent entity not found: %s", parent)
+		}
+		parentID = parentResults[0].ID
 	}
-	if len(childResults) == 0 {
-		return fmt.Errorf("child entity not found: %s", child)
+
+	// Handle child entity retrieval
+	if childType == "minister" {
+		// Child is a minister, parent is the president's name
+		presidentName := parent // parent contains the president's name
+
+		ministerEntity, err := c.GetMinisterByPresident(presidentName, child, dateISO)
+		if err != nil {
+			return fmt.Errorf("failed to get child minister entity: %w", err)
+		}
+		childID = ministerEntity.ID
+
+	} else if childType == "department" {
+		// Child is a department, need to find it under the correct minister
+		presidentName, ok := transaction["president"].(string)
+		if !ok || presidentName == "" {
+			return fmt.Errorf("president name is required and must be a non-empty string when terminating department relationships")
+		}
+
+		// First get the minister that should have this department
+		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		if err != nil {
+			return fmt.Errorf("failed to get minister for department termination: %w", err)
+		}
+
+		// Then find the department under this minister
+		departmentRelations, err := c.GetRelatedEntities(ministerEntity.ID, &models.Relationship{
+			Name: "AS_DEPARTMENT",
+		})
+		if err != nil {
+			return fmt.Errorf("failed to get minister's department relationships: %w", err)
+		}
+
+		// Find the department with the matching name
+		var foundDepartmentID string
+		for _, rel := range departmentRelations {
+			if rel.EndTime == "" { // Only active relationships
+				departmentResults, err := c.SearchEntities(&models.SearchCriteria{ID: rel.RelatedEntityID})
+				if err != nil || len(departmentResults) == 0 {
+					continue
+				}
+				if departmentResults[0].Name == child {
+					foundDepartmentID = rel.RelatedEntityID
+					break
+				}
+			}
+		}
+
+		if foundDepartmentID == "" {
+			return fmt.Errorf("department '%s' not found under minister '%s'", child, parent)
+		}
+		childID = foundDepartmentID
+
+	} else {
+		// For other child types, use the original logic
+		childMajorType := "Organisation"
+		if childType == "citizen" {
+			childMajorType = "Person"
+		}
+
+		searchCriteria := &models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: childMajorType,
+				Minor: childType,
+			},
+			Name: child,
+		}
+		childResults, err := c.SearchEntities(searchCriteria)
+		if err != nil {
+			return fmt.Errorf("failed to search for child entity: %w", err)
+		}
+		if len(childResults) == 0 {
+			return fmt.Errorf("child entity not found: %s", child)
+		}
+		childID = childResults[0].ID
 	}
-	childID := childResults[0].ID
 
 	//If we're terminating a minister, check for active departments
 	if childType == "minister" {
 		// Get all relationships for the minister
-		relations, err := c.GetAllRelatedEntities(childID)
+		relations, err := c.GetRelatedEntities(childID, &models.Relationship{
+			Name: "AS_DEPARTMENT",
+		})
 		if err != nil {
 			return fmt.Errorf("failed to get minister's relationships: %w", err)
 		}
 
-		// Check for active departments
+		// fmt.Println("relations: ", relations)
+
+		// Manually filter only active (EndTime == "") relationships
+		var activeRelations []models.Relationship
 		for _, rel := range relations {
-			if rel.Name == "AS_DEPARTMENT" && rel.EndTime == "" {
-				return fmt.Errorf("cannot terminate minister with active departments")
+			if rel.EndTime == "" {
+				activeRelations = append(activeRelations, rel)
 			}
+		}
+
+		// Check for active departments
+		if len(activeRelations) > 0 {
+			return fmt.Errorf("cannot terminate minister with active departments")
 		}
 	}
 
@@ -202,7 +469,6 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 	relations, err := c.GetRelatedEntities(parentID, &models.Relationship{
 		RelatedEntityID: childID,
 		Name:            relType,
-		StartTime:       dateISO,
 	})
 	if err != nil {
 		return fmt.Errorf("failed to get relationship: %w", err)
@@ -210,11 +476,12 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 
 	// FIXME: Is it possible to have more than one active relationship? For orgchart case only it won't happen
 	// Find the active relationship (no end time)
+	// Manually filter for active relationship (i.e., EndTime == "")
 	var activeRel *models.Relationship
 	for _, rel := range relations {
-		if rel.RelatedEntityID == childID && rel.EndTime == "" {
+		if rel.EndTime == "" {
 			activeRel = &rel
-			break
+			break // stop at the first active one
 		}
 	}
 
@@ -250,6 +517,17 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 	child := transaction["child"].(string)
 	dateStr := transaction["date"].(string)
 
+	// Validate president names are provided
+	newPresidentName, ok := transaction["new_president_name"].(string)
+	if !ok || newPresidentName == "" {
+		return fmt.Errorf("new_president_name is required and must be a non-empty string")
+	}
+
+	oldPresidentName, ok := transaction["old_president_name"].(string)
+	if !ok || oldPresidentName == "" {
+		return fmt.Errorf("old_president_name is required and must be a non-empty string")
+	}
+
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
 	if err != nil {
@@ -257,37 +535,43 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 	}
 	dateISO := date.Format(time.RFC3339)
 
-	// Get the new minister (parent) entity ID
-	newParentResults, err := c.SearchEntities(&models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: "minister",
-		},
-		Name: newParent,
-	})
+	// --- Get the new minister (parent) entity ID under the new president ---
+	newParentEntity, err := c.GetMinisterByPresident(newPresidentName, newParent, dateISO)
 	if err != nil {
-		return fmt.Errorf("failed to search for new parent entity: %w", err)
+		return fmt.Errorf("failed to get new minister: %w", err)
 	}
-	if len(newParentResults) == 0 {
-		return fmt.Errorf("new parent entity not found: %s", newParent)
-	}
-	newParentID := newParentResults[0].ID
+	newParentID := newParentEntity.ID
 
-	// Get the department (child) entity ID
-	childResults, err := c.SearchEntities(&models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: "department",
-		},
-		Name: child,
+	// --- Get the old minister (parent) entity ID under the old president ---
+	oldParentEntity, err := c.GetMinisterByPresident(oldPresidentName, oldParent, dateISO)
+	if err != nil {
+		return fmt.Errorf("failed to get old minister: %w", err)
+	}
+	oldParentID := oldParentEntity.ID
+
+	// Get the department (child) entity ID connected to the old minister
+	departmentRelations, err := c.GetRelatedEntities(oldParentID, &models.Relationship{
+		Name: "AS_DEPARTMENT",
 	})
 	if err != nil {
-		return fmt.Errorf("failed to search for child entity: %w", err)
+		return fmt.Errorf("failed to get department relationships for old minister: %w", err)
 	}
-	if len(childResults) == 0 {
-		return fmt.Errorf("child entity not found: %s", child)
+
+	var childID string
+	for _, rel := range departmentRelations {
+		departmentResults, err := c.SearchEntities(&models.SearchCriteria{ID: rel.RelatedEntityID})
+		if err != nil || len(departmentResults) == 0 {
+			continue
+		}
+		department := departmentResults[0]
+		if department.Name == child {
+			childID = department.ID
+			break
+		}
 	}
-	childID := childResults[0].ID
+	if childID == "" {
+		return fmt.Errorf("department entity '%s' not found or not active under old minister '%s' on date %s", child, oldParent, dateStr)
+	}
 
 	// Create new relationship between new minister and department
 	newRelationship := &models.Entity{
@@ -311,33 +595,19 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 		return fmt.Errorf("failed to create new relationship: %w", err)
 	}
 
-	// Get the old minister's ID
-	oldParentResults, err := c.SearchEntities(&models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: "minister",
-		},
-		Name: oldParent,
+	// Find the active relationship to terminate it.
+	oldMinisterRelations, err := c.GetRelatedEntities(oldParentID, &models.Relationship{
+		Name:            "AS_DEPARTMENT",
+		RelatedEntityID: childID,
 	})
 	if err != nil {
-		return fmt.Errorf("failed to search for old parent entity: %w", err)
-	}
-	if len(oldParentResults) == 0 {
-		return fmt.Errorf("old parent entity not found: %s", oldParent)
-	}
-	oldParentID := oldParentResults[0].ID
-
-	// Check if the relationship already has an end date
-	// Get all relationships for the old minister
-	relations, err := c.GetAllRelatedEntities(oldParentID)
-	if err != nil {
-		return fmt.Errorf("failed to get relationships: %w", err)
+		return fmt.Errorf("failed to get relationship between old minister and department: %w", err)
 	}
 
-	// Find the active relationship (no end time)
+	// Manually find the active relationship (no EndTime)
 	var activeRel *models.Relationship
-	for _, rel := range relations {
-		if rel.RelatedEntityID == childID && rel.Name == "AS_DEPARTMENT" && rel.EndTime == "" {
+	for _, rel := range oldMinisterRelations {
+		if rel.EndTime == "" {
 			activeRel = &rel
 			break
 		}
@@ -353,6 +623,7 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 			"parent_type": "minister",
 			"child_type":  "department",
 			"rel_type":    "AS_DEPARTMENT",
+			"president":   oldPresidentName,
 		}
 
 		err = c.TerminateOrgEntity(terminateTransaction)
@@ -373,6 +644,12 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 	relType := "AS_MINISTER"
 	transactionID := transaction["transaction_id"]
 
+	// Validate president name is provided
+	presidentName, ok := transaction["president"].(string)
+	if !ok || presidentName == "" {
+		return 0, fmt.Errorf("president name is required and must be a non-empty string")
+	}
+
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
 	if err != nil {
@@ -381,30 +658,22 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 	dateISO := date.Format(time.RFC3339)
 
 	// Get the old minister's ID
-	oldMinisterResults, err := c.SearchEntities(&models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: "minister",
-		},
-		Name: oldName,
-	})
+	oldMinister, err := c.GetMinisterByPresident(presidentName, oldName, dateISO)
 	if err != nil {
-		return 0, fmt.Errorf("failed to search for old minister: %w", err)
+		return 0, fmt.Errorf("failed to get old minister: %w", err)
 	}
-	if len(oldMinisterResults) == 0 {
-		return 0, fmt.Errorf("old minister not found: %s", oldName)
-	}
-	oldMinisterID := oldMinisterResults[0].ID
+	oldMinisterID := oldMinister.ID
 
 	// Create new minister
 	addEntityTransaction := map[string]interface{}{
-		"parent":         "Government of Sri Lanka",
+		"parent":         presidentName,
 		"child":          newName,
 		"date":           dateStr,
-		"parent_type":    "government",
+		"parent_type":    "president",
 		"child_type":     "minister",
 		"rel_type":       relType,
 		"transaction_id": transactionID,
+		"president":      presidentName,
 	}
 
 	// Create the new minister
@@ -414,92 +683,69 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 	}
 
 	// Get the new minister's ID
-	newMinisterResults, err := c.SearchEntities(&models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: "minister",
-		},
-		Name: newName,
-	})
+	newMinister, err := c.GetMinisterByPresident(presidentName, newName, dateISO)
 	if err != nil {
-		return 0, fmt.Errorf("failed to search for new minister: %w", err)
+		return 0, fmt.Errorf("failed to get new minister: %w", err)
 	}
-	if len(newMinisterResults) == 0 {
-		return 0, fmt.Errorf("new minister not found: %s", newName)
-	}
-	newMinisterID := newMinisterResults[0].ID
+	newMinisterID := newMinister.ID
 
 	// Get all active departments of the old minister
-	oldRelations, err := c.GetAllRelatedEntities(oldMinisterID)
+	oldRelations, err := c.GetRelatedEntities(oldMinisterID, &models.Relationship{
+		Name: "AS_DEPARTMENT",
+	})
 	if err != nil {
 		return 0, fmt.Errorf("failed to get old minister's relationships: %w", err)
 	}
 
-	// Transfer each active department to the new minister
+	// Manually filter only active relationships (EndTime == "")
+	var oldActiveRelations []models.Relationship
 	for _, rel := range oldRelations {
-		if rel.Name == "AS_DEPARTMENT" && rel.EndTime == "" {
-			// Get the department name using its ID
-			departmentResults, err := c.SearchEntities(&models.SearchCriteria{
-				ID: rel.RelatedEntityID,
-			})
-			if err != nil {
-				return 0, fmt.Errorf("failed to search for department: %w", err)
-			}
-
-			if len(departmentResults) == 0 {
-				return 0, fmt.Errorf("failed to find department with ID: %s", rel.RelatedEntityID)
-			}
-
-			// Create new relationship between new minister and department
-			newRelationship := &models.Entity{
-				ID: newMinisterID,
-				Relationships: []models.RelationshipEntry{
-					{
-						Key: fmt.Sprintf("%s_%s", newMinisterID, rel.RelatedEntityID),
-						Value: models.Relationship{
-							RelatedEntityID: rel.RelatedEntityID,
-							StartTime:       dateISO,
-							EndTime:         "",
-							ID:              fmt.Sprintf("%s_%s", newMinisterID, rel.RelatedEntityID),
-							Name:            "AS_DEPARTMENT",
-						},
-					},
-				},
-			}
-
-			_, err = c.UpdateEntity(newMinisterID, newRelationship)
-			if err != nil {
-				return 0, fmt.Errorf("failed to create new department relationship: %w", err)
-			}
-
-			// Terminate the old relationship
-			terminateTransaction := map[string]interface{}{
-				"parent":      oldName,
-				"child":       departmentResults[0].Name,
-				"date":        dateStr,
-				"parent_type": "minister",
-				"child_type":  "department",
-				"rel_type":    "AS_DEPARTMENT",
-			}
-
-			err = c.TerminateOrgEntity(terminateTransaction)
-			if err != nil {
-				return 0, fmt.Errorf("failed to terminate old department relationship: %w", err)
-			}
+		if rel.EndTime == "" {
+			oldActiveRelations = append(oldActiveRelations, rel)
 		}
 	}
 
-	// Terminate the old minister's relationship with government
-	terminateGovTransaction := map[string]interface{}{
-		"parent":      "Government of Sri Lanka",
+	// Transfer each active department to the new minister using MoveDepartment
+	for _, rel := range oldActiveRelations {
+		// Get the department name using its ID
+		departmentResults, err := c.SearchEntities(&models.SearchCriteria{
+			ID: rel.RelatedEntityID,
+		})
+		if err != nil {
+			return 0, fmt.Errorf("failed to search for department: %w", err)
+		}
+
+		if len(departmentResults) == 0 {
+			return 0, fmt.Errorf("failed to find department with ID: %s", rel.RelatedEntityID)
+		}
+
+		// Use MoveDepartment to move the department from old minister to new minister
+		moveTransaction := map[string]interface{}{
+			"old_parent":         oldName,
+			"new_parent":         newName,
+			"child":              departmentResults[0].Name,
+			"date":               dateStr,
+			"new_president_name": presidentName,
+			"old_president_name": presidentName,
+		}
+
+		err = c.MoveDepartment(moveTransaction)
+		if err != nil {
+			return 0, fmt.Errorf("failed to move department: %w", err)
+		}
+	}
+
+	// Terminate the old minister's relationship with the president
+	terminatePresTransaction := map[string]interface{}{
+		"parent":      presidentName,
 		"child":       oldName,
 		"date":        dateStr,
-		"parent_type": "government",
+		"parent_type": "president",
 		"child_type":  "minister",
 		"rel_type":    relType,
 	}
 
-	err = c.TerminateOrgEntity(terminateGovTransaction)
+	err = c.TerminateOrgEntity(terminatePresTransaction)
 	if err != nil {
 		return 0, fmt.Errorf("failed to terminate old minister's government relationship: %w", err)
 	}
@@ -537,6 +783,10 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 	dateStr := transaction["date"].(string)
 	relType := "AS_DEPARTMENT"
 	transactionID := transaction["transaction_id"].(string)
+	presidentName, ok := transaction["president"].(string)
+	if !ok || presidentName == "" {
+		return 0, fmt.Errorf("president name is required and must be a non-empty string when renaming a department")
+	}
 
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
@@ -561,7 +811,8 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 	}
 	oldDepartmentID := oldDepartmentResults[0].ID
 
-	// Find the minister that has a relationship with this department
+	// Find the minister that has an active relationship with this department
+	// We need to search through all ministers to find which one has this department
 	ministerResults, err := c.SearchEntities(&models.SearchCriteria{
 		Kind: &models.Kind{
 			Major: "Organisation",
@@ -572,30 +823,35 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 		return 0, fmt.Errorf("failed to search for ministers: %w", err)
 	}
 
-	// Find the minister that has an active relationship with this department
 	var ministerID string
 	var ministerName string
 	for _, minister := range ministerResults {
-		relations, err := c.GetAllRelatedEntities(minister.ID)
+		relations, err := c.GetRelatedEntities(minister.ID, &models.Relationship{
+			Name:            "AS_DEPARTMENT",
+			RelatedEntityID: oldDepartmentID,
+		})
 		if err != nil {
 			return 0, fmt.Errorf("failed to get minister's relationships: %w", err)
 		}
 
-		// Check if there's an active relationship
+		// Manually check if any of those relationships are active (EndTime == "")
 		for _, rel := range relations {
-			if rel.Name == "AS_DEPARTMENT" && rel.RelatedEntityID == oldDepartmentID && rel.EndTime == "" {
+			if rel.EndTime == "" {
 				ministerID = minister.ID
 				ministerName = minister.Name
 				break
 			}
 		}
-		if ministerID != "" {
-			break
-		}
 	}
 
 	if ministerID == "" {
 		return 0, fmt.Errorf("no active minister relationship found for department: %s", oldName)
+	}
+
+	// Verify that this minister is under the correct president
+	_, err = c.GetMinisterByPresident(presidentName, ministerName, dateISO)
+	if err != nil {
+		return 0, fmt.Errorf("minister '%s' not found under president '%s'", ministerName, presidentName)
 	}
 
 	// Create new department under the same minister
@@ -607,6 +863,7 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 		"child_type":     "department",
 		"rel_type":       relType,
 		"transaction_id": transactionID,
+		"president":      presidentName,
 	}
 
 	// Create the new department
@@ -639,6 +896,7 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 		"parent_type": "minister",
 		"child_type":  "department",
 		"rel_type":    relType,
+		"president":   presidentName,
 	}
 
 	err = c.TerminateOrgEntity(terminateMinisterTransaction)
@@ -679,6 +937,12 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 	dateStr := transaction["date"].(string)
 	transactionID := transaction["transaction_id"].(string)
 
+	// Validate president name is provided
+	presidentName, ok := transaction["president"].(string)
+	if !ok || presidentName == "" {
+		return 0, fmt.Errorf("president name is required and must be a non-empty string")
+	}
+
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
 	if err != nil {
@@ -686,21 +950,23 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 	}
 	dateISO := date.Format(time.RFC3339)
 
-	// Parse old ministers list
-	oldMinisters := strings.Split(strings.Trim(oldMinistersStr, "[]"), ",")
+	// Parse old ministers list - use semicolons as separators to avoid comma conflicts
+	trimmedStr := strings.Trim(oldMinistersStr, "[]")
+	oldMinisters := strings.Split(trimmedStr, ";")
 	for i := range oldMinisters {
 		oldMinisters[i] = strings.TrimSpace(oldMinisters[i])
 	}
 
 	// 1. Create new minister using AddEntity
 	addEntityTransaction := map[string]interface{}{
-		"parent":         "Government of Sri Lanka",
+		"parent":         presidentName,
 		"child":          newMinister,
 		"date":           dateStr,
-		"parent_type":    "government",
+		"parent_type":    "president",
 		"child_type":     "minister",
 		"rel_type":       "AS_MINISTER",
 		"transaction_id": transactionID,
+		"president":      presidentName,
 	}
 
 	newMinisterCounter, err := c.AddOrgEntity(addEntityTransaction, entityCounters)
@@ -709,80 +975,71 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 	}
 
 	// Get the new minister's ID
-	newMinisterResults, err := c.SearchEntities(&models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: "minister",
-		},
-		Name: newMinister,
-	})
+	newMinisterEntity, err := c.GetMinisterByPresident(presidentName, newMinister, dateISO)
 	if err != nil {
-		return 0, fmt.Errorf("failed to search for new minister: %w", err)
+		return 0, fmt.Errorf("failed to get new minister: %w", err)
 	}
-	if len(newMinisterResults) == 0 {
-		return 0, fmt.Errorf("new minister not found: %s", newMinister)
-	}
-	newMinisterID := newMinisterResults[0].ID
+	newMinisterID := newMinisterEntity.ID
 
 	// For each old minister
 	for _, oldMinister := range oldMinisters {
 		// Get the old minister's ID
-		oldMinisterResults, err := c.SearchEntities(&models.SearchCriteria{
-			Kind: &models.Kind{
-				Major: "Organisation",
-				Minor: "minister",
-			},
-			Name: oldMinister,
-		})
+		oldMinisterEntity, err := c.GetMinisterByPresident(presidentName, oldMinister, dateISO)
 		if err != nil {
-			return 0, fmt.Errorf("failed to search for old minister: %w", err)
+			return 0, fmt.Errorf("failed to get old minister: %w", err)
 		}
-		if len(oldMinisterResults) == 0 {
-			return 0, fmt.Errorf("old minister not found: %s", oldMinister)
-		}
-		oldMinisterID := oldMinisterResults[0].ID
+		oldMinisterID := oldMinisterEntity.ID
 
 		// 2. Move old minister's departments to new minister
-		oldRelations, err := c.GetAllRelatedEntities(oldMinisterID)
+		oldRelations, err := c.GetRelatedEntities(oldMinisterID, &models.Relationship{
+			Name: "AS_DEPARTMENT",
+		})
 		if err != nil {
 			return 0, fmt.Errorf("failed to get old minister's relationships: %w", err)
 		}
 
+		// Manually filter only active relationships (EndTime == "")
+		var oldActiveRelations []models.Relationship
 		for _, rel := range oldRelations {
-			if rel.Name == "AS_DEPARTMENT" && rel.EndTime == "" {
-				// Get the department name using its ID
-				departmentResults, err := c.SearchEntities(&models.SearchCriteria{
-					ID: rel.RelatedEntityID,
-				})
-				if err != nil {
-					return 0, fmt.Errorf("failed to search for department: %w", err)
-				}
-				if len(departmentResults) == 0 {
-					return 0, fmt.Errorf("failed to find department with ID: %s", rel.RelatedEntityID)
-				}
+			if rel.EndTime == "" {
+				oldActiveRelations = append(oldActiveRelations, rel)
+			}
+		}
 
-				// Move department to new minister
-				moveTransaction := map[string]interface{}{
-					"old_parent": oldMinister,
-					"new_parent": newMinister,
-					"child":      departmentResults[0].Name,
-					"type":       "AS_DEPARTMENT",
-					"date":       dateStr,
-				}
+		for _, rel := range oldActiveRelations {
+			// Get the department name using its ID
+			departmentResults, err := c.SearchEntities(&models.SearchCriteria{
+				ID: rel.RelatedEntityID,
+			})
+			if err != nil {
+				return 0, fmt.Errorf("failed to search for department: %w", err)
+			}
+			if len(departmentResults) == 0 {
+				return 0, fmt.Errorf("failed to find department with ID: %s", rel.RelatedEntityID)
+			}
 
-				err = c.MoveDepartment(moveTransaction)
-				if err != nil {
-					return 0, fmt.Errorf("failed to move department: %w", err)
-				}
+			// Move department to new minister
+			moveTransaction := map[string]interface{}{
+				"old_parent":         oldMinister,
+				"new_parent":         newMinister,
+				"child":              departmentResults[0].Name,
+				"date":               dateStr,
+				"new_president_name": presidentName,
+				"old_president_name": presidentName,
+			}
+
+			err = c.MoveDepartment(moveTransaction)
+			if err != nil {
+				return 0, fmt.Errorf("failed to move department: %w", err)
 			}
 		}
 
 		// 3. Terminate gov -> old minister relationship
 		terminateGovTransaction := map[string]interface{}{
-			"parent":      "Government of Sri Lanka",
+			"parent":      presidentName,
 			"child":       oldMinister,
 			"date":        dateStr,
-			"parent_type": "government",
+			"parent_type": "citizen",
 			"child_type":  "minister",
 			"rel_type":    "AS_MINISTER",
 		}
@@ -830,6 +1087,16 @@ func (c *Client) AddPersonEntity(transaction map[string]interface{}, entityCount
 	relType := transaction["rel_type"].(string)
 	transactionID := transaction["transaction_id"].(string)
 
+	// Get president name if parent is a minister -> currently only supports adding people to ministers
+	var presidentName string
+	if parentType == "minister" {
+		var ok bool
+		presidentName, ok = transaction["president"].(string)
+		if !ok || presidentName == "" {
+			return 0, fmt.Errorf("president name is required and must be a non-empty string when adding a person to a minister")
+		}
+	}
+
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
 	if err != nil {
@@ -838,24 +1105,36 @@ func (c *Client) AddPersonEntity(transaction map[string]interface{}, entityCount
 	dateISO := date.Format(time.RFC3339)
 
 	// Get the parent entity ID
-	searchCriteria := &models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: parentType,
-		},
-		Name: parent,
-	}
+	var parentID string
 
-	searchResults, err := c.SearchEntities(searchCriteria)
-	if err != nil {
-		return 0, fmt.Errorf("failed to search for parent entity: %w", err)
-	}
+	if parentType == "minister" {
+		// Parent is a minister, need president context to get the correct minister
+		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		if err != nil {
+			return 0, fmt.Errorf("failed to get parent minister entity: %w", err)
+		}
+		parentID = ministerEntity.ID
+	} else {
+		// For other parent types, use the original logic
+		searchCriteria := &models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: "Organisation",
+				Minor: parentType,
+			},
+			Name: parent,
+		}
 
-	if len(searchResults) == 0 {
-		return 0, fmt.Errorf("parent entity not found: %s", parent)
-	}
+		searchResults, err := c.SearchEntities(searchCriteria)
+		if err != nil {
+			return 0, fmt.Errorf("failed to search for parent entity: %w", err)
+		}
 
-	parentID := searchResults[0].ID
+		if len(searchResults) == 0 {
+			return 0, fmt.Errorf("parent entity not found: %s", parent)
+		}
+
+		parentID = searchResults[0].ID
+	}
 
 	// Check if person already exists (search across all person types)
 	personSearchCriteria := &models.SearchCriteria{
@@ -955,6 +1234,16 @@ func (c *Client) TerminatePersonEntity(transaction map[string]interface{}) error
 	childType := transaction["child_type"].(string)
 	relType := transaction["rel_type"].(string)
 
+	// Get president name if parent is a minister -> currently only supports terminating relationships with ministers
+	var presidentName string
+	if parentType == "minister" {
+		var ok bool
+		presidentName, ok = transaction["president"].(string)
+		if !ok || presidentName == "" {
+			return fmt.Errorf("president name is required and must be a non-empty string when terminating relationships with ministers")
+		}
+	}
+
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
 	if err != nil {
@@ -963,21 +1252,33 @@ func (c *Client) TerminatePersonEntity(transaction map[string]interface{}) error
 	dateISO := date.Format(time.RFC3339)
 
 	// Get the parent entity ID
-	searchCriteria := &models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: parentType,
-		},
-		Name: parent,
+	var parentID string
+
+	if parentType == "minister" {
+		// Parent is a minister, need president context to get the correct minister
+		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		if err != nil {
+			return fmt.Errorf("failed to get parent minister entity: %w", err)
+		}
+		parentID = ministerEntity.ID
+	} else {
+		// For other parent types, use the original logic
+		searchCriteria := &models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: "Organisation",
+				//Minor: parentType,
+			},
+			Name: parent,
+		}
+		parentResults, err := c.SearchEntities(searchCriteria)
+		if err != nil {
+			return fmt.Errorf("failed to search for parent entity: %w", err)
+		}
+		if len(parentResults) == 0 {
+			return fmt.Errorf("parent entity not found: %s", parent)
+		}
+		parentID = parentResults[0].ID
 	}
-	parentResults, err := c.SearchEntities(searchCriteria)
-	if err != nil {
-		return fmt.Errorf("failed to search for parent entity: %w", err)
-	}
-	if len(parentResults) == 0 {
-		return fmt.Errorf("parent entity not found: %s", parent)
-	}
-	parentID := parentResults[0].ID
 
 	// Get the child entity ID
 	childSearchCriteria := &models.SearchCriteria{
@@ -997,24 +1298,28 @@ func (c *Client) TerminatePersonEntity(transaction map[string]interface{}) error
 	}
 	childID := childResults[0].ID
 
-	// Get the specific relationship that is still active (no end date) -> this should give us the relationship(s) active for dateISO
+	// Get the specific relationship that is still active (no end date)
 	relations, err := c.GetRelatedEntities(parentID, &models.Relationship{
 		RelatedEntityID: childID,
 		Name:            relType,
-		StartTime:       dateISO,
 	})
 	if err != nil {
 		return fmt.Errorf("failed to get relationship: %w", err)
 	}
 
 	// FIXME: Is it possible to have more than one active relationship? For orgchart case only it won't happen
+	// Manually filter only active relationships (EndTime == "")
+	var activeRelations []models.Relationship
+	for _, rel := range relations {
+		if rel.EndTime == "" {
+			activeRelations = append(activeRelations, rel)
+		}
+	}
+
 	// Find the active relationship (no end time)
 	var activeRel *models.Relationship
-	for _, rel := range relations {
-		if rel.RelatedEntityID == childID && rel.EndTime == "" {
-			activeRel = &rel
-			break
-		}
+	if len(activeRelations) > 0 {
+		activeRel = &activeRelations[0]
 	}
 
 	if activeRel == nil {
@@ -1053,6 +1358,12 @@ func (c *Client) MovePerson(transaction map[string]interface{}) error {
 	dateStr := transaction["date"].(string)
 	relType := "AS_APPOINTED"
 
+	// Validate president name is provided
+	presidentName, ok := transaction["president"].(string)
+	if !ok || presidentName == "" {
+		return fmt.Errorf("president name is required and must be a non-empty string")
+	}
+
 	// Parse the date
 	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
 	if err != nil {
@@ -1060,21 +1371,12 @@ func (c *Client) MovePerson(transaction map[string]interface{}) error {
 	}
 	dateISO := date.Format(time.RFC3339)
 
-	// Get the new minister (parent) entity ID
-	newParentResults, err := c.SearchEntities(&models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: "minister",
-		},
-		Name: newParent,
-	})
+	// Get the new minister (parent) entity ID -> only supports moving person to and from minister
+	newParentEntity, err := c.GetMinisterByPresident(presidentName, newParent, dateISO)
 	if err != nil {
-		return fmt.Errorf("failed to search for new parent entity: %w", err)
+		return fmt.Errorf("failed to get new parent entity: %w", err)
 	}
-	if len(newParentResults) == 0 {
-		return fmt.Errorf("new parent entity not found: %s", newParent)
-	}
-	newParentID := newParentResults[0].ID
+	newParentID := newParentEntity.ID
 
 	// Get the department (child) entity ID
 	childResults, err := c.SearchEntities(&models.SearchCriteria{
@@ -1122,11 +1424,109 @@ func (c *Client) MovePerson(transaction map[string]interface{}) error {
 		"parent_type": "minister",
 		"child_type":  "citizen",
 		"rel_type":    relType,
+		"president":   presidentName,
 	}
 
 	err = c.TerminatePersonEntity(terminateTransaction)
 	if err != nil {
 		return fmt.Errorf("failed to terminate old relationship: %w", err)
+	}
+
+	return nil
+}
+
+// MoveMinister moves a minister from one president to another
+func (c *Client) MoveMinister(transaction map[string]interface{}) error {
+	// Extract details from the transaction
+	newParent := transaction["new_parent"].(string)
+	oldParent := transaction["old_parent"].(string)
+	child := transaction["child"].(string)
+	dateStr := transaction["date"].(string)
+
+	// Parse the date
+	date, err := time.Parse("2006-01-02", strings.TrimSpace(dateStr))
+	if err != nil {
+		return fmt.Errorf("failed to parse date: %w", err)
+	}
+	dateISO := date.Format(time.RFC3339)
+
+	// --- Get the new president (parent) entity ID ---
+	newPresidentEntity, err := c.GetPresidentByGovernment(newParent)
+	if err != nil {
+		return fmt.Errorf("failed to get new president entity: %w", err)
+	}
+	newParentID := newPresidentEntity.ID
+
+	// --- Get the old president (parent) entity ID ---
+	oldPresidentEntity, err := c.GetPresidentByGovernment(oldParent)
+	if err != nil {
+		return fmt.Errorf("failed to get old president entity: %w", err)
+	}
+	oldParentID := oldPresidentEntity.ID
+
+	// Get the minister (child) entity ID connected to the old president
+	ministerEntity, err := c.GetMinisterByPresident(oldParent, child, dateISO)
+	if err != nil {
+		return fmt.Errorf("minister entity '%s' not found or not active under old president '%s' on date %s: %w", child, oldParent, dateStr, err)
+	}
+	childID := ministerEntity.ID
+
+	// Create new relationship between new president and minister
+	newRelationship := &models.Entity{
+		ID: newParentID,
+		Relationships: []models.RelationshipEntry{
+			{
+				Key: fmt.Sprintf("%s_%s", newParentID, childID),
+				Value: models.Relationship{
+					RelatedEntityID: childID,
+					StartTime:       dateISO,
+					EndTime:         "",
+					ID:              fmt.Sprintf("%s_%s", newParentID, childID),
+					Name:            "AS_MINISTER",
+				},
+			},
+		},
+	}
+
+	_, err = c.UpdateEntity(newParentID, newRelationship)
+	if err != nil {
+		return fmt.Errorf("failed to create new relationship: %w", err)
+	}
+
+	// Find the active relationship to terminate it.
+	oldPresidentRelations, err := c.GetRelatedEntities(oldParentID, &models.Relationship{
+		Name:            "AS_MINISTER",
+		RelatedEntityID: childID,
+	})
+	if err != nil {
+		return fmt.Errorf("failed to get relationship between old president and minister: %w", err)
+	}
+
+	// Manually filter for active relationships (EndTime == "")
+	var activeRel *models.Relationship
+	for _, rel := range oldPresidentRelations {
+		if rel.EndTime == "" {
+			activeRel = &rel
+			break
+		}
+	}
+
+	// Only terminate if there is an active relationship
+	if activeRel != nil {
+		// Terminate the old relationship
+		terminateTransaction := map[string]interface{}{
+			"parent":      oldParent,
+			"child":       child,
+			"date":        dateStr,
+			"parent_type": "president",
+			"child_type":  "minister",
+			"rel_type":    "AS_MINISTER",
+		}
+
+		err = c.TerminateOrgEntity(terminateTransaction)
+		if err != nil {
+			return fmt.Errorf("failed to terminate old relationship: %w", err)
+		}
 	}
 
 	return nil
