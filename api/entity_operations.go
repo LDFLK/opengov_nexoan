@@ -233,7 +233,9 @@ func (c *Client) AddOrgEntity(transaction map[string]interface{}, entityCounters
 		return 0, fmt.Errorf("unknown child type: %s", childType)
 	}
 
-	prefix := fmt.Sprintf("%s_%s", transactionID[:7], strings.ToLower(childType[:3]))
+	// Get the part before the first underscore for the prefix
+	prefixPart := strings.Split(transactionID, "_")[0]
+	prefix := fmt.Sprintf("%s_%s", prefixPart, strings.ToLower(childType[:3]))
 	entityCounter := entityCounters[childType] + 1
 	newEntityID := fmt.Sprintf("%s_%d", prefix, entityCounter)
 
@@ -1262,7 +1264,9 @@ func (c *Client) AddPersonEntity(transaction map[string]interface{}, entityCount
 			return 0, fmt.Errorf("unknown child type: %s", childType)
 		}
 
-		prefix := fmt.Sprintf("%s_%s", transactionID[:7], strings.ToLower(childType[:3]))
+		// Get the part before the first underscore for the prefix
+		prefixPart := strings.Split(transactionID, "_")[0]
+		prefix := fmt.Sprintf("%s_%s", prefixPart, strings.ToLower(childType[:3]))
 		entityCounters[childType]++ // Increment the counter
 		newEntityID := fmt.Sprintf("%s_%d", prefix, entityCounters[childType])
 
@@ -1841,7 +1845,9 @@ func (c *Client) AddDocumentEntity(transaction map[string]interface{}, entityCou
 		childID = documentResults[0].ID
 	} else {
 		// Generate new entity ID
-		prefix := fmt.Sprintf("%s_doc", transactionID[:7])
+		// Get the part before the first underscore for the prefix
+		prefixPart := strings.Split(transactionID, "_")[0]
+		prefix := fmt.Sprintf("%s_doc", prefixPart)
 		entityCounter = entityCounters["document"] + 1
 		newEntityID := fmt.Sprintf("%s_%d", prefix, entityCounter)
 

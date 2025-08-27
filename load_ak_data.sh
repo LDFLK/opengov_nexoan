@@ -7,9 +7,9 @@
 ./orgchart -data "$(pwd)/data/documents/Anura Kumara Dissanayake/organisation/" -type document
 
 # Load Anura's presidency data (termination of Ranil's presidency and starting Anura's)
-./orgchart -data "$(pwd)/data/people/Anura Kumara Dissanayake/2024-09-23/2403-03_1" -type person
+./orgchart -data "$(pwd)/data/people/Anura Kumara Dissanayake/2024-09-23/2403-03-1" -type person
 ./orgchart -data "$(pwd)/data/orgchart/Anura Kumara Dissanayake/2024-09-23/"
-./orgchart -data "$(pwd)/data/people/Anura Kumara Dissanayake/2024-09-23/2403-03_2" -type person
+./orgchart -data "$(pwd)/data/people/Anura Kumara Dissanayake/2024-09-23/2403-03-2" -type person
 
 # Load Anura's org data
 # ./orgchart -data "$(pwd)/data/orgchart/Anura Kumara Dissanayake/2024-09-25/2403-38"
@@ -21,11 +21,11 @@
 ./orgchart -data "$(pwd)/data/people/Anura Kumara Dissanayake/2024-09-25/2403-38-1" -type person
 
 # Add Anura's new cabinet
-./orgchart -data "$(pwd)/data/orgchart/Anura Kumara Dissanayake/2024-09-25/2403-38"
+./orgchart -data "$(pwd)/data/orgchart/Anura Kumara Dissanayake/2024-09-25/2403-38-2"
 ./orgchart -data "$(pwd)/data/orgchart/Anura Kumara Dissanayake/2024-09-25/2403-39"
 
 # Add Anura's new cabinet people
-./orgchart -data "$(pwd)/data/people/Anura Kumara Dissanayake/2024-09-25/2403-38" -type person
+./orgchart -data "$(pwd)/data/people/Anura Kumara Dissanayake/2024-09-25/2403-38-2" -type person
 ./orgchart -data "$(pwd)/data/people/Anura Kumara Dissanayake/2024-09-25/2403-39" -type person
 
 
