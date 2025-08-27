@@ -164,11 +164,23 @@ func (c *Client) ProcessTransactions(dataDir string, processType string) error {
 
 		case "MOVE":
 			if processType == "organisation" {
-				err := c.MoveDepartment(transaction)
-				if err != nil {
-					return fmt.Errorf("failed to process move transaction %s: %w", transaction["transaction_id"], err)
+				// Check if we're moving a department or a minister
+				childType := transaction["type"].(string)
+				if childType == "department" {
+					err := c.MoveDepartment(transaction)
+					if err != nil {
+						return fmt.Errorf("failed to process move department transaction %s: %w", transaction["transaction_id"], err)
+					}
+					fmt.Printf("Processed Move Department transaction: %s\n", transaction["transaction_id"])
+				} else if childType == "minister" {
+					err := c.MoveMinister(transaction)
+					if err != nil {
+						return fmt.Errorf("failed to process move minister transaction %s: %w", transaction["transaction_id"], err)
+					}
+					fmt.Printf("Processed Move Minister transaction: %s\n", transaction["transaction_id"])
+				} else {
+					return fmt.Errorf("unknown child type for MOVE transaction: %s", childType)
 				}
-				fmt.Printf("Processed Move transaction: %s\n", transaction["transaction_id"])
 			} else if processType == "person" {
 				err := c.MovePerson(transaction)
 				if err != nil {
