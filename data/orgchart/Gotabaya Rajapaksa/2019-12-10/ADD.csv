@@ -116,7 +116,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_115,"Minister of Buddhasasana, Cultural and Religious Affairs",minister,Department of Muslim Religious and Cultural Affairs,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_116,"Minister of Buddhasasana, Cultural and Religious Affairs",minister,Department of Cultural Affairs,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_117,"Minister of Buddhasasana, Cultural and Religious Affairs",minister,Department of National Museums,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_118,"Minister of Buddhasasana, Cultural and Religious Affairs",minister,Department of Archeology,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_118,"Minister of Buddhasasana, Cultural and Religious Affairs",minister,Department of Archaeology,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_119,"Minister of Buddhasasana, Cultural and Religious Affairs",minister,Tower Hall Theatre Foundation,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_120,"Minister of Buddhasasana, Cultural and Religious Affairs",minister,Public Performance Board,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_121,"Minister of Buddhasasana, Cultural and Religious Affairs",minister,National Arts Council,department,AS_DEPARTMENT,2019-12-10
@@ -146,7 +146,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_145,"Minister of Urban Development, Water Supply and Housing Facilities",minister,State Engineering Corporation,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_146,"Minister of Urban Development, Water Supply and Housing Facilities",minister,State Development and Construction Corporation,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_147,"Minister of Urban Development, Water Supply and Housing Facilities",minister,National Equipment and Machinery Organization,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_148,"Minister of Urban Development, Water Supply and Housing Facilities",minister,Ocean View Development (Pvt) Ltd,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_148,"Minister of Urban Development, Water Supply and Housing Facilities",minister,Ocean View Development (Pvt) Ltd.,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_149,"Minister of Justice, Human Rights & Law Reforms",minister,Attorney General's Department,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_150,"Minister of Justice, Human Rights & Law Reforms",minister,Legal Draftsman's Department,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_151,"Minister of Justice, Human Rights & Law Reforms",minister,Department of Debt Conciliation Board,department,AS_DEPARTMENT,2019-12-10
@@ -162,7 +162,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_161,"Minister of Justice, Human Rights & Law Reforms",minister,International Arbitration Centre of Sri Lanka,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_162,"Minister of Justice, Human Rights & Law Reforms",minister,Department of Prisons,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_163,"Minister of Justice, Human Rights & Law Reforms",minister,Community Based Correction Department,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_164,"Minister of Justice, Human Rights & Law Reforms",minister,Training Schools for Youthful Offender,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_164,"Minister of Justice, Human Rights & Law Reforms",minister,Training Schools for Youthful Offenders,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_165,"Minister of Justice, Human Rights & Law Reforms",minister,Rehabilitation Commissioner General's Office,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_166,"Minister of Justice, Human Rights & Law Reforms",minister,Office for National Unity and Reconciliation,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_167,"Minister of Justice, Human Rights & Law Reforms",minister,Office of Missing Persons,department,AS_DEPARTMENT,2019-12-10
@@ -170,9 +170,9 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_169,Minister of Community Empowerment and Estate Infrastructure Development,minister,New Villages Development Authority for Plantation Region,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_170,Minister of Community Empowerment and Estate Infrastructure Development,minister,Estate Sector Self-Employment Revolving Fund,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_171,Minister of Community Empowerment and Estate Infrastructure Development,minister,Plantation Human Development Trust,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_172,Minister of Community Empowerment and Estate Infrastructure Development,minister,Saumyamoorthy Thondaman Memorial Foundation,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_172,Minister of Community Empowerment and Estate Infrastructure Development,minister,Saumyamoorthi Thondaman Memorial Foundation,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_173,Minister of Community Empowerment and Estate Infrastructure Development,minister,Resettlement Authority,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_174,Minister of Community Empowerment and Estate Infrastructure Development,minister,Gramasakthi Bureau,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_174,Minister of Community Empowerment and Estate Infrastructure Development,minister,Gramashakthi Bureau,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_175,Minister of Foreign Relations,minister,Diplomatic Missions in abroad,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_176,Minister of Foreign Relations,minister,Lakshman Kadirgamar Institute for International Relations and Strategic Studies,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_177,Minister of Foreign Relations,minister,National Oceanic Affairs Committee Secretariat,department,AS_DEPARTMENT,2019-12-10
@@ -186,9 +186,9 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_185,"Minister of Skills Development, Employment and Labour Relations ",minister,Department of Technical Education and Training,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_186,"Minister of Skills Development, Employment and Labour Relations ",minister,Department of Labour,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_187,"Minister of Skills Development, Employment and Labour Relations ",minister,National Institute of Labour Studies,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_188,"Minister of Skills Development, Employment and Labour Relations ",minister,Employees� Provident Fund,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_188,"Minister of Skills Development, Employment and Labour Relations ",minister,Employees' Provident Fund,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_189,"Minister of Skills Development, Employment and Labour Relations ",minister,National Institute for Occupational Safety and Health,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_190,"Minister of Skills Development, Employment and Labour Relations ",minister,Office of the Commissioner of Workmen�s Compensation,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_190,"Minister of Skills Development, Employment and Labour Relations ",minister,Office of the Commissioner of Workmen's Compensation,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_191,"Minister of Skills Development, Employment and Labour Relations ",minister,Shrama Vasana Fund,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_192,"Minister of Skills Development, Employment and Labour Relations ",minister,Department of Manpower and Employment,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_193,"Minister of Skills Development, Employment and Labour Relations ",minister,Sri Lanka Job Net Ltd.,department,AS_DEPARTMENT,2019-12-10
@@ -202,11 +202,11 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_201,Minister of Fisheries & Aquatic Resources,minister,Sri Lanka Fisheries Corporation,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_202,Minister of Fisheries & Aquatic Resources,minister,National Aquatic Resources Research and Development Agency,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_203,Minister of Fisheries & Aquatic Resources,minister,North Sea Ltd.,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_204,Minister of Women & Child Affairs and Social Security,minister,Sri Lanka Women�s Bureau,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_204,Minister of Women & Child Affairs and Social Security,minister,Sri Lanka Women's Bureau,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_205,Minister of Women & Child Affairs and Social Security,minister,National Committee on Women,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_206,Minister of Women & Child Affairs and Social Security,minister,Department of Probation and Childcare Services,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_207,Minister of Women & Child Affairs and Social Security,minister,National Child Protection Authority,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_208,Minister of Women & Child Affairs and Social Security,minister,Children�s Secretariat,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_208,Minister of Women & Child Affairs and Social Security,minister,Children's Secretariat,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_209,Minister of Women & Child Affairs and Social Security,minister,National Social Development Institute,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_210,Minister of Women & Child Affairs and Social Security,minister,Department of Samurdhi Development,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_211,Minister of Women & Child Affairs and Social Security,minister,Rural Development Training and Research Institute,department,AS_DEPARTMENT,2019-12-10
@@ -245,7 +245,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_244,Minister of Healthcare and Indigenous Medical Services,minister,1990 Suwaseriya Foundation,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_245,Minister of Healthcare and Indigenous Medical Services,minister,Kidney Fund,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_246,Minister of Information and Communication Technology,minister,Sri Lanka Telecom and its subsidiaries and affiliated companies,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_247,Minister of Information and Communication Technology,minister,Department of Telecommunication,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_247,Minister of Information and Communication Technology,minister,Department of Telecommunications,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_248,Minister of Information and Communication Technology,minister,All Information Technology Parks,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_249,Minister of Information and Communication Technology,minister,Department of Information,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_250,Minister of Information and Communication Technology,minister,Sri Lanka Press Council,department,AS_DEPARTMENT,2019-12-10
@@ -336,7 +336,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_335,"Minister of Internal Trade, Food Security and Consumer Welfare",minister,Department of Co-operative Development (Registrar of Co-operative Societies),department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_336,"Minister of Internal Trade, Food Security and Consumer Welfare",minister,Co-operative Employees Commission,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_337,"Minister of Internal Trade, Food Security and Consumer Welfare",minister,National Institute of Co-operative Development,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_338,"Minister of Internal Trade, Food Security and Consumer Welfare",minister,Food Commissioner�s Department,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_338,"Minister of Internal Trade, Food Security and Consumer Welfare",minister,Food Commissioner's Department,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_339,"Minister of Internal Trade, Food Security and Consumer Welfare",minister,Divisional Economic Centres,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_340,Minister of Education,minister,Department of Educational Publications,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_341,Minister of Education,minister,National Institute of Education,department,AS_DEPARTMENT,2019-12-10
@@ -472,4 +472,4 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_471,Minister of Tourism and Civil Aviation,minister,Sri Lanka Exhibition and Convention Bureau,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_472,Minister of Tourism and Civil Aviation,minister,Civil Aviation Authority,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_473,Minister of Tourism and Civil Aviation,minister,Airport and Aviation Services (Sri Lanka) Ltd.,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_474,Minister of Tourism and Civil Aviation,minister,Sri Lankan Air Line Limited and its subsidiaries.,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_474,Minister of Tourism and Civil Aviation,minister,Sri Lankan Air Lines Limited and its subsidiaries,department,AS_DEPARTMENT,2019-12-10

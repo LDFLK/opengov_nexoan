@@ -1,0 +1,18 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2187-27_tr_19,Gotabaya Rajapaksa,citizen,State Minister of Defence,minister,AS_MINISTER,2020-08-09
+2187-27_tr_20,Minister of Defence,minister,National Media Centre,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_21,Minister of Defence,minister,Information and Communication Technology Agency of Sri Lanka,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_58,Minister of Information and Mass Media,minister,Department of Telecommunications,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_59,State Minister of Wildlife Resources,minister,Wildlife Trust,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_60,Minister of Information and Mass Media,minister,Sri Lanka Media Training Institute,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_61,"Minister of Internal Trade, Food Security and Consumer Welfare",minister,Internal Trade Department,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_63,"Minister of Buddha Sasana, Religious and Cultural Affairs",minister,International Buddhist Centre,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_98,Minister of Urban Development and Housing,minister,Housing Planning and Building Centre and its subsidiaries and affiliated companies,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_99,Minister of Community Empowerment and Estate Infrastructure Development,minister,Resettlement Authority,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_100,Gotabaya Rajapaksa,citizen,Minister of Community Empowerment and Estate Infrastructure Development,minister,AS_MINISTER,2020-08-09
+2187-27_tr_174,Minister of Health,minister,Private Medical Institute Council,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_275,Gotabaya Rajapaksa,citizen,State Minister of Renewable Energy & Power,minister,AS_MINISTER,2020-08-09
+2187-27_tr_284,Minister of Highways,minister,Road Maintenance Trust Fund,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_290,Minister of Transport,minister,Werahara Engineering Services Ltd. (WESCO),department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_299,Minister of Youth and Sports,minister,Provincial Sports Complexes,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_300,Minister of Youth and Sports,minister,National Youth Awards Authority,department,AS_DEPARTMENT,2020-08-09

@@ -275,6 +275,21 @@ func (c *Client) AddOrgEntity(transaction map[string]interface{}, entityCounters
 			return 0, fmt.Errorf("president name is required and must be a non-empty string when adding a department")
 		}
 
+		// Check if a department with the same name already exists
+		existingDepartmentResults, err := c.SearchEntities(&models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: "Organisation",
+				Minor: "department",
+			},
+			Name: child,
+		})
+		if err != nil {
+			return 0, fmt.Errorf("failed to search for existing department: %w", err)
+		}
+		if len(existingDepartmentResults) > 0 {
+			return 0, fmt.Errorf("department with name '%s' already exists", child)
+		}
+
 		// Use GetMinisterByPresident to ensure we get the correct minister under the correct president
 		ministerEntity, err := c.GetActiveMinisterByPresident(presidentName, parent, dateISO)
 		if err != nil {

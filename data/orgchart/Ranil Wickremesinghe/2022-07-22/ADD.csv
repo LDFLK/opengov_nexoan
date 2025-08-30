@@ -167,7 +167,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2289-43_tr_166,Minister of Fisheries,minister,National Aquaculture Development Authority,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_167,Minister of Fisheries,minister,Ceylon Fisheries Corporation,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_168,Minister of Fisheries,minister,Ceylon Fishery Harbours Corporation,department,AS_DEPARTMENT,2022-07-22
-2289-43_tr_169,Minister of Fisheries,minister,Cey-Nor Foundation Ltd,department,AS_DEPARTMENT,2022-07-22
+2289-43_tr_169,Minister of Fisheries,minister,Cey-Nor Foundation Ltd.,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_170,Minister of Education,minister,Department of Examinations,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_171,Minister of Education,minister,Department of Educational Publications,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_172,Minister of Education,minister,National Library and Documentation Services Board,department,AS_DEPARTMENT,2022-07-22
@@ -197,7 +197,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2289-43_tr_196,Minister of Education,minister,Arthur C. Clarke Institute for Modern Technologies,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_197,Minister of Education,minister,National Innovation Agency,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_198,Minister of Education,minister,Skills Development Fund Ltd.,department,AS_DEPARTMENT,2022-07-22
-2289-43_tr_199,Minister of Education,minister,Sri Lanka Inventors Fund,department,AS_DEPARTMENT,2022-07-22
+2289-43_tr_199,Minister of Education,minister,Sri Lanka Inventors' Fund,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_200,Minister of Education,minister,National Science and Technology Commission,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_201,Minister of Education,minister,Sri Lanka Institute of Nanotechnology (Pvt.) Ltd.,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_202,Minister of Education,minister,Sri Lanka Institute of Biotechnology (Pvt.) Ltd.,department,AS_DEPARTMENT,2022-07-22
@@ -278,7 +278,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2289-43_tr_277,Minister of Agriculture,minister,Institute of Post-Harvest Technology,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_278,Minister of Agriculture,minister,Department of Animal Production and Health,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_279,Minister of Agriculture,minister,National Livestock Development Board and affiliated companies,department,AS_DEPARTMENT,2022-07-22
-2289-43_tr_280,Minister of Agriculture,minister,Milco (Pvt.) Ltd,department,AS_DEPARTMENT,2022-07-22
+2289-43_tr_280,Minister of Agriculture,minister,Milco (Pvt.) Ltd.,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_281,Minister of Agriculture,minister,Mahaweli Livestock Enterprise Limited,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_282,Minister of Wildlife and Forest Resources Conservation,minister,Department of Forest Conservation,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_283,Minister of Wildlife and Forest Resources Conservation,minister,Department of Wildlife Conservation,department,AS_DEPARTMENT,2022-07-22
@@ -408,7 +408,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2289-43_tr_407,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,J.R. Jayewardene Centre,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_408,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,Department of Public Trustee,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_409,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,Central Cultural Fund,department,AS_DEPARTMENT,2022-07-22
-2289-43_tr_410,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,Buddha Sasana Fund,department,AS_DEPARTMENT,2022-07-22
+2289-43_tr_410,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,Buddhasasana Fund,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_411,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,Buddhist Renaissance Fund,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_412,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,Department of Cultural Affairs,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_413,"Minister of Buddhasasana, Religious and Cultural Affairs",minister,Department of Archaeology,department,AS_DEPARTMENT,2022-07-22
@@ -426,7 +426,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2289-43_tr_425,Minister of Power and Energy,minister,Ceylon Petroleum Corporation,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_426,Minister of Power and Energy,minister,Ceylon Petroleum Storage Terminal Ltd.,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_427,Minister of Power and Energy,minister,Petroleum Development Authority of Sri Lanka,department,AS_DEPARTMENT,2022-07-22
-2289-43_tr_428,Minister of Power and Energy,minister,Polipto Lanka (Pvt) Ltd,department,AS_DEPARTMENT,2022-07-22
+2289-43_tr_428,Minister of Power and Energy,minister,Polipto Lanka (Pvt) Ltd.,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_429,Minister of Power and Energy,minister,Sri Lanka Sustainable Energy Authority,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_430,Minister of Power and Energy,minister,Sri Lanka Atomic Energy Board,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_431,Minister of Power and Energy,minister,Sri Lanka Atomic Energy Regulatory Council,department,AS_DEPARTMENT,2022-07-22
