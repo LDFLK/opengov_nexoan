@@ -1,33 +1,33 @@
 transaction_id,parent,parent_type,child,child_type,rel_type,date
-2153-12_tr_01,Government of Sri Lanka,government,Minister of Defence,minister,AS_MINISTER,2019-12-10
-2153-12_tr_02,Government of Sri Lanka,government,"Minister of Finance, Economic and Policy Development",minister,AS_MINISTER,2019-12-10
-2153-12_tr_03,Government of Sri Lanka,government,"Minister of Buddhasasana, Cultural and Religious Affairs",minister,AS_MINISTER,2019-12-10
-2153-12_tr_04,Government of Sri Lanka,government,"Minister of Urban Development, Water Supply and Housing Facilities",minister,AS_MINISTER,2019-12-10
-2153-12_tr_05,Government of Sri Lanka,government,"Minister of Justice, Human Rights & Law Reforms",minister,AS_MINISTER,2019-12-10
-2153-12_tr_06,Government of Sri Lanka,government,Minister of Community Empowerment and Estate Infrastructure Development,minister,AS_MINISTER,2019-12-10
-2153-12_tr_07,Government of Sri Lanka,government,Minister of Foreign Relations,minister,AS_MINISTER,2019-12-10
-2153-12_tr_08,Government of Sri Lanka,government,"Minister of Skills Development, Employment and Labour Relations ",minister,AS_MINISTER,2019-12-10
-2153-12_tr_09,Government of Sri Lanka,government,Minister of Fisheries & Aquatic Resources,minister,AS_MINISTER,2019-12-10
-2153-12_tr_10,Government of Sri Lanka,government,Minister of Women & Child Affairs and Social Security,minister,AS_MINISTER,2019-12-10
-2153-12_tr_11,Government of Sri Lanka,government,Minister of Healthcare and Indigenous Medical Services,minister,AS_MINISTER,2019-12-10
-2153-12_tr_12,Government of Sri Lanka,government,Minister of Information and Communication Technology,minister,AS_MINISTER,2019-12-10
-2153-12_tr_13,Government of Sri Lanka,government,"Minister of Higher Education, Technology and Innovation",minister,AS_MINISTER,2019-12-10
-2153-12_tr_14,Government of Sri Lanka,government,"Minister of Public Administration, Home Affairs, Provincial Councils & Local Government",minister,AS_MINISTER,2019-12-10
-2153-12_tr_15,Government of Sri Lanka,government,"Minister of Mahaweli, Agriculture, Irrigation and Rural Development",minister,AS_MINISTER,2019-12-10
-2153-12_tr_16,Government of Sri Lanka,government,"Minister of Internal Trade, Food Security and Consumer Welfare",minister,AS_MINISTER,2019-12-10
-2153-12_tr_17,Government of Sri Lanka,government,Minister of Education,minister,AS_MINISTER,2019-12-10
-2153-12_tr_18,Government of Sri Lanka,government,Minister of Sports & Youth Affairs,minister,AS_MINISTER,2019-12-10
-2153-12_tr_19,Government of Sri Lanka,government,Minister of Roads and Highways,minister,AS_MINISTER,2019-12-10
-2153-12_tr_20,Government of Sri Lanka,government,Minister of Ports & Shipping,minister,AS_MINISTER,2019-12-10
-2153-12_tr_21,Government of Sri Lanka,government,Minister of Small & Medium Business and Enterprise Development,minister,AS_MINISTER,2019-12-10
-2153-12_tr_22,Government of Sri Lanka,government,Minister of Industries and Supply Chain Management,minister,AS_MINISTER,2019-12-10
-2153-12_tr_23,Government of Sri Lanka,government,Minister of Transport Services Management,minister,AS_MINISTER,2019-12-10
-2153-12_tr_24,Government of Sri Lanka,government,Minister of Power & Energy,minister,AS_MINISTER,2019-12-10
-2153-12_tr_25,Government of Sri Lanka,government,Minister of Environment and Wildlife Resources,minister,AS_MINISTER,2019-12-10
-2153-12_tr_26,Government of Sri Lanka,government,Minister of Lands & Land Development,minister,AS_MINISTER,2019-12-10
-2153-12_tr_27,Government of Sri Lanka,government,Minister of Plantation Industries and Export Agriculture,minister,AS_MINISTER,2019-12-10
-2153-12_tr_28,Government of Sri Lanka,government,Minister of Industrial Export and Investment Promotion,minister,AS_MINISTER,2019-12-10
-2153-12_tr_29,Government of Sri Lanka,government,Minister of Tourism and Civil Aviation,minister,AS_MINISTER,2019-12-10
+2153-12_tr_01,Gotabaya Rajapaksa,citizen,Minister of Defence,minister,AS_MINISTER,2019-12-10
+2153-12_tr_02,Gotabaya Rajapaksa,citizen,"Minister of Finance, Economic and Policy Development",minister,AS_MINISTER,2019-12-10
+2153-12_tr_03,Gotabaya Rajapaksa,citizen,"Minister of Buddhasasana, Cultural and Religious Affairs",minister,AS_MINISTER,2019-12-10
+2153-12_tr_04,Gotabaya Rajapaksa,citizen,"Minister of Urban Development, Water Supply and Housing Facilities",minister,AS_MINISTER,2019-12-10
+2153-12_tr_05,Gotabaya Rajapaksa,citizen,"Minister of Justice, Human Rights & Law Reforms",minister,AS_MINISTER,2019-12-10
+2153-12_tr_06,Gotabaya Rajapaksa,citizen,Minister of Community Empowerment and Estate Infrastructure Development,minister,AS_MINISTER,2019-12-10
+2153-12_tr_07,Gotabaya Rajapaksa,citizen,Minister of Foreign Relations,minister,AS_MINISTER,2019-12-10
+2153-12_tr_08,Gotabaya Rajapaksa,citizen,"Minister of Skills Development, Employment and Labour Relations ",minister,AS_MINISTER,2019-12-10
+2153-12_tr_09,Gotabaya Rajapaksa,citizen,Minister of Fisheries & Aquatic Resources,minister,AS_MINISTER,2019-12-10
+2153-12_tr_10,Gotabaya Rajapaksa,citizen,Minister of Women & Child Affairs and Social Security,minister,AS_MINISTER,2019-12-10
+2153-12_tr_11,Gotabaya Rajapaksa,citizen,Minister of Healthcare and Indigenous Medical Services,minister,AS_MINISTER,2019-12-10
+2153-12_tr_12,Gotabaya Rajapaksa,citizen,Minister of Information and Communication Technology,minister,AS_MINISTER,2019-12-10
+2153-12_tr_13,Gotabaya Rajapaksa,citizen,"Minister of Higher Education, Technology and Innovation",minister,AS_MINISTER,2019-12-10
+2153-12_tr_14,Gotabaya Rajapaksa,citizen,"Minister of Public Administration, Home Affairs, Provincial Councils & Local Government",minister,AS_MINISTER,2019-12-10
+2153-12_tr_15,Gotabaya Rajapaksa,citizen,"Minister of Mahaweli, Agriculture, Irrigation and Rural Development",minister,AS_MINISTER,2019-12-10
+2153-12_tr_16,Gotabaya Rajapaksa,citizen,"Minister of Internal Trade, Food Security and Consumer Welfare",minister,AS_MINISTER,2019-12-10
+2153-12_tr_17,Gotabaya Rajapaksa,citizen,Minister of Education,minister,AS_MINISTER,2019-12-10
+2153-12_tr_18,Gotabaya Rajapaksa,citizen,Minister of Sports & Youth Affairs,minister,AS_MINISTER,2019-12-10
+2153-12_tr_19,Gotabaya Rajapaksa,citizen,Minister of Roads and Highways,minister,AS_MINISTER,2019-12-10
+2153-12_tr_20,Gotabaya Rajapaksa,citizen,Minister of Ports & Shipping,minister,AS_MINISTER,2019-12-10
+2153-12_tr_21,Gotabaya Rajapaksa,citizen,Minister of Small & Medium Business and Enterprise Development,minister,AS_MINISTER,2019-12-10
+2153-12_tr_22,Gotabaya Rajapaksa,citizen,Minister of Industries and Supply Chain Management,minister,AS_MINISTER,2019-12-10
+2153-12_tr_23,Gotabaya Rajapaksa,citizen,Minister of Transport Services Management,minister,AS_MINISTER,2019-12-10
+2153-12_tr_24,Gotabaya Rajapaksa,citizen,Minister of Power & Energy,minister,AS_MINISTER,2019-12-10
+2153-12_tr_25,Gotabaya Rajapaksa,citizen,Minister of Environment and Wildlife Resources,minister,AS_MINISTER,2019-12-10
+2153-12_tr_26,Gotabaya Rajapaksa,citizen,Minister of Lands & Land Development,minister,AS_MINISTER,2019-12-10
+2153-12_tr_27,Gotabaya Rajapaksa,citizen,Minister of Plantation Industries and Export Agriculture,minister,AS_MINISTER,2019-12-10
+2153-12_tr_28,Gotabaya Rajapaksa,citizen,Minister of Industrial Export and Investment Promotion,minister,AS_MINISTER,2019-12-10
+2153-12_tr_29,Gotabaya Rajapaksa,citizen,Minister of Tourism and Civil Aviation,minister,AS_MINISTER,2019-12-10
 2153-12_tr_30,Minister of Defence,minister,Office of the Chief of Defence Staff,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_31,Minister of Defence,minister,Sri Lanka Army,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_32,Minister of Defence,minister,Sri Lanka Navy,department,AS_DEPARTMENT,2019-12-10

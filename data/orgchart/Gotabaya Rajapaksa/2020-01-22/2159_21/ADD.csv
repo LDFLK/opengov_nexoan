@@ -1,0 +1,3 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2159-21_tr_01,Gotabaya Rajapaksa,citizen,State Minister of Environment,minister,AS_MINISTER,2020-01-22
+2159-21_tr_02,Gotabaya Rajapaksa,citizen,State Minister of Wildlife Resources,minister,AS_MINISTER,2020-01-22
