@@ -276,7 +276,7 @@ func (c *Client) AddOrgEntity(transaction map[string]interface{}, entityCounters
 		}
 
 		// Use GetMinisterByPresident to ensure we get the correct minister under the correct president
-		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		ministerEntity, err := c.GetActiveMinisterByPresident(presidentName, parent, dateISO)
 		if err != nil {
 			return 0, fmt.Errorf("failed to get parent minister entity: %w", err)
 		}
@@ -632,6 +632,7 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 						Key: rel.ID,
 						Value: models.Relationship{
 							EndTime: dateISO,
+							ID:      rel.ID,
 						},
 					},
 				},
@@ -930,7 +931,7 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 			minister := ministerResults[0]
 
 			// Check if this minister is under the specified president
-			_, err = c.GetMinisterByPresident(presidentName, minister.Name, dateISO)
+			_, err = c.GetActiveMinisterByPresident(presidentName, minister.Name, dateISO)
 			if err == nil {
 				// Found the minister under the correct president
 				ministerID = minister.ID
@@ -988,13 +989,37 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 	newDepartmentID := newDepartmentResults[0].ID
 
 	// Terminate the old department's relationship with minister directly
+	// Get the specific existing relationship to this department
+	existingRelations, err := c.GetRelatedEntities(ministerID, &models.Relationship{
+		Name:            "AS_DEPARTMENT",
+		RelatedEntityID: oldDepartmentID,
+	})
+	if err != nil {
+		return 0, fmt.Errorf("failed to get existing relationship: %w", err)
+	}
+
+	// Find the active relationship (no end time)
+	var existingRel *models.Relationship
+	for _, rel := range existingRelations {
+		if rel.EndTime == "" {
+			existingRel = &rel
+			break
+		}
+	}
+
+	if existingRel == nil {
+		return 0, fmt.Errorf("no active relationship found between minister '%s' and department '%s'", ministerID, oldDepartmentID)
+	}
+
+	// Terminate the relationship by updating it with the end time
 	terminateRelationship := &models.Entity{
 		ID: ministerID,
 		Relationships: []models.RelationshipEntry{
 			{
-				Key: fmt.Sprintf("%s_%s", ministerID, oldDepartmentID),
+				Key: existingRel.ID,
 				Value: models.Relationship{
 					EndTime: dateISO,
+					ID:      existingRel.ID,
 				},
 			},
 		},
