@@ -1,0 +1,3 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2202-25_tr_11,Gotabaya Rajapaksa,citizen,Minister of Technology,minister,AS_MINISTER,2020-11-20
+2202-25_tr_24,Gotabaya Rajapaksa,citizen,Minister of Public Security,minister,AS_MINISTER,2020-11-20

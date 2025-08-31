@@ -18,5 +18,14 @@
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2020-08-09/"
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2020-09-25/"
 
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2020-10-06/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2020-11-20/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2020-12-11/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2021-02-16/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2021-05-03/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2021-05-17/"
+
+
+
 
 

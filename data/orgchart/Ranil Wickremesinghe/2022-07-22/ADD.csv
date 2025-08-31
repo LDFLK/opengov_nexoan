@@ -34,7 +34,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2289-43_tr_33,Minister of Defence,minister,Sri Lanka Air Force,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_34,Minister of Defence,minister,State Intelligence Service,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_35,Minister of Defence,minister,Civil Security Department,department,AS_DEPARTMENT,2022-07-22
-2289-43_tr_36,Minister of Defence,minister,Department of Multipurpose Development Task Force,department,AS_DEPARTMENT,2022-07-22
+2289-43_tr_36,Minister of Defence,minister,Department of Multi-purpose Development Task Force,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_37,Minister of Defence,minister,National Cadet Corps,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_38,Minister of Defence,minister,National Authority for the Implementation of Chemical Weapons Convention,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_39,Minister of Defence,minister,Sir John Kotelawala Defence University,department,AS_DEPARTMENT,2022-07-22
@@ -113,7 +113,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2289-43_tr_112,"Minister of Finance, Economic Stabilization and National Policies",minister,Department of Internal Trade,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_113,"Minister of Finance, Economic Stabilization and National Policies",minister,"Pulse Crops, Grain Research and Production Authority",department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_114,"Minister of Finance, Economic Stabilization and National Policies",minister,Janatha Fertilizer Enterprises Ltd,department,AS_DEPARTMENT,2022-07-22
-2289-43_tr_115,"Minister of Finance, Economic Stabilization and National Policies",minister,Protection of Children National Trust Fund,department,AS_DEPARTMENT,2022-07-22
+2289-43_tr_115,"Minister of Finance, Economic Stabilization and National Policies",minister,Protection of Children-National Trust Fund,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_116,"Minister of Finance, Economic Stabilization and National Policies",minister,Institutions coming under the Revival (Removal) of Underperforming Enterprises or Underutilized Assets Act vested to the Secretary to the Treasury,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_117,Minister of Technology,minister,Department of Registration of Persons,department,AS_DEPARTMENT,2022-07-22
 2289-43_tr_118,Minister of Technology,minister,Information and Communication Technology Agency and Allied Institutions,department,AS_DEPARTMENT,2022-07-22

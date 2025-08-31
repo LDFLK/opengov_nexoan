@@ -8,3 +8,4 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2194-74_tr_08,Minister of Finance,minister,Public Service Mutual Provident Association,department,AS_DEPARTMENT,2020-09-25
 2194-74_tr_15,"State Minister of Urban Development, Coast Conservation, Waste Disposal and Community Cleanliness",minister,Selendiva Investments Limited,department,AS_DEPARTMENT,2020-09-25
 2194-74_tr_19,Minister of Environment,minister,Sri Lanka Climate Fund (Pvt.) Ltd,department,AS_DEPARTMENT,2020-09-25
+2194-74_tr_30,"State Minister of Development of Minor Crops Plantation including Sugarcane, Maize, Cashew, Pepper, Cinnamon, Cloves, Betel Related Industries and Export Promotion",minister,Lanka Sugar Company (Pvt.) Ltd.,department,AS_DEPARTMENT,2020-09-25

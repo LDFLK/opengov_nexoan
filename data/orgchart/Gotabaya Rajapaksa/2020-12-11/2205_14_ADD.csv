@@ -1,0 +1,3 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2205-14_tr_01,Minister of Technology,minister,Sri Lanka Institute of Biotechnology (Pvt.) Ltd.,department,AS_DEPARTMENT,2020-12-11
+2205-14_tr_03,Gotabaya Rajapaksa,citizen,"State Minister of Primary Health Care, Epidemics and COVID Disease Control",minister,AS_MINISTER,2020-12-11

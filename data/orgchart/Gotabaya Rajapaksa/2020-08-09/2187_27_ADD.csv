@@ -2,7 +2,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2187-27_tr_01,Gotabaya Rajapaksa,citizen,"State Minister of Internal Security, Home Affairs and Disaster Management",minister,AS_MINISTER,2020-08-09
 2187-27_tr_03,Minister of Defence,minister,Api Wenuwen Api Fund,department,AS_DEPARTMENT,2020-08-09
 2187-27_tr_04,Minister of Defence,minister,National Authority for the implementation of Chemical Weapons Convention,department,AS_DEPARTMENT,2020-08-09
-2187-27_tr_05,Minister of Defence,minister,departmentof Multi-purpose Development Task Force,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_05,Minister of Defence,minister,Department of Multi-purpose Development Task Force,department,AS_DEPARTMENT,2020-08-09
 2187-27_tr_09,"State Minister of Internal Security, Home Affairs and Disaster Management",minister,National Police Academy,department,AS_DEPARTMENT,2020-08-09
 2187-27_tr_23,Gotabaya Rajapaksa,citizen,State Minister of Money and Capital Market and State Enterprise Reforms,minister,AS_MINISTER,2020-08-09
 2187-27_tr_27,State Minister of Money and Capital Market and State Enterprise Reforms,minister,Housing Development Finance Corporation,department,AS_DEPARTMENT,2020-08-09
