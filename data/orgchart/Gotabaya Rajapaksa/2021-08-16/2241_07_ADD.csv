@@ -1,0 +1,4 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2241-07_tr_02,Minister of Finance,minister,Department of State Accounts,department,AS_DEPARTMENT,2021-08-16
+2241-07_tr_05,Minister of Finance,minister,Insurance Regulatory Commission of Sri Lanka,department,AS_DEPARTMENT,2021-08-16
+2241-07_tr_06,Gotabaya Rajapaksa,citizen,Minister of Development Co-ordination and Monitoring,minister,AS_MINISTER,2021-08-16

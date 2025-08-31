@@ -1,0 +1,4 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2235-45_tr_01,Gotabaya Rajapaksa,citizen,Minister of Economic Policies & Plan Implementation,minister,AS_MINISTER,2021-07-07
+2235-45_tr_14,Gotabaya Rajapaksa,citizen,State Minister of Coast Conservation & Low-Lying Lands Development,minister,AS_MINISTER,2021-07-07
+2235-45_tr_21,Gotabaya Rajapaksa,citizen,"State Minister of Promoting the Production & Regulating the Supply of Organic Fertilizer, and Paddy & Grains, Organic Foods, Vegetables, Fruits, Chillies, Onion and Potato Cultivation Promoting, Seed Production and Advanced Technology Agriculture",minister,AS_MINISTER,2021-07-07
