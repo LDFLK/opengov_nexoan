@@ -1,0 +1,4 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2254-30_tr_01,Presidential Secretariat - National Priority Programme,minister,Presidential Task Force for Green Agriculture,department,AS_DEPARTMENT,2021-11-17
+2254-30_tr_02,Presidential Secretariat - National Priority Programme,minister,"Presidential Task Force for One Country, One Law",department,AS_DEPARTMENT,2021-11-17
+2254-30_tr_03,State Minister of National Security and Disaster Management,minister,Institute of National Security Studies,department,AS_DEPARTMENT,2021-11-17

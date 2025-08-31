@@ -32,6 +32,11 @@
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2021-07-29/"
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2021-08-16/"
 
-
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2021-10-06/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2021-11-17/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2021-12-02/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-01-09/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-02-23/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-03-08/"
 
 
