@@ -653,7 +653,7 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 		return fmt.Errorf("new_president_name is required and must be a non-empty string")
 	}
 
-	newMinisterEntity, err := c.GetMinisterByPresident(newPresidentName, newParent, dateISO)
+	newMinisterEntity, err := c.GetActiveMinisterByPresident(newPresidentName, newParent, dateISO)
 	if err != nil {
 		return fmt.Errorf("failed to get new minister '%s' under president '%s': %w", newParent, newPresidentName, err)
 	}
