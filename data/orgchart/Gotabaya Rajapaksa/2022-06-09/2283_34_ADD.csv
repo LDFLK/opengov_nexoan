@@ -1,0 +1,18 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2283-34_tr_01,Gotabaya Rajapaksa,citizen,Minister of Technology and Investment Promotion,minister,AS_MINISTER,2022-06-09
+2283-34_tr_02,Gotabaya Rajapaksa,citizen,"Minister of Women, Child Affairs and Social Empowerment",minister,AS_MINISTER,2022-06-09
+2283-34_tr_18,"Minister of Women, Child Affairs and Social Empowerment",minister,National Committee on Women,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_19,"Minister of Women, Child Affairs and Social Empowerment",minister,Sri Lanka Women’s Bureau,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_20,"Minister of Women, Child Affairs and Social Empowerment",minister,Department of Probation and Childcare Services,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_21,"Minister of Women, Child Affairs and Social Empowerment",minister,National Child Protection Authority,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_22,"Minister of Women, Child Affairs and Social Empowerment",minister,National Secretariat for Early Childhood Development,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_23,"Minister of Women, Child Affairs and Social Empowerment",minister,Department of Samurdhi Development,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_24,"Minister of Women, Child Affairs and Social Empowerment",minister,Saubhagya Development Bureau,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_25,"Minister of Women, Child Affairs and Social Empowerment",minister,National Institute of Social Development,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_26,"Minister of Women, Child Affairs and Social Empowerment",minister,Rural Development Training and Research Institute,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_27,"Minister of Women, Child Affairs and Social Empowerment",minister,Social Security Board,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_28,"Minister of Women, Child Affairs and Social Empowerment",minister,National Council for Persons with Disabilities,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_29,"Minister of Women, Child Affairs and Social Empowerment",minister,National Secretariat for Persons with Disabilities,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_30,"Minister of Women, Child Affairs and Social Empowerment",minister,Department of Social Services,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_31,"Minister of Women, Child Affairs and Social Empowerment",minister,National Council for Elders and National Secretariat for Elders,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_32,"Minister of Women, Child Affairs and Social Empowerment",minister,Kidney Fund,department,AS_DEPARTMENT,2022-06-09

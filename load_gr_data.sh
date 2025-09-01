@@ -39,4 +39,10 @@
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-02-23/"
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-03-08/"
 
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-03-14/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-04-28"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-05-27"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-06-09"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-06-27"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-07-07"
 
