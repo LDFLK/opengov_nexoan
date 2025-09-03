@@ -1,12 +1,5 @@
 transaction_id,parent,parent_type,child,child_type,rel_type,date
-2281-41_tr_35,"Minister of Finance, Economic Stabilization and National Policies",minister,Tax Appeals Commission,department,AS_DEPARTMENT,2022-05-27
-2281-41_tr_37,"Minister of Finance, Economic Stabilization and National Policies",minister,departmentof Telecommunications,department,AS_DEPARTMENT,2022-05-27
-2281-41_tr_38,"Minister of Finance, Economic Stabilization and National Policies",minister,Wildlife Trust,department,AS_DEPARTMENT,2022-05-27
-2281-41_tr_39,"Minister of Finance, Economic Stabilization and National Policies",minister,Sri Lanka Media Training Institute,department,AS_DEPARTMENT,2022-05-27
-2281-41_tr_40,"Minister of Finance, Economic Stabilization and National Policies",minister,departmentof Internal Trade,department,AS_DEPARTMENT,2022-05-27
-2281-41_tr_41,"Minister of Finance, Economic Stabilization and National Policies",minister,"Pulse Crops, Grain Research and Production Authority",department,AS_DEPARTMENT,2022-05-27
-2281-41_tr_42,"Minister of Finance, Economic Stabilization and National Policies",minister,Janatha Fertilizer Enterprises Ltd,department,AS_DEPARTMENT,2022-05-27
-2281-41_tr_43,"Minister of Finance, Economic Stabilization and National Policies",minister,Protection of Children National Trust Fund Institutions coming under the Revival (Removal) of Underperforming Enterprises or Underutilized Assets Act vested to the Secretary to the Treasury,department,AS_DEPARTMENT,2022-05-27
+2281-41_tr_40,"Minister of Finance, Economic Stabilization and National Policies",minister,Department of Internal Trade,department,AS_DEPARTMENT,2022-05-27
 2281-41_tr_50,"Minister of Public Administration, Home Affairs, Provincial Councils & Local Government",minister,Local Government Service Pension Fund,department,AS_DEPARTMENT,2022-05-27
 2281-41_tr_51,"Minister of Public Administration, Home Affairs, Provincial Councils & Local Government",minister,Local Government Widows' and Orphans' Pension Fund,department,AS_DEPARTMENT,2022-05-27
 2281-41_tr_52,"Minister of Public Administration, Home Affairs, Provincial Councils & Local Government",minister,Local Government Widowers' and Orphans' Pension Fund,department,AS_DEPARTMENT,2022-05-27

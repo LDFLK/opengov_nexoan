@@ -21,7 +21,6 @@ transaction_id,old,new,type,date
 2187-27_tr_232,Minister of Fisheries & Aquatic Resources,Minister of Fisheries,minister,2020-08-09
 2187-27_tr_239,Minister of Plantation Industries and Export Agriculture,Minister of Plantation,minister,2020-08-09
 2187-27_tr_268,Minister of Power & Energy,Minister of Power,minister,2020-08-09
-2187-27_tr_281,Minister of Ports & Shipping,Minister of Ports and Shipping ,minister,2020-08-09
 2187-27_tr_282,Ceylon Shipping Corporation Ltd. and its Subsidiaries and Associates,Ceylon Shipping Corporation Ltd,department,2020-08-09
 2187-27_tr_283,Minister of Roads and Highways,Minister of Highways,minister,2020-08-09
 2187-27_tr_286,Minister of Transport Services Management,Minister of Transport,minister,2020-08-09
@@ -33,3 +32,4 @@ transaction_id,old,new,type,date
 2187-27_tr_310,"Minister of Internal Trade, Food Security and Consumer Welfare",Minister of Trade,minister,2020-08-09
 2187-27_tr_321,Minister of Industries and Supply Chain Management,Minister of Industries,minister,2020-08-09
 2187-27_tr_333,Minister of Information and Mass Media,Minister of Mass Media,minister,2020-08-09
+2187-27_tr_347,Lanka Coal Company (Pvt.) Ltd.,Ceylon Coal Pvt. Ltd.,department,2020-08-09

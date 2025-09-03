@@ -24,7 +24,7 @@ transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_pres
 2281-41_tr_24,Minister of Technology,Minister of Defence,Techno Park Development Company (Pvt.) Limited,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_25,State Minister of Technology,Minister of Defence,Industrial Technology Institute,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_26,State Minister of Technology,Minister of Defence,Information Technology Parks (Jaffna & Mannar),department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_27,State Minister of Technology,Minister of Defence,Sri Lanka Standard Institute,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_27,State Minister of Technology,Minister of Defence,Sri Lanka Standards Institute,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_28,State Minister of Technology,Minister of Defence,Sri Lanka Institute of Biotechnology (Pvt.) Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_29,State Minister of Technology,Minister of Defence,Sri Lanka Institute of Nano Technology (Pvt.) Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_30,Presidential Secretariat - National Priority Programme,Minister of Defence,Board of Investment of Sri Lanka,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
@@ -42,14 +42,14 @@ transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_pres
 2281-41_tr_56,"Minister of Finance, Economic Stabilization and National Policies","Minister of Public Administration, Home Affairs, Provincial Councils & Local Government",Local Loans and Development Fund,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_58,State Minister of Fisheries,Minister of Fisheries,National Aquaculture Development Authority,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_59,State Minister of Fisheries,Minister of Fisheries,Ceylon Fisheries Harbour Corporation,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_60,State Minister of Fisheries,Minister of Fisheries,Cey-Nor Foundation Ltd,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_60,State Minister of Fisheries,Minister of Fisheries,Cey-Nor Foundation Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_61,State Minister of Fisheries,Minister of Fisheries,Ceylon Fisheries Corporation,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_62,State Minister of Higher Education,Minister of Education,University Grants Commission,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_63,State Minister of Higher Education,Minister of Education,"All State Universities, Postgraduate Institutions and other Institutions under the purview of University Grants Commission",department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_64,State Minister of Higher Education,Minister of Education,Buddhasravaka Bhikku University,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_65,State Minister of Higher Education,Minister of Education,Buddhist and Pali University of Sri Lanka,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_66,State Minister of Education Reforms,Minister of Education,National Institute of Education,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_67,"State Minister of Women and Child Development, Pre-schools and Primary Education, School Infrastructure and Education Services",Minister of Education,Pirivena Education Board,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_67,"State Minister of Women and Child Development, Pre-schools and Primary Education, School Infrastructure and Education Services",Minister of Education,Piriven Education Board,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_68,State Minister of Education,Minister of Education,National Institute of Business Management and affiliated institutions,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_69,State Minister of Education,Minister of Education,University of Vocational Technology,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_70,State Minister of Education,Minister of Education,National Institute of Fisheries and Nautical Engineering (Ocean University),department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
@@ -59,7 +59,7 @@ transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_pres
 2281-41_tr_74,State Minister of Education,Minister of Education,Department of Technical Education and Training,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_75,State Minister of Education,Minister of Education,National Institute of Fundamental Studies,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_76,State Minister of Education,Minister of Education,Sri Lanka Inventors' Commission,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_77,State Minister of Education,Minister of Education,National Engineering Research And Development Centre,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_77,State Minister of Education,Minister of Education,National Engineering Research and Development Centre,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_78,State Minister of Education,Minister of Education,National Research Council,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_79,State Minister of Education,Minister of Education,Tertiary and Vocational Education Commission,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_80,State Minister of Education,Minister of Education,National Science Foundation,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
@@ -92,9 +92,9 @@ transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_pres
 2281-41_tr_111,State Minister of Indigenous Medicine,Minister of Health,"Homeopathy Hospital, Welisara",department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_112,State Minister of Indigenous Medicine,Minister of Health,Homeopathy Medical Council,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_113,"Minister of Finance, Economic Stabilization and National Policies",Minister of Health,National Health Development Fund,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_114,State Minister of Rural and Divisional Drinking Water Supply Projects Development,Minister of Water Supply,Department of National Community Water Supply,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_114,State Minister of Water Supply,Minister of Water Supply,Department of National Community Water Supply,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_115,State Minister of Promoting the Production of Organic fertilizer and Advanced Technology Agriculture,Minister of Agriculture,Department of Agrarian Development,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_116,State Minister of Rural Economic Crop Cultivation & Promotion,Minister of Agriculture,National Agricultural Diversification and Settlement Authority,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_116,State Minister of Rural Economic Crop Cultivation and Promotion,Minister of Agriculture,National Agricultural Diversification and Settlement Authority,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_117,State Minister of Promoting the Production of Organic fertilizer and Advanced Technology Agriculture,Minister of Agriculture,National Fertilizer Secretariat,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_118,State Minister of Promoting the Production of Organic fertilizer and Advanced Technology Agriculture,Minister of Agriculture,Ceylon Fertilizer Company Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_119,State Minister of Promoting the Production of Organic fertilizer and Advanced Technology Agriculture,Minister of Agriculture,Colombo Commercial Fertilizer Company,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
@@ -102,12 +102,12 @@ transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_pres
 2281-41_tr_121,State Minister of Promoting the Production of Organic fertilizer and Advanced Technology Agriculture,Minister of Agriculture,Institute of Post-Harvest Technology,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_122,State Minister of Livestock,Minister of Agriculture,Department of Animal Production and Health,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_123,State Minister of Livestock,Minister of Agriculture,National Livestock Development Board and affiliated companies,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_124,State Minister of Livestock,Minister of Agriculture,Milco (Pvt.) Ltd,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_124,State Minister of Livestock,Minister of Agriculture,Milco (Pvt.) Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_125,State Minister of Livestock,Minister of Agriculture,Mahaweli Livestock Enterprise Limited,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_127,State Minister of Prison Management and Prisoners' Rehabilitation,"Minister of Justice, Prisions Affairs and Constitutional Reforms",Department of Prisons,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_128,State Minister of Prison Management and Prisoners' Rehabilitation,"Minister of Justice, Prisions Affairs and Constitutional Reforms",Community Based Correction Department,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_129,State Minister of Prison Management and Prisoners' Rehabilitation,"Minister of Justice, Prisions Affairs and Constitutional Reforms",Training Schools for Youthful Offenders,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_130,State Minister of Prison Management and Prisoners' Rehabilitation,"Minister of Justice, Prisions Affairs and Constitutional Reforms",Rehabilitation Commissioner General’s Office,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_130,State Minister of Prison Management and Prisoners' Rehabilitation,"Minister of Justice, Prisions Affairs and Constitutional Reforms",Rehabilitation Commissioner General's Office,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_132,Minister of Lands,Minister of Tourism and Lands,Department of Land Commissioner General,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_133,Minister of Lands,Minister of Tourism and Lands,Land Reform Commission,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_134,Minister of Lands,Minister of Tourism and Lands,Sri Lanka Survey Department,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
@@ -123,19 +123,19 @@ transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_pres
 2281-41_tr_145,State Minister of Development of Minor Export Crops Plantation,Minister of Plantation Industries,Hingurana Sugar Factory (Pvt) Limited,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_146,State Minister of Development of Minor Export Crops Plantation,Minister of Plantation Industries,Ceylon Sugar (Pvt.) Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_147,State Minister of Development of Minor Export Crops Plantation,Minister of Plantation Industries,Kantale Sugar Company Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_148,State Minister of Development of Minor Export Crops Plantation,Minister of Plantation Industries,Sugarcane Research Institute,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_149,State Minister of Development of Minor Export Crops Plantation,Minister of Plantation Industries,Gal Oya Plantation (Pvt.) Company,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_148,State Minister of Development of Minor Export Crops Plantation,Minister of Plantation Industries,Sugar Cane Research Institute,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_149,State Minister of Development of Minor Export Crops Plantation,Minister of Plantation Industries,Galoya Plantation (Pvt.) Company,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_150,State Minister of Development of Minor Export Crops Plantation,Minister of Plantation Industries,Spices and Allied Products Marketing Board,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_151,State Minister of Plantation,Minister of Plantation Industries,Kurunegala Plantation Company Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_152,State Minister of Plantation,Minister of Plantation Industries,Chilaw Plantation Company Ltd,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_153,State Minister of Plantation,Minister of Plantation Industries,Palmyra Development Board,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_152,State Minister of Plantation,Minister of Plantation Industries,Chilaw Plantation Company Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_153,State Minister of Plantation,Minister of Plantation Industries,Palmyrah Development Board,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_154,State Minister of Plantation,Minister of Plantation Industries,Coconut Cultivation Board,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_155,State Minister of Plantation,Minister of Plantation Industries,Coconut Development Authority,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_156,State Minister of Plantation,Minister of Plantation Industries,Coconut Research Institute,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_158,"Minister of Finance, Economic Stabilization and National Policies",Minister of Plantation Industries,Kapruka Fund,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_159,Minister of Samurdhi Development,Minister of Industries,Small and Medium Enterprise Venture Capital Company,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_160,Minister of Samurdhi Development,Minister of Industries,Small and Medium Enterprise Authority,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_161,State Minister of Industries,Minister of Industries,Timber-related design Centre,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_161,State Minister of Industries,Minister of Industries,Timber-related design centre,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_162,State Minister of Industries,Minister of Industries,Vidatha Centres,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_163,State Minister of Industries,Minister of Industries,National Crafts Council,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_164,State Minister of Textile Industry & Local Apparel Products Promotion,Minister of Industries,Department of Textile Industries,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
@@ -158,7 +158,7 @@ transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_pres
 2281-41_tr_182,State Minister of Housing,Minister of Urban Development and Housing,Construction Industry Development Authority,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_183,State Minister of Housing,Minister of Urban Development and Housing,State Engineering Corporation,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_184,State Minister of Housing,Minister of Urban Development and Housing,National Equipment and Machinery Organization,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_185,State Minister of Housing,Minister of Urban Development and Housing,Ocean View Development (Pvt) Ltd,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_185,State Minister of Housing,Minister of Urban Development and Housing,Ocean View Development (Pvt) Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_186,State Minister of Coast Conservation,Minister of Urban Development and Housing,Marine Environment Protection Authority,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_187,State Minister of Coast Conservation,Minister of Urban Development and Housing,Department of Coast Conservation and Coastal Resource Management,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_188,State Minister of Estate Housing and Community Infrastructure,Minister of Urban Development and Housing,New Villages Development Authority for Plantation Region,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
@@ -177,7 +177,7 @@ transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_pres
 2281-41_tr_204,Minister of Energy,Minister of Power & Energy,Ceylon Petroleum Corporation,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_205,Minister of Energy,Minister of Power & Energy,Ceylon Petroleum Storage Terminal Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_206,Minister of Energy,Minister of Power & Energy,Petroleum Resources Development Secretariat,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_207,Minister of Energy,Minister of Power & Energy,Polipto Lanka (Pvt.) Ltd,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_207,Minister of Energy,Minister of Power & Energy,Polipto Lanka (Pvt.) Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_208,State Minister of Renewable Energy Projects Development,Minister of Power & Energy,Sri Lanka Sustainable Energy Authority,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_209,State Minister of Renewable Energy Projects Development,Minister of Power & Energy,Sri Lanka Atomic Energy Board,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_210,State Minister of Renewable Energy Projects Development,Minister of Power & Energy,Sri Lanka Atomic Energy Regulatory Council,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
@@ -189,7 +189,7 @@ transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_pres
 2281-41_tr_218,State Minister of Mahaweli,Minister of Irrigation,Mahaweli Authority of Sri Lanka,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_220,"Minister of Finance, Economic Stabilization and National Policies",Minister of Labour and Foreign Employment,Shrama Vasana Fund,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_222,State Minister of Foreign Employment Promotion and Market Diversification,Minister of Labour and Foreign Employment,Sri Lanka Foreign Employment Bureau,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
-2281-41_tr_223,State Minister of Foreign Employment Promotion and Market Diversification,Minister of Labour and Foreign Employment,Foreign Employment Agency of Sri Lanka (Pvt.) Ltd,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_223,State Minister of Foreign Employment Promotion and Market Diversification,Minister of Labour and Foreign Employment,Foreign Employment Agency of Sri Lanka (Pvt.) Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_226,State Minister of Trade,"Minister of Trade, Commerce and Food Security",Sri Lanka Accreditation Board for Conformity Assessment,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_227,State Minister of Trade,"Minister of Trade, Commerce and Food Security","Department of Measurement Units, Standards and Services",department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_228,State Minister of Trade,"Minister of Trade, Commerce and Food Security",National Intellectual Property Office of Sri Lanka,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
@@ -198,3 +198,10 @@ transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_pres
 2281-41_tr_231,"State Minister of Cooperative Services, Marketing Development and Consumer Protection","Minister of Trade, Commerce and Food Security",Department of Co-operative Development (Registrar of Co-operative Societies),department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_232,"State Minister of Cooperative Services, Marketing Development and Consumer Protection","Minister of Trade, Commerce and Food Security",National Institute of Co-operative Development,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
 2281-41_tr_233,"State Minister of Cooperative Services, Marketing Development and Consumer Protection","Minister of Trade, Commerce and Food Security",Co-operative Employees Commission,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_35,Minister of Finance,"Minister of Finance, Economic Stabilization and National Policies",Tax Appeal Commission,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_37,Minister of Information and Mass Media,"Minister of Finance, Economic Stabilization and National Policies",Department of Telecommunications,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_38,State Minister of Wildlife Resources,"Minister of Finance, Economic Stabilization and National Policies",Wildlife Trust,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_39,Minister of Information and Mass Media,"Minister of Finance, Economic Stabilization and National Policies",Sri Lanka Media Training Institute,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_41,State Minister of Production and Supply of Fertilizer and Regulation of Chemical Fertilizer and Insecticide Use,"Minister of Finance, Economic Stabilization and National Policies",Pulses and Grain Research and Production Authority,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_42,State Minister of Production and Supply of Fertilizer and Regulation of Chemical Fertilizer and Insecticide Use,"Minister of Finance, Economic Stabilization and National Policies",Janatha Fertilizer Enterprises Ltd.,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2281-41_tr_43,Minister of Finance,"Minister of Finance, Economic Stabilization and National Policies",Protection of Children-National Trust Fund,department,2022-05-27,Gotabaya Rajapaksa,Gotabaya Rajapaksa

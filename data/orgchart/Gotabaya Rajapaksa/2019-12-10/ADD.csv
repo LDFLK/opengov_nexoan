@@ -18,7 +18,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_17,Gotabaya Rajapaksa,citizen,Minister of Education,minister,AS_MINISTER,2019-12-10
 2153-12_tr_18,Gotabaya Rajapaksa,citizen,Minister of Sports & Youth Affairs,minister,AS_MINISTER,2019-12-10
 2153-12_tr_19,Gotabaya Rajapaksa,citizen,Minister of Roads and Highways,minister,AS_MINISTER,2019-12-10
-2153-12_tr_20,Gotabaya Rajapaksa,citizen,Minister of Ports & Shipping,minister,AS_MINISTER,2019-12-10
+2153-12_tr_20,Gotabaya Rajapaksa,citizen,Minister of Ports and Shipping,minister,AS_MINISTER,2019-12-10
 2153-12_tr_21,Gotabaya Rajapaksa,citizen,Minister of Small & Medium Business and Enterprise Development,minister,AS_MINISTER,2019-12-10
 2153-12_tr_22,Gotabaya Rajapaksa,citizen,Minister of Industries and Supply Chain Management,minister,AS_MINISTER,2019-12-10
 2153-12_tr_23,Gotabaya Rajapaksa,citizen,Minister of Transport Services Management,minister,AS_MINISTER,2019-12-10
@@ -218,7 +218,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_217,Minister of Women & Child Affairs and Social Security,minister,Social Security Board,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_218,Minister of Healthcare and Indigenous Medical Services,minister,Department of Health Services,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_219,Minister of Healthcare and Indigenous Medical Services,minister,Sri Jayewardenepura General Hospital,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_220,Minister of Healthcare and Indigenous Medical Services,minister,Vijaya Kumaranatunuga Memorial Hospital,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_220,Minister of Healthcare and Indigenous Medical Services,minister,Vijaya Kumaranatunga Memorial Hospital,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_221,Minister of Healthcare and Indigenous Medical Services,minister,State Pharmaceutical Corporation,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_222,Minister of Healthcare and Indigenous Medical Services,minister,State Pharmaceutical Manufacturing Corporation,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_223,Minister of Healthcare and Indigenous Medical Services,minister,National Drugs Regulatory Authority,department,AS_DEPARTMENT,2019-12-10
@@ -270,14 +270,14 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_269,"Minister of Higher Education, Technology and Innovation",minister,University of Vocational Technology,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_270,"Minister of Higher Education, Technology and Innovation",minister,National Institute of Fisheries and Nautical Engineering (Ocean University),department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_271,"Minister of Higher Education, Technology and Innovation",minister,Industrial Technology Institute,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_272,"Minister of Higher Education, Technology and Innovation",minister,Sri Lanka Institute of Nano Technology (Pvt) Ltd.,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_272,"Minister of Higher Education, Technology and Innovation",minister,Sri Lanka Institute of Nano Technology (Pvt.) Ltd.,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_273,"Minister of Higher Education, Technology and Innovation",minister,National Institute of Fundamental Studies,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_274,"Minister of Higher Education, Technology and Innovation",minister,National Science Foundation,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_275,"Minister of Higher Education, Technology and Innovation",minister,National Science and Technology Commission,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_276,"Minister of Higher Education, Technology and Innovation",minister,Planetarium,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_277,"Minister of Higher Education, Technology and Innovation",minister,Arthur C. Clarke Centre for Modern Technology,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_278,"Minister of Higher Education, Technology and Innovation",minister,Sri Lanka Accreditation Board for Conformity Assessment,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_279,"Minister of Higher Education, Technology and Innovation",minister,Sri Lanka Standard Institute,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_279,"Minister of Higher Education, Technology and Innovation",minister,Sri Lanka Standards Institute,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_280,"Minister of Higher Education, Technology and Innovation",minister,National Intellectual Property Office of Sri Lanka,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_281,"Minister of Higher Education, Technology and Innovation",minister,Sri Lanka Inventors' Commission,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_282,"Minister of Higher Education, Technology and Innovation",minister,Inventors' Fund,department,AS_DEPARTMENT,2019-12-10
@@ -366,9 +366,9 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2153-12_tr_365,Minister of Sports & Youth Affairs,minister,Institute of Smart Sri Lanka,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_366,Minister of Roads and Highways,minister,Road Development Authority and its Subsidiaries and Associates,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_367,Minister of Roads and Highways,minister,Road Maintenance Trust Fund,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_368,Minister of Ports & Shipping,minister,Sri Lanka Ports Authority and its Subsidiaries and Associates,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_369,Minister of Ports & Shipping,minister,Ceylon Shipping Corporation Ltd. and its Subsidiaries and Associates,department,AS_DEPARTMENT,2019-12-10
-2153-12_tr_370,Minister of Ports & Shipping,minister,Merchant Shipping Secretariat,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_368,Minister of Ports and Shipping,minister,Sri Lanka Ports Authority and its Subsidiaries and Associates,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_369,Minister of Ports and Shipping,minister,Ceylon Shipping Corporation Ltd. and its Subsidiaries and Associates,department,AS_DEPARTMENT,2019-12-10
+2153-12_tr_370,Minister of Ports and Shipping,minister,Merchant Shipping Secretariat,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_371,Minister of Small & Medium Business and Enterprise Development,minister,National Enterprise Development Authority,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_372,Minister of Small & Medium Business and Enterprise Development,minister,National Crafts Council,department,AS_DEPARTMENT,2019-12-10
 2153-12_tr_373,Minister of Small & Medium Business and Enterprise Development,minister,Sri Lanka Handicraft Board (Laksala),department,AS_DEPARTMENT,2019-12-10
