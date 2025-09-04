@@ -593,6 +593,46 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 		return fmt.Errorf("failed to terminate relationship: %w", err)
 	}
 
+	// If we're terminating a minister, also terminate any active people assigned to it
+	if childType == "minister" {
+		// Get all active people relationships from the minister
+		ministerPeopleRelations, err := c.GetRelatedEntities(childID, &models.Relationship{
+			Name: "AS_APPOINTED",
+		})
+		if err != nil {
+			return fmt.Errorf("failed to get minister's people relationships: %w", err)
+		}
+
+		// Find active people relationships (EndTime == "")
+		var activePeopleRelations []models.Relationship
+		for _, rel := range ministerPeopleRelations {
+			if rel.EndTime == "" {
+				activePeopleRelations = append(activePeopleRelations, rel)
+			}
+		}
+
+		// Terminate each active person relationship
+		for _, rel := range activePeopleRelations {
+			terminatePersonRel := &models.Entity{
+				ID: childID,
+				Relationships: []models.RelationshipEntry{
+					{
+						Key: rel.ID,
+						Value: models.Relationship{
+							EndTime: dateISO,
+							ID:      rel.ID,
+						},
+					},
+				},
+			}
+
+			_, err = c.UpdateEntity(childID, terminatePersonRel)
+			if err != nil {
+				return fmt.Errorf("failed to terminate person relationship: %w", err)
+			}
+		}
+	}
+
 	return nil
 }
 
@@ -804,6 +844,70 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 		err = c.MoveDepartment(moveTransaction)
 		if err != nil {
 			return 0, fmt.Errorf("failed to move department: %w", err)
+		}
+	}
+
+	// Find and move active person connected to old minister to new minister
+	// Get all active people relationships from the old minister
+	oldMinisterPeopleRelations, err := c.GetRelatedEntities(oldMinisterID, &models.Relationship{
+		Name: "AS_APPOINTED",
+	})
+	if err != nil {
+		return 0, fmt.Errorf("failed to get old minister's people relationships: %w", err)
+	}
+
+	// Find active people relationships (EndTime == "")
+	var activePeopleRelations []models.Relationship
+	for _, rel := range oldMinisterPeopleRelations {
+		if rel.EndTime == "" {
+			activePeopleRelations = append(activePeopleRelations, rel)
+		}
+	}
+
+	// Move each active person to the new minister
+	for _, rel := range activePeopleRelations {
+		// Create new relationship between new minister and person
+		currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
+		uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", newMinisterID, rel.RelatedEntityID, currentTimestamp)
+
+		newPersonRelationship := &models.Entity{
+			ID: newMinisterID,
+			Relationships: []models.RelationshipEntry{
+				{
+					Key: uniqueRelationshipID,
+					Value: models.Relationship{
+						RelatedEntityID: rel.RelatedEntityID,
+						StartTime:       dateISO,
+						EndTime:         "",
+						ID:              uniqueRelationshipID,
+						Name:            "AS_APPOINTED",
+					},
+				},
+			},
+		}
+
+		_, err = c.UpdateEntity(newMinisterID, newPersonRelationship)
+		if err != nil {
+			return 0, fmt.Errorf("failed to create new person relationship: %w", err)
+		}
+
+		// Terminate the old relationship directly using the relationship ID
+		terminateOldRelationship := &models.Entity{
+			ID: oldMinisterID,
+			Relationships: []models.RelationshipEntry{
+				{
+					Key: rel.ID,
+					Value: models.Relationship{
+						EndTime: dateISO,
+						ID:      rel.ID,
+					},
+				},
+			},
+		}
+
+		_, err = c.UpdateEntity(oldMinisterID, terminateOldRelationship)
+		if err != nil {
+			return 0, fmt.Errorf("failed to terminate old person relationship: %w", err)
 		}
 	}
 
@@ -1558,7 +1662,7 @@ func (c *Client) TerminatePersonEntity(transaction map[string]interface{}) error
 		}
 
 		if parentID == "" {
-			return fmt.Errorf("no active relationship found between person '%s' and ministry '%s' under president '%s'", child, parent, presidentName)
+			return fmt.Errorf("no active relationship found between person '%s' (ID: %s) and ministry '%s' under president '%s'", child, childID, parent, presidentName)
 		}
 	} else {
 		// For other parent types, use the original logic
