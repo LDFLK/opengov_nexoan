@@ -70,7 +70,8 @@
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2021-07-07/"
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2021-07-08/"
 
-./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2021-07-16/" -type person
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2021-07-16/2236-56/" -type person
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2021-07-16/2236-57/" -type person
 
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2021-07-29/"
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2021-08-16/"
@@ -84,10 +85,25 @@
 
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-02-07/" -type person
 
-# ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-02-23/"
-# ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-03-08/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-02-23/"
 
-# ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-03-14/"
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-03-07/" -type person
+
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-03-08/"
+
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-03-08/" -type person
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-03-09/" -type person
+
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-03-14/"
+
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-03-15/" -type person
+# ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-03-21/" -type person
+
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-07/2274-25/" -type person
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-07/2274-26/" -type person
+
+# check till here
+
 # ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-04-28"
 # ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-05-27"
 # ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-06-09"
