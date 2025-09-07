@@ -1,6 +1,6 @@
 transaction_id,parent,parent_type,child,child_type,rel_type,date
 2188-43_tr_01,"State Minister of Internal Security, Home Affairs and Disaster Management",minister,Chamal Rajapaksa,citizen,AS_APPOINTED,2020-08-13
-2188-43_tr_02,State Minister of Foreign Employment Promotion and Market Diversification,minister,Piyankara Jayarathne,citizen,AS_APPOINTED,2020-08-13
+2188-43_tr_02,State Minister of Foreign Employment Promotion and Market Diversification,minister,Piyankara Jayaratne,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_03,"State Minister of Solar, Wind and Hydro Power Generation Projects Development",minister,Duminda Dissanayaka,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_04,"State Minister of Batik, Handloom and Local Apparel Products",minister,Dayasiri Jayasekara,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_05,"State Minister of Cooperative Services, Marketing Development and Consumer Protection",minister,Lasantha Alagiyawanna,citizen,AS_APPOINTED,2020-08-13
@@ -10,19 +10,19 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2188-43_tr_09,"State Minister of Warehouse Facilities, Container Yards, Port Supply Facilities and Boats and Shipping Industry Development",minister,Jayantha Samaraweera,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_10,"State Minister of Land Management, State Enterprises Land and Property Development",minister,Roshan Ranasinghe,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_11,"State Minister of Company Estate Reforms, Tea Estates related Crops, Tea Factories Modernization and Tea Export Promotion",minister,Kanaka Herath,citizen,AS_APPOINTED,2020-08-13
-2188-43_tr_12,"State Minister of National Heritage, Performing Arts and Rural Arts Promotion",minister,Vidura Wikramanayaka,citizen,AS_APPOINTED,2020-08-13
+2188-43_tr_12,"State Minister of National Heritage, Performing Arts and Rural Arts Promotion",minister,Vidura Wickramanayaka,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_13,"State Minister of Development of Minor Crops Plantation including Sugarcane, Maize, Cashew, Pepper, Cinnamon, Cloves, Betel Related Industries and Export Promotion",minister,Janaka Wakkumbura,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_14,"State Minister of Dhamma Schools, Bhikkhu Education, Piriven and Buddhist Universities",minister,Vijitha Berugoda,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_15,"State Minister of Samurdhi, Household Economy, Micro Finance, Self Employment, Business Development and Underutilized State Resources Development",minister,Shehan Semasinghe,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_16,State Minister of Production and Supply of Fertilizer and Regulation of Chemical Fertilizer and Insecticide Use,minister,Mohan Priyadarshana De Silva,citizen,AS_APPOINTED,2020-08-13
-2188-43_tr_17,State Minister of Gem and Jewellery related Industries,minister,Lohan Rathwaththe,citizen,AS_APPOINTED,2020-08-13
+2188-43_tr_17,State Minister of Gem and Jewellery related Industries,minister,Lohan Ratwatte,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_18,"State Minister of Vehicle Regulation, Bus Transport Services and Train Compartments and Motor Car Industry",minister,Dilum Amunugama,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_19,"State Minister of Wildlife Protection, Adoption of safety measures including the construction of electrical fences and trenches and reforestation and forest resource development",minister,Wimalaweera Dissanayaka,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_20,State Minister of Regional Cooperation,minister,Tharaka Balasuriya,citizen,AS_APPOINTED,2020-08-13
-2188-43_tr_21,"State Minister of Rural Housing, Construction and Building Material Industries",minister,Indika Anurudhdha,citizen,AS_APPOINTED,2020-08-13
+2188-43_tr_21,"State Minister of Rural Housing, Construction and Building Material Industries",minister,Indika Anuruddha,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_22,"State Minister of Ornamental Fish, Inland Fish and Prawn Farming, Fishery Harbour Development, Multiday Fishing Activities and Fish Exports",minister,Kanchana Wijesekera,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_23,State Minister of Rural and Divisional Drinking Water Supply Projects Development,minister,Sanath Nishantha,citizen,AS_APPOINTED,2020-08-13
-2188-43_tr_24,State Minister of Canals and Common Infrastructure Development in Settlements in Mahaweli Zones,minister,Siripala Gamalath,citizen,AS_APPOINTED,2020-08-13
+2188-43_tr_24,State Minister of Canals and Common Infrastructure Development in Settlements in Mahaweli Zones,minister,Siripala Gamlath,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_25,State Minister of Provincial Councils and Local Government,minister,Sarath Weerasekara,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_26,"State Minister of Tanks, Reservoirs and Irrigation Development Related to Rural Paddy Fields",minister,Anuradha Jayaratne,citizen,AS_APPOINTED,2020-08-13
 2188-43_tr_27,State Minister of Postal Services and Professional Development of Journalists,minister,Sathasivam Viyalendiran,citizen,AS_APPOINTED,2020-08-13

@@ -1,0 +1,7 @@
+2276-63_tr_01,"Minister of Public Administration, Home Affairs, Provincial Councils & Local Government",minister,Dinesh Chandra Rupasingha Gunawardena,citizen,AS_APPOINTED,2022-04-22
+2276-63_tr_04,Minister of Plantation Industries,minister,Ramesh Pathirana,citizen,AS_APPOINTED,2022-04-22
+2276-63_tr_14,Minister of Samurdhi Development,minister,Asanka Shehan Semasinghe,citizen,AS_APPOINTED,2022-04-22
+
+The above transactions were mentioned in this gazette, however the ministries was only created in 2022-04-28
+gazette 2277/53. Thus I separated them into another folder 2276-63-2 and ran them after running transactions 
+for that gazette.

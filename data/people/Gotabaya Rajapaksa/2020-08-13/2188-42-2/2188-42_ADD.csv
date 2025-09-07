@@ -5,7 +5,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date,comments
 2188-42_tr_04,Minister of Labour,minister,Nimal Siripala De Silva,citizen,AS_APPOINTED,2020-08-13,
 2188-42_tr_05,Minister of Education,minister,G. L. Peiris,citizen,AS_APPOINTED,2020-08-13,
 2188-42_tr_06,Minister of Health,minister,Pavithra Devi Vanniarachchi,citizen,AS_APPOINTED,2020-08-13,
-2188-42_tr_07,Foreign Minister,minister,Dinesh Gunawardena,citizen,AS_APPOINTED,2020-08-13,I am assuming this is foreign minister but in the gazette it says Minister of Foreign
+2188-42_tr_07,Foreign Minister,minister,Dinesh Chandra Rupasingha Gunawardena,citizen,AS_APPOINTED,2020-08-13,I am assuming this is foreign minister but in the gazette it says Minister of Foreign
 2188-42_tr_08,Minister of Fisheries,minister,Douglas Devananda,citizen,AS_APPOINTED,2020-08-13,
 2188-42_tr_09,Minister of Transport,minister,Gamini Lokuge,citizen,AS_APPOINTED,2020-08-13,
 2188-42_tr_10,Minister of Trade,minister,Bandula Gunawardena,citizen,AS_APPOINTED,2020-08-13,

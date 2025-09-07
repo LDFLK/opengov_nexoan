@@ -25,7 +25,7 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2154-55_tr_24,State Minister of Women and Child Affairs,minister,Vijitha Berugoda,citizen,AS_APPOINTED,2019-12-21
 2154-55_tr_25,State Minister of Mahaweli Development,minister,Roshan Ranasinghe,citizen,AS_APPOINTED,2019-12-21
 2154-55_tr_26,State Minister of Export Agriculture,minister,Janaka Wakkumbura,citizen,AS_APPOINTED,2019-12-21
-2154-55_tr_27,State Minister of Agriculture,minister,Vidura Wickremenayake,citizen,AS_APPOINTED,2019-12-21
+2154-55_tr_27,State Minister of Agriculture,minister,Vidura Wickramanayaka,citizen,AS_APPOINTED,2019-12-21
 2154-55_tr_28,State Minister of Development Banking and Loan Schemes,minister,Shehan Semasinghe,citizen,AS_APPOINTED,2019-12-21
 2154-55_tr_29,State Minister of Ports Development Affairs,minister,Kanaka Herath,citizen,AS_APPOINTED,2019-12-21
 2154-55_tr_30,State Minister of Transport Services Management,minister,Dilum Amunugama,citizen,AS_APPOINTED,2019-12-21
@@ -36,4 +36,4 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2154-55_tr_35,State Minister of Social Security,minister,Tharaka Balasuriya,citizen,AS_APPOINTED,2019-12-21
 2154-55_tr_36,State Minister of Community Development,minister,Nimal Lanza,citizen,AS_APPOINTED,2019-12-21
 2154-55_tr_37,State Minister of Tea Industry Development,minister,Kanchana Wijesekara,citizen,AS_APPOINTED,2019-12-21
-2154-55_tr_38,State Minister of Housing,minister,Indika Anurudhdha,citizen,AS_APPOINTED,2019-12-21
+2154-55_tr_38,State Minister of Housing,minister,Indika Anuruddha,citizen,AS_APPOINTED,2019-12-21
