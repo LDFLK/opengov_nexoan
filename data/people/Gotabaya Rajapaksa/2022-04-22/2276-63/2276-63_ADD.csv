@@ -1,8 +1,8 @@
 transaction_id,parent,parent_type,child,child_type,rel_type,date
 2276-63_tr_02,Minister of Fisheries,minister,Douglas Devananda,citizen,AS_APPOINTED,2022-04-22
 2276-63_tr_03,Minister of Education,minister,Ramesh Pathirana,citizen,AS_APPOINTED,2022-04-22
-2276-63_tr_05,Minister of Public Security,minister,Prasanna Ranathunga,citizen,AS_APPOINTED,2022-04-22
-2276-63_tr_06,Minister of Tourism,minister,Prasanna Ranathunga,citizen,AS_APPOINTED,2022-04-22
+2276-63_tr_05,Minister of Public Security,minister,Prasanna Ranatunga,citizen,AS_APPOINTED,2022-04-22
+2276-63_tr_06,Minister of Tourism,minister,Prasanna Ranatunga,citizen,AS_APPOINTED,2022-04-22
 2276-63_tr_07,Minister of Transport,minister,Amunugama Dilum Suraj Bandara,citizen,AS_APPOINTED,2022-04-22
 2276-63_tr_08,Minister of Industries,minister,Amunugama Dilum Suraj Bandara,citizen,AS_APPOINTED,2022-04-22
 2276-63_tr_09,Minister of Highways,minister,Kanaka Herath,citizen,AS_APPOINTED,2022-04-22

@@ -8,9 +8,11 @@
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2019-11-17/" -type person
 
 # Load Gota's org data
-./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2019-12-10/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2019-11-27/"
 
-./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2019-12-10/" -type person
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2019-11-27/" -type person
+
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2019-12-10/"
 
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2019-12-21/"
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2019-12-21/" -type person
@@ -21,8 +23,6 @@
 
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2020-01-22/2159_15/"
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2020-01-22/2159_21/"
-
-./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2020-01-21/" -type person
 
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2020-01-24/2159_47/"
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2020-01-24/2159_48/"
@@ -103,7 +103,6 @@
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-03-14/"
 
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-03-15/" -type person
-# ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-03-21/" -type person
 
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-07/2274-25/" -type person
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-07/2274-26/" -type person
@@ -114,6 +113,8 @@
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-22/2276-62/" -type person
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-22/2276-63/" -type person
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-22/2276-64/" -type person
+
+## check till here
 
 
 # ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-04-28"

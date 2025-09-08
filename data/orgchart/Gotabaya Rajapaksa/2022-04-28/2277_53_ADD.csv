@@ -9,3 +9,5 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2277-53_tr_92,Gotabaya Rajapaksa,citizen,State Minister of Trade,minister,AS_MINISTER,2022-04-28
 2277-53_tr_100,State Minister of Industries,minister,Ape Gama - Office Premises,department,AS_DEPARTMENT,2022-04-28
 2277-53_tr_81,Gotabaya Rajapaksa,citizen,State Minister of Development of Minor Export Crops Plantation,minister,AS_MINISTER,2022-04-28
+2277-53_tr_101,Gotabaya Rajapaksa,citizen,State Minister of Highways,minister,AS_MINISTER,2022-04-28
+2277-53_tr_13,Gotabaya Rajapaksa,citizen,State Minister of Housing,minister,AS_MINISTER,2022-04-28

@@ -10,3 +10,4 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2277-53_tr_98,Minister of Trade,minister,Lanka General Trading Company Ltd.,department,AS_DEPARTMENT,2022-04-28
 2277-53_tr_105,Gotabaya Rajapaksa,citizen,"State Minister of Primary Health Care, Epidemics and COVID Disease Control",minister,AS_MINISTER,2022-04-28
 2277-53_tr_106,Gotabaya Rajapaksa,citizen,"State Minister of Warehouse Facilities, Container Yards, Port Supply Facilities and Boats and Shipping Industry Development",minister,AS_MINISTER,2022-04-28
+2277-53_tr_120,Gotabaya Rajapaksa,citizen,"State Minister of Rural Housing, Construction and Building Material Industries",minister,AS_MINISTER,2022-04-28

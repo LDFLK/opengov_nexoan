@@ -11,7 +11,6 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2187-27_tr_45,Gotabaya Rajapaksa,citizen,"State Minister of Samurdhi, Household Economy, Micro Finance, Self Employment, Business Development and Underutilized State Resources Development",minister,AS_MINISTER,2020-08-09
 2187-27_tr_48,"State Minister of Samurdhi, Household Economy, Micro Finance, Self Employment, Business Development and Underutilized State Resources Development",minister,Regional Development Bank,department,AS_DEPARTMENT,2020-08-09
 2187-27_tr_64,Gotabaya Rajapaksa,citizen,"State Minister of National Heritage, Performing Arts and Rural Arts Promotion",minister,AS_MINISTER,2020-08-09
-2187-27_tr_74,Gotabaya Rajapaksa,citizen,"State Minister of Urban Development, Coast Conservation, Waste Disposal and Community Cleanliness",minister,AS_MINISTER,2020-08-09
 2187-27_tr_78,Gotabaya Rajapaksa,citizen,"State Minister of Rural Housing, Construction and Building Material Industries",minister,AS_MINISTER,2020-08-09
 2187-27_tr_79,Gotabaya Rajapaksa,citizen,State Minister of Estate Housing and Community Infrastructure,minister,AS_MINISTER,2020-08-09
 2187-27_tr_103,Minister of Justice,minister,National Authority for the Protection of Victims and Witnesses of Crime,department,AS_DEPARTMENT,2020-08-09
@@ -59,8 +58,8 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2187-27_tr_334,Minister of Mass Media,minister,Department of Government Information,department,AS_DEPARTMENT,2020-08-09
 2187-27_tr_335,Minister of Mass Media,minister,Sri Lanka Foundation Institute,department,AS_DEPARTMENT,2020-08-09
 2187-27_tr_336,Gotabaya Rajapaksa,citizen,State Minister of Postal Services and Professional Development of Journalists,minister,AS_MINISTER,2020-08-09
-2187-27_tr_338,Gotabaya Rajapaksa,citizen,Institutions Operating with Guidance and Coordination at National Level for National Priorities,minister,AS_MINISTER,2020-08-10
-2187-27_tr_340,Institutions Operating with Guidance and Coordination at National Level for National Priorities,minister,Information and Communication Technology Agency and Allied Institutions,department,AS_DEPARTMENT,2020-08-10
-2187-27_tr_342,Institutions Operating with Guidance and Coordination at National Level for National Priorities,minister,Board of Investment of Sri Lanka,department,AS_DEPARTMENT,2020-08-10
-2187-27_tr_343,Institutions Operating with Guidance and Coordination at National Level for National Priorities,minister,Colombo Port City Project,department,AS_DEPARTMENT,2020-08-10
-2187-27_tr_346,Gotabaya Rajapaksa,citizen,"State Minister of Warehouse Facilities, Container Yards, Port Supply Facilities and Boats and Shipping Industry Development",minister,AS_MINISTER,2020-08-10
+2187-27_tr_338,Gotabaya Rajapaksa,citizen,Institutions Operating with Guidance and Coordination at National Level for National Priorities,minister,AS_MINISTER,2020-08-09
+2187-27_tr_340,Institutions Operating with Guidance and Coordination at National Level for National Priorities,minister,Information and Communication Technology Agency and Allied Institutions,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_342,Institutions Operating with Guidance and Coordination at National Level for National Priorities,minister,Board of Investment of Sri Lanka,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_343,Institutions Operating with Guidance and Coordination at National Level for National Priorities,minister,Colombo Port City Project,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_346,Gotabaya Rajapaksa,citizen,"State Minister of Warehouse Facilities, Container Yards, Port Supply Facilities and Boats and Shipping Industry Development",minister,AS_MINISTER,2020-08-09
