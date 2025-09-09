@@ -1,7 +1,4 @@
 transaction_id,parent,parent_type,child,child_type,rel_type,date,comments
-2188-42_tr_01,Minister of Finance,minister,Mahinda Rajapaksa,citizen,AS_APPOINTED,2020-08-13,
-2188-42_tr_02,"Minister of Buddha Sasana, Religious and Cultural Affairs",minister,Mahinda Rajapaksa,citizen,AS_APPOINTED,2020-08-13,
-2188-42_tr_03,Minister of Urban Development and Housing,minister,Mahinda Rajapaksa,citizen,AS_APPOINTED,2020-08-13,
 2188-42_tr_04,Minister of Labour,minister,Nimal Siripala De Silva,citizen,AS_APPOINTED,2020-08-13,
 2188-42_tr_05,Minister of Education,minister,G. L. Peiris,citizen,AS_APPOINTED,2020-08-13,
 2188-42_tr_08,Minister of Fisheries,minister,Douglas Devananda,citizen,AS_APPOINTED,2020-08-13,
