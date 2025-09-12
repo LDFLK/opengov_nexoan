@@ -28,3 +28,6 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2289-43_tr_522,Ranil Wickremesinghe,citizen,Minister of Labour and Foreign Employment,minister,AS_MINISTER,2022-07-22
 2289-43_tr_523,Ranil Wickremesinghe,citizen,Minister of Public Security,minister,AS_MINISTER,2022-07-22
 2289-43_tr_524,Ranil Wickremesinghe,citizen,"Minister of Trade, Commerce and Food Security",minister,AS_MINISTER,2022-07-22
+2289-43_tr_1030,Minister of Tourism and Lands,minister,Land Acquisition Board of Review,department,AS_DEPARTMENT,2022-07-22
+2289-43_tr_1031,Minister of Industries,minister,National Salt Limited,department,AS_DEPARTMENT,2022-07-22
+2289-43_tr_1032,Minister of Power and Energy,minister,Petroleum Development Authority of Sri Lanka,department,AS_DEPARTMENT,2022-07-22
