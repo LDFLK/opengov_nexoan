@@ -1925,7 +1925,7 @@ func (c *Client) MoveMinister(transaction map[string]interface{}) error {
 	oldParentID := oldPresidentEntity.ID
 
 	// Get the minister (child) entity ID connected to the old president
-	ministerEntity, err := c.GetMinisterByPresident(oldParent, child, dateISO)
+	ministerEntity, err := c.GetActiveMinisterByPresident(oldParent, child, dateISO)
 	if err != nil {
 		return fmt.Errorf("minister entity '%s' not found or not active under old president '%s' on date %s: %w", child, oldParent, dateStr, err)
 	}
@@ -1977,17 +1977,19 @@ func (c *Client) MoveMinister(transaction map[string]interface{}) error {
 
 	// Only terminate if there is an active relationship
 	if activeRel != nil {
-		// Terminate the old relationship
-		terminateTransaction := map[string]interface{}{
-			"parent":      oldParent,
-			"child":       child,
-			"date":        dateStr,
-			"parent_type": "president",
-			"child_type":  "minister",
-			"rel_type":    "AS_MINISTER",
-		}
-
-		err = c.TerminateOrgEntity(terminateTransaction)
+		// Terminate the old relationship directly without cascading to people
+		_, err = c.UpdateEntity(oldParentID, &models.Entity{
+			ID: oldParentID,
+			Relationships: []models.RelationshipEntry{
+				{
+					Key: activeRel.ID,
+					Value: models.Relationship{
+						EndTime: dateISO,
+						ID:      activeRel.ID,
+					},
+				},
+			},
+		})
 		if err != nil {
 			return fmt.Errorf("failed to terminate old relationship: %w", err)
 		}

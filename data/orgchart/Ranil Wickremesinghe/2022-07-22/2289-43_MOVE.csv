@@ -1,0 +1,384 @@
+transaction_id,old_parent,old_president_name,new_parent,new_president_name,child,type,date
+2289-43_tr_525,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Office of the Chief of Defence Staff,department,2022-07-22
+2289-43_tr_526,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Sri Lanka Army,department,2022-07-22
+2289-43_tr_527,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Sri Lanka Navy,department,2022-07-22
+2289-43_tr_528,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Sri Lanka Air Force,department,2022-07-22
+2289-43_tr_529,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,State Intelligence Service,department,2022-07-22
+2289-43_tr_530,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Civil Security Department,department,2022-07-22
+2289-43_tr_531,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Department of Multi-purpose Development Task Force,department,2022-07-22
+2289-43_tr_532,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,National Cadet Corps,department,2022-07-22
+2289-43_tr_533,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Sir John Kotelawala Defence University,department,2022-07-22
+2289-43_tr_534,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Defence Services Command and Staff College,department,2022-07-22
+2289-43_tr_535,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Defence Services School,department,2022-07-22
+2289-43_tr_536,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Defence Research and Development Centre,department,2022-07-22
+2289-43_tr_537,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Institute of National Security Studies,department,2022-07-22
+2289-43_tr_538,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,National Defence College,department,2022-07-22
+2289-43_tr_539,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Rakna Arakshana Lanka Ltd.,department,2022-07-22
+2289-43_tr_540,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Coast Guard Department of Sri Lanka,department,2022-07-22
+2289-43_tr_541,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,National Dangerous Drugs Control Board,department,2022-07-22
+2289-43_tr_542,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,National Defence Fund,department,2022-07-22
+2289-43_tr_543,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Ranaviru Seva Authority,department,2022-07-22
+2289-43_tr_544,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Api Wenuwen Api Fund,department,2022-07-22
+2289-43_tr_545,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Department of Meteorology,department,2022-07-22
+2289-43_tr_546,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,National Disaster Management Council,department,2022-07-22
+2289-43_tr_547,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Disaster Management Centre,department,2022-07-22
+2289-43_tr_548,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,National Disaster Relief Services Centre,department,2022-07-22
+2289-43_tr_549,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,National Building Research Organization,department,2022-07-22
+2289-43_tr_550,,Ranil Wickremesinghe,Minister of Defence,Ranil Wickremesinghe,Telecommunication Regulatory Commission of Sri Lanka and Allied Institutions,department,2022-07-22
+2289-43_tr_551,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,National Planning Department,department,2022-07-22
+2289-43_tr_552,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Project Management and Monitoring,department,2022-07-22
+2289-43_tr_553,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of External Resources,department,2022-07-22
+2289-43_tr_554,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,State Resources Management Corporation,department,2022-07-22
+2289-43_tr_555,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,General Treasury,department,2022-07-22
+2289-43_tr_556,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Fiscal Policy,department,2022-07-22
+2289-43_tr_557,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of National Budget,department,2022-07-22
+2289-43_tr_558,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Management Services,department,2022-07-22
+2289-43_tr_559,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Public Finance,department,2022-07-22
+2289-43_tr_560,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Treasury Operations,department,2022-07-22
+2289-43_tr_561,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of State Accounts,department,2022-07-22
+2289-43_tr_562,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Trade and Investment Policies,department,2022-07-22
+2289-43_tr_563,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Information Technology Management,department,2022-07-22
+2289-43_tr_564,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Legal Affairs,department,2022-07-22
+2289-43_tr_565,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Development Finance,department,2022-07-22
+2289-43_tr_566,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Public Enterprises,department,2022-07-22
+2289-43_tr_567,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Office of Comptroller General,department,2022-07-22
+2289-43_tr_568,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Inland Revenue,department,2022-07-22
+2289-43_tr_569,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Sri Lanka Customs,department,2022-07-22
+2289-43_tr_570,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Excise,department,2022-07-22
+2289-43_tr_571,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,National Lotteries Board,department,2022-07-22
+2289-43_tr_572,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Development Lotteries Board,department,2022-07-22
+2289-43_tr_573,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Valuation,department,2022-07-22
+2289-43_tr_574,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Sri Lanka Export Development Board,department,2022-07-22
+2289-43_tr_575,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Central Bank of Sri Lanka,department,2022-07-22
+2289-43_tr_576,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Insurance Regulatory Commission of Sri Lanka,department,2022-07-22
+2289-43_tr_577,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Sri Lanka Insurance Corporation and its subsidiaries and affiliated companies,department,2022-07-22
+2289-43_tr_578,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Credit Information Bureau,department,2022-07-22
+2289-43_tr_579,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Sri Lanka Accounting and Auditing Standard Monitoring Board,department,2022-07-22
+2289-43_tr_580,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Public Utilities Commission of Sri Lanka,department,2022-07-22
+2289-43_tr_581,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Sri Lanka Export Credit Insurance Corporation,department,2022-07-22
+2289-43_tr_582,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Housing Development Finance Corporation,department,2022-07-22
+2289-43_tr_583,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,State Mortgage and Investment Bank,department,2022-07-22
+2289-43_tr_584,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Regional Development Bank,department,2022-07-22
+2289-43_tr_585,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Census and Statistics,department,2022-07-22
+2289-43_tr_586,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Institute of Policy Studies,department,2022-07-22
+2289-43_tr_587,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Sustainable Development Council,department,2022-07-22
+2289-43_tr_588,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Welfare Benefits Board,department,2022-07-22
+2289-43_tr_589,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Public Service Mutual Provident Fund,department,2022-07-22
+2289-43_tr_590,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,"Strike, Riot, Civil Commotion and Terrorism Fund",department,2022-07-22
+2289-43_tr_591,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,National Insurance Trust Fund,department,2022-07-22
+2289-43_tr_592,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Employees' Trust Fund,department,2022-07-22
+2289-43_tr_593,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Lady Lochore Fund,department,2022-07-22
+2289-43_tr_594,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Board of Investment of Sri Lanka,department,2022-07-22
+2289-43_tr_595,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Colombo Port City Economic Commission,department,2022-07-22
+2289-43_tr_596,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Telecommunications,department,2022-07-22
+2289-43_tr_597,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Wildlife Trust,department,2022-07-22
+2289-43_tr_598,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Sri Lanka Media Training Institute,department,2022-07-22
+2289-43_tr_599,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Department of Internal Trade,department,2022-07-22
+2289-43_tr_600,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,"Pulse Crops, Grain Research and Production Authority",department,2022-07-22
+2289-43_tr_601,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Protection of Children-National Trust Fund,department,2022-07-22
+2289-43_tr_602,,Ranil Wickremesinghe,"Minister of Finance, Economic Stabilization and National Policies",Ranil Wickremesinghe,Institutions coming under the Revival (Removal) of Underperforming Enterprises or Underutilized Assets Act vested to the Secretary to the Treasury,department,2022-07-22
+2289-43_tr_603,,Ranil Wickremesinghe,Minister of Technology,Ranil Wickremesinghe,Department of Registration of Persons,department,2022-07-22
+2289-43_tr_604,,Ranil Wickremesinghe,Minister of Technology,Ranil Wickremesinghe,Information and Communication Technology Agency and Allied Institutions,department,2022-07-22
+2289-43_tr_605,,Ranil Wickremesinghe,Minister of Technology,Ranil Wickremesinghe,Sri Lanka Computer Emergency Readiness Team,department,2022-07-22
+2289-43_tr_606,,Ranil Wickremesinghe,Minister of Technology,Ranil Wickremesinghe,Sri Lanka Telecom and its Subsidiaries and Allied Institutions,department,2022-07-22
+2289-43_tr_607,,Ranil Wickremesinghe,Minister of Technology,Ranil Wickremesinghe,Industrial Technology Institute,department,2022-07-22
+2289-43_tr_608,,Ranil Wickremesinghe,Minister of Technology,Ranil Wickremesinghe,Sri Lanka Standards Institute,department,2022-07-22
+2289-43_tr_609,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,National Committee on Women,department,2022-07-22
+2289-43_tr_610,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,Sri Lanka Women's Bureau,department,2022-07-22
+2289-43_tr_611,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,Department of Probation and Childcare Services,department,2022-07-22
+2289-43_tr_612,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,National Child Protection Authority,department,2022-07-22
+2289-43_tr_613,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,National Secretariat for Early Childhood Development,department,2022-07-22
+2289-43_tr_614,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,Department of Samurdhi Development,department,2022-07-22
+2289-43_tr_615,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,Saubhagya Development Bureau,department,2022-07-22
+2289-43_tr_616,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,National Institute of Social Development,department,2022-07-22
+2289-43_tr_617,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,Rural Development Training and Research Institute,department,2022-07-22
+2289-43_tr_618,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,Social Security Board,department,2022-07-22
+2289-43_tr_619,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,National Council for Persons with Disabilities,department,2022-07-22
+2289-43_tr_620,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,National Secretariat for Persons with Disabilities,department,2022-07-22
+2289-43_tr_621,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,Department of Social Services,department,2022-07-22
+2289-43_tr_622,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,National Council for Elders and National Secretariat for Elders,department,2022-07-22
+2289-43_tr_623,,Ranil Wickremesinghe,"Minister of Women, Child Affairs and Social Empowerment",Ranil Wickremesinghe,Kidney Fund,department,2022-07-22
+2289-43_tr_624,,Ranil Wickremesinghe,"Minister of Ports, Shipping and Aviation",Ranil Wickremesinghe,Sri Lanka Ports Authority and its Subsidiaries and Associates,department,2022-07-22
+2289-43_tr_625,,Ranil Wickremesinghe,"Minister of Ports, Shipping and Aviation",Ranil Wickremesinghe,Merchant Shipping Secretariat,department,2022-07-22
+2289-43_tr_626,,Ranil Wickremesinghe,"Minister of Ports, Shipping and Aviation",Ranil Wickremesinghe,Civil Aviation Authority of Sri Lanka,department,2022-07-22
+2289-43_tr_627,,Ranil Wickremesinghe,"Minister of Ports, Shipping and Aviation",Ranil Wickremesinghe,Airport and Aviation Services (Sri Lanka) Ltd.,department,2022-07-22
+2289-43_tr_628,,Ranil Wickremesinghe,"Minister of Ports, Shipping and Aviation",Ranil Wickremesinghe,Sri Lankan Air Lines Limited and its subsidiaries,department,2022-07-22
+2289-43_tr_629,,Ranil Wickremesinghe,Minister of Investment Promotion,Ranil Wickremesinghe,Department of Immigration and Emigration,department,2022-07-22
+2289-43_tr_630,,Ranil Wickremesinghe,Minister of Investment Promotion,Ranil Wickremesinghe,Colombo Lotus Tower Management Company (Pvt.) Limited,department,2022-07-22
+2289-43_tr_631,,Ranil Wickremesinghe,Minister of Investment Promotion,Ranil Wickremesinghe,Techno Park Development Company (Pvt.) Limited,department,2022-07-22
+2289-43_tr_632,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,Department of Pensions,department,2022-07-22
+2289-43_tr_633,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,Sri Lanka Institute of Development Administration,department,2022-07-22
+2289-43_tr_634,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,Distance Learning Centre Ltd.,department,2022-07-22
+2289-43_tr_635,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,Department of Official Languages,department,2022-07-22
+2289-43_tr_636,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,Official Languages Commission,department,2022-07-22
+2289-43_tr_637,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,National Institute of Language Education and Training,department,2022-07-22
+2289-43_tr_638,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,Public Service Pensioners' Trust Fund,department,2022-07-22
+2289-43_tr_639,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,Local Government Service Pension Fund,department,2022-07-22
+2289-43_tr_640,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,Local Government Widows' and Orphans' Pension Fund,department,2022-07-22
+2289-43_tr_641,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,Local Government Widowers' and Orphans' Pension Fund,department,2022-07-22
+2289-43_tr_642,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,All District Secretariats and Divisional Secretariats,department,2022-07-22
+2289-43_tr_643,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,Department of Registrar General,department,2022-07-22
+2289-43_tr_644,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,Sri Lanka Institute of Local Government,department,2022-07-22
+2289-43_tr_645,,Ranil Wickremesinghe,"Minister of Public Administration, Home Affairs, Provincial Councils and Local Government",Ranil Wickremesinghe,Local Loans and Development Fund,department,2022-07-22
+2289-43_tr_646,,Ranil Wickremesinghe,Minister of Fisheries,Ranil Wickremesinghe,Department of Fisheries and Aquatic Resources,department,2022-07-22
+2289-43_tr_647,,Ranil Wickremesinghe,Minister of Fisheries,Ranil Wickremesinghe,National Aquatic Resources Research and Development Agency,department,2022-07-22
+2289-43_tr_648,,Ranil Wickremesinghe,Minister of Fisheries,Ranil Wickremesinghe,National Aquaculture Development Authority,department,2022-07-22
+2289-43_tr_649,,Ranil Wickremesinghe,Minister of Fisheries,Ranil Wickremesinghe,Ceylon Fisheries Corporation,department,2022-07-22
+2289-43_tr_650,,Ranil Wickremesinghe,Minister of Fisheries,Ranil Wickremesinghe,Cey-Nor Foundation Ltd.,department,2022-07-22
+2289-43_tr_651,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Department of Educational Publications,department,2022-07-22
+2289-43_tr_652,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,National Library and Documentation Services Board,department,2022-07-22
+2289-43_tr_653,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,National Colleges of Education,department,2022-07-22
+2289-43_tr_654,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,UNESCO National Commission of Sri Lanka,department,2022-07-22
+2289-43_tr_655,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Sri Lanka Publication Development Bureau,department,2022-07-22
+2289-43_tr_656,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,State Printing Corporation,department,2022-07-22
+2289-43_tr_657,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Directorates of Education,department,2022-07-22
+2289-43_tr_658,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,National Education Commission,department,2022-07-22
+2289-43_tr_659,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,National Institute of Education,department,2022-07-22
+2289-43_tr_660,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Piriven Education Board,department,2022-07-22
+2289-43_tr_661,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,National Institute of Business Management and affiliated institutions,department,2022-07-22
+2289-43_tr_662,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,University of Vocational Technology,department,2022-07-22
+2289-43_tr_663,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,National Institute of Fisheries and Nautical Engineering (Ocean University),department,2022-07-22
+2289-43_tr_664,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Vocational Training Authority of Sri Lanka,department,2022-07-22
+2289-43_tr_665,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,National Apprenticeship and Industrial Training Authority,department,2022-07-22
+2289-43_tr_666,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Ceylon German Technical Training Institute,department,2022-07-22
+2289-43_tr_667,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Department of Technical Education and Training,department,2022-07-22
+2289-43_tr_668,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,National Institute of Fundamental Studies,department,2022-07-22
+2289-43_tr_669,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Sri Lanka Inventors' Commission,department,2022-07-22
+2289-43_tr_670,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,National Research Council,department,2022-07-22
+2289-43_tr_671,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Tertiary and Vocational Education Commission,department,2022-07-22
+2289-43_tr_672,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,National Science Foundation,department,2022-07-22
+2289-43_tr_673,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Planetarium of Sri Lanka,department,2022-07-22
+2289-43_tr_674,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,National Innovation Agency,department,2022-07-22
+2289-43_tr_675,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Skills Development Fund Ltd.,department,2022-07-22
+2289-43_tr_676,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,National Science and Technology Commission,department,2022-07-22
+2289-43_tr_677,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Sri Lanka Institute of Biotechnology (Pvt.) Ltd.,department,2022-07-22
+2289-43_tr_678,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Vidatha Centres,department,2022-07-22
+2289-43_tr_679,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,University Grants Commission,department,2022-07-22
+2289-43_tr_680,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,"All State Universities, Postgraduate Institutions and other Institutions under the purview of University Grants Commission",department,2022-07-22
+2289-43_tr_681,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Buddhasravaka Bhikku University,department,2022-07-22
+2289-43_tr_682,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Buddhist and Pali University of Sri Lanka,department,2022-07-22
+2289-43_tr_683,,Ranil Wickremesinghe,Minister of Education,Ranil Wickremesinghe,Sri Lanka Institute of Advanced Technological Education,department,2022-07-22
+2289-43_tr_684,,Ranil Wickremesinghe,Minister of Transport and Highways,Ranil Wickremesinghe,State Development and Construction Corporation,department,2022-07-22
+2289-43_tr_685,,Ranil Wickremesinghe,Minister of Transport and Highways,Ranil Wickremesinghe,National Transport Commission,department,2022-07-22
+2289-43_tr_686,,Ranil Wickremesinghe,Minister of Transport and Highways,Ranil Wickremesinghe,Department of Sri Lanka Railways,department,2022-07-22
+2289-43_tr_687,,Ranil Wickremesinghe,Minister of Transport and Highways,Ranil Wickremesinghe,Sri Lanka Transport Board,department,2022-07-22
+2289-43_tr_688,,Ranil Wickremesinghe,Minister of Transport and Highways,Ranil Wickremesinghe,National Transport Medical Institute,department,2022-07-22
+2289-43_tr_689,,Ranil Wickremesinghe,Minister of Transport and Highways,Ranil Wickremesinghe,Department of Motor Traffic,department,2022-07-22
+2289-43_tr_690,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Right to Information Commission,department,2022-07-22
+2289-43_tr_691,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Department of Government Printing,department,2022-07-22
+2289-43_tr_692,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Department of Government Information,department,2022-07-22
+2289-43_tr_693,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Sri Lanka Press Council,department,2022-07-22
+2289-43_tr_694,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Sri Lanka Broadcasting Corporation,department,2022-07-22
+2289-43_tr_695,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Independent Television Network,department,2022-07-22
+2289-43_tr_696,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Sri Lanka Rupavahini Corporation,department,2022-07-22
+2289-43_tr_697,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Associated Newspapers of Ceylon Ltd.,department,2022-07-22
+2289-43_tr_698,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Selacine Rupavahini Institute,department,2022-07-22
+2289-43_tr_699,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Sri Lanka Foundation,department,2022-07-22
+2289-43_tr_700,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Postal Department,department,2022-07-22
+2289-43_tr_701,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Sri Lanka Institute of Printing,department,2022-07-22
+2289-43_tr_702,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,Public Performance Board,department,2022-07-22
+2289-43_tr_703,,Ranil Wickremesinghe,Minister of Mass Media,Ranil Wickremesinghe,National Film Corporation,department,2022-07-22
+2289-43_tr_704,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,National Health Council,department,2022-07-22
+2289-43_tr_705,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Medical Research Institute,department,2022-07-22
+2289-43_tr_706,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Sri Lanka Medical Council,department,2022-07-22
+2289-43_tr_707,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Sri Lanka Medical College Council,department,2022-07-22
+2289-43_tr_708,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Private Health Services Regulatory Council,department,2022-07-22
+2289-43_tr_709,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Department of Health Services,department,2022-07-22
+2289-43_tr_710,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,School of Medical Laboratory Technology,department,2022-07-22
+2289-43_tr_711,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,"National Institute of Nephrology, Dialysis and Transplantation",department,2022-07-22
+2289-43_tr_712,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Sri Lanka Thriposha Co. Ltd.,department,2022-07-22
+2289-43_tr_713,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Sri Jayewardenepura General Hospital,department,2022-07-22
+2289-43_tr_714,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Ashraff Memorial Hospital,department,2022-07-22
+2289-43_tr_715,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,National Authority on Tobacco and Alcohol,department,2022-07-22
+2289-43_tr_716,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,1990 Suwaseriya Foundation,department,2022-07-22
+2289-43_tr_717,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,National Health Development Fund,department,2022-07-22
+2289-43_tr_718,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,State Pharmaceutical Corporation,department,2022-07-22
+2289-43_tr_719,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,State Pharmaceutical Manufacturing Corporation,department,2022-07-22
+2289-43_tr_720,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,National Medicines Regulatory Authority,department,2022-07-22
+2289-43_tr_721,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Department of Ayurveda,department,2022-07-22
+2289-43_tr_722,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Sri Lanka Ayurvedic Drugs Corporation,department,2022-07-22
+2289-43_tr_723,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Ayurvedic Medical Council,department,2022-07-22
+2289-43_tr_724,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Ayurvedic College and Hospital Board,department,2022-07-22
+2289-43_tr_725,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Ayurveda Teaching and Research Hospitals,department,2022-07-22
+2289-43_tr_726,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,"Homeopathy Hospital, Welisara",department,2022-07-22
+2289-43_tr_727,,Ranil Wickremesinghe,Minister of Health,Ranil Wickremesinghe,Homeopathy Medical Council,department,2022-07-22
+2289-43_tr_728,,Ranil Wickremesinghe,Minister of Water Supply,Ranil Wickremesinghe,National Water Supply and Drainage Board,department,2022-07-22
+2289-43_tr_729,,Ranil Wickremesinghe,Minister of Water Supply,Ranil Wickremesinghe,Water Resources Board,department,2022-07-22
+2289-43_tr_730,,Ranil Wickremesinghe,Minister of Water Supply,Ranil Wickremesinghe,Department of National Community Water Supply,department,2022-07-22
+2289-43_tr_731,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,Department of Agriculture,department,2022-07-22
+2289-43_tr_732,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,Department of Agrarian Development,department,2022-07-22
+2289-43_tr_733,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,Agriculture and Agrarian Insurance Board,department,2022-07-22
+2289-43_tr_734,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,Paddy Marketing Board,department,2022-07-22
+2289-43_tr_735,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,Hector Kobbekaduwa Agrarian Research and Training Institute,department,2022-07-22
+2289-43_tr_736,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,Sri Lanka Council for Agricultural Research Policy,department,2022-07-22
+2289-43_tr_737,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,National Agricultural Diversification and Settlement Authority,department,2022-07-22
+2289-43_tr_738,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,National Fertilizer Secretariat,department,2022-07-22
+2289-43_tr_739,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,Ceylon Fertilizer Company Ltd.,department,2022-07-22
+2289-43_tr_740,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,Colombo Commercial Fertilizer Company,department,2022-07-22
+2289-43_tr_741,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,National Hunger Eradication Campaign Board of Sri Lanka (National Food Promotion Board),department,2022-07-22
+2289-43_tr_742,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,Institute of Post-Harvest Technology,department,2022-07-22
+2289-43_tr_743,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,Department of Animal Production and Health,department,2022-07-22
+2289-43_tr_744,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,National Livestock Development Board and affiliated companies,department,2022-07-22
+2289-43_tr_745,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,Milco (Pvt.) Ltd.,department,2022-07-22
+2289-43_tr_746,,Ranil Wickremesinghe,Minister of Agriculture,Ranil Wickremesinghe,Mahaweli Livestock Enterprise Limited,department,2022-07-22
+2289-43_tr_747,,Ranil Wickremesinghe,Minister of Wildlife and Forest Resources Conservation,Ranil Wickremesinghe,Department of Forest Conservation,department,2022-07-22
+2289-43_tr_748,,Ranil Wickremesinghe,Minister of Wildlife and Forest Resources Conservation,Ranil Wickremesinghe,Department of Wildlife Conservation,department,2022-07-22
+2289-43_tr_749,,Ranil Wickremesinghe,Minister of Wildlife and Forest Resources Conservation,Ranil Wickremesinghe,Department of National Zoological Gardens,department,2022-07-22
+2289-43_tr_750,,Ranil Wickremesinghe,Minister of Wildlife and Forest Resources Conservation,Ranil Wickremesinghe,State Timber Corporation,department,2022-07-22
+2289-43_tr_751,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Attorney General's Department,department,2022-07-22
+2289-43_tr_752,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Legal Draftsman's Department,department,2022-07-22
+2289-43_tr_753,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Department of Debt Conciliation Board,department,2022-07-22
+2289-43_tr_754,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Department of Government Analyst,department,2022-07-22
+2289-43_tr_755,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Office of the Registrar of the Supreme Court,department,2022-07-22
+2289-43_tr_756,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Law Commission of Sri Lanka,department,2022-07-22
+2289-43_tr_757,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Superior Courts Complex Board of Management,department,2022-07-22
+2289-43_tr_758,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Mediation Boards Commission,department,2022-07-22
+2289-43_tr_759,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Council of Legal Education,department,2022-07-22
+2289-43_tr_760,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Commercial Mediation Centre of Sri Lanka,department,2022-07-22
+2289-43_tr_761,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Office for National Unity and Reconciliation,department,2022-07-22
+2289-43_tr_762,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Office of Missing Persons,department,2022-07-22
+2289-43_tr_763,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Office for Reparations,department,2022-07-22
+2289-43_tr_764,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Department of Prisons,department,2022-07-22
+2289-43_tr_765,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Community Based Correction Department,department,2022-07-22
+2289-43_tr_766,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Training Schools for Youthful Offenders,department,2022-07-22
+2289-43_tr_767,,Ranil Wickremesinghe,"Minister of Justice, Prisons Affairs and Constitutional Reforms",Ranil Wickremesinghe,Rehabilitation Commissioner General's Office,department,2022-07-22
+2289-43_tr_768,,Ranil Wickremesinghe,Minister of Tourism and Lands,Ranil Wickremesinghe,Sri Lanka Tourism Promotion Bureau,department,2022-07-22
+2289-43_tr_769,,Ranil Wickremesinghe,Minister of Tourism and Lands,Ranil Wickremesinghe,Sri Lanka Tourism Development Authority,department,2022-07-22
+2289-43_tr_770,,Ranil Wickremesinghe,Minister of Tourism and Lands,Ranil Wickremesinghe,Sri Lanka Institute of Tourism and Hotel Management,department,2022-07-22
+2289-43_tr_771,,Ranil Wickremesinghe,Minister of Tourism and Lands,Ranil Wickremesinghe,Sri Lanka Convention Bureau,department,2022-07-22
+2289-43_tr_772,,Ranil Wickremesinghe,Minister of Tourism and Lands,Ranil Wickremesinghe,Department of Land Commissioner General,department,2022-07-22
+2289-43_tr_773,,Ranil Wickremesinghe,Minister of Tourism and Lands,Ranil Wickremesinghe,Department of Land Use Policy Planning,department,2022-07-22
+2289-43_tr_774,,Ranil Wickremesinghe,Minister of Tourism and Lands,Ranil Wickremesinghe,Department of Land Settlement,department,2022-07-22
+2289-43_tr_775,,Ranil Wickremesinghe,Minister of Tourism and Lands,Ranil Wickremesinghe,Land Reform Commission,department,2022-07-22
+2289-43_tr_776,,Ranil Wickremesinghe,Minister of Tourism and Lands,Ranil Wickremesinghe,Sri Lanka Survey Department,department,2022-07-22
+2289-43_tr_777,,Ranil Wickremesinghe,Minister of Tourism and Lands,Ranil Wickremesinghe,Institute of Surveying and Mapping,department,2022-07-22
+2289-43_tr_778,,Ranil Wickremesinghe,Minister of Tourism and Lands,Ranil Wickremesinghe,Land Survey Council,department,2022-07-22
+2289-43_tr_779,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,National Institute of Plantation Management,department,2022-07-22
+2289-43_tr_780,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Sri Lanka Tea Board,department,2022-07-22
+2289-43_tr_781,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Tea Small Holdings Development Authority,department,2022-07-22
+2289-43_tr_782,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Tea Research Institute,department,2022-07-22
+2289-43_tr_783,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Tea and Rubber Estates (Control and Fragmentation) Board,department,2022-07-22
+2289-43_tr_784,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Janatha Estate Development Board,department,2022-07-22
+2289-43_tr_785,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Kalubovitiyana Tea Factory Ltd.,department,2022-07-22
+2289-43_tr_786,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Sri Lanka State Plantation Corporation,department,2022-07-22
+2289-43_tr_787,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Elkaduwa Plantation Company Ltd.,department,2022-07-22
+2289-43_tr_788,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Department of Rubber Development,department,2022-07-22
+2289-43_tr_789,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Rubber Research Institute,department,2022-07-22
+2289-43_tr_790,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Sri Lanka Rubber Manufacturing and Export Corporation,department,2022-07-22
+2289-43_tr_791,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Tea Shakthi Fund,department,2022-07-22
+2289-43_tr_792,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Thurusaviya Fund,department,2022-07-22
+2289-43_tr_793,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Department of Export Agriculture,department,2022-07-22
+2289-43_tr_794,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Sri Lanka Cashew Corporation,department,2022-07-22
+2289-43_tr_795,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Hingurana Sugar Industry Ltd.,department,2022-07-22
+2289-43_tr_796,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Ceylon Sugar (Pvt.) Ltd.,department,2022-07-22
+2289-43_tr_797,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Kantale Sugar Company Ltd.,department,2022-07-22
+2289-43_tr_798,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Sugar Cane Research Institute,department,2022-07-22
+2289-43_tr_799,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Galoya Plantation (Pvt.) Company,department,2022-07-22
+2289-43_tr_800,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Spices and Allied Products Marketing Board,department,2022-07-22
+2289-43_tr_801,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Kurunegala Plantation Company Ltd.,department,2022-07-22
+2289-43_tr_802,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Coconut Cultivation Board,department,2022-07-22
+2289-43_tr_803,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Coconut Development Authority,department,2022-07-22
+2289-43_tr_804,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Coconut Research Institute,department,2022-07-22
+2289-43_tr_805,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Palmyrah Development Board,department,2022-07-22
+2289-43_tr_806,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Kithul Development Board,department,2022-07-22
+2289-43_tr_807,,Ranil Wickremesinghe,Minister of Plantation Industries,Ranil Wickremesinghe,Kapruka Fund,department,2022-07-22
+2289-43_tr_808,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,Ceylon Industrial Development Board,department,2022-07-22
+2289-43_tr_809,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,Lanka Leyland Ltd.,department,2022-07-22
+2289-43_tr_810,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,Lanka Ashok Leyland Ltd.,department,2022-07-22
+2289-43_tr_811,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,National Paper Corporation Ltd.,department,2022-07-22
+2289-43_tr_812,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,Sri Lanka Cement Corporation,department,2022-07-22
+2289-43_tr_813,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,Ceylon Ceramics Corporation (Brick and Tiles Division),department,2022-07-22
+2289-43_tr_814,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,National Enterprise Development Authority,department,2022-07-22
+2289-43_tr_815,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,Lanka Mineral Sands Company,department,2022-07-22
+2289-43_tr_816,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,National Crafts Council,department,2022-07-22
+2289-43_tr_817,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,Department of Textile Industries,department,2022-07-22
+2289-43_tr_818,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,Sri Lanka Institute of Textile and Apparels,department,2022-07-22
+2289-43_tr_819,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,Lanka Textile Mills Emporium Ltd.,department,2022-07-22
+2289-43_tr_820,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,Sri Lanka Handicraft Board (Laksala),department,2022-07-22
+2289-43_tr_821,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,National Design Centre,department,2022-07-22
+2289-43_tr_822,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,National Gem and Jewellery Authority,department,2022-07-22
+2289-43_tr_823,,Ranil Wickremesinghe,Minister of Industries,Ranil Wickremesinghe,Gem and Jewellery Research and Training Institute,department,2022-07-22
+2289-43_tr_824,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Urban Development Authority,department,2022-07-22
+2289-43_tr_825,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Urban Settlement Development Authority,department,2022-07-22
+2289-43_tr_826,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Selendiva Investments Limited,department,2022-07-22
+2289-43_tr_827,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Hotel Developers (Lanka) PLC (PQ 143),department,2022-07-22
+2289-43_tr_828,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,National Physical Planning Department,department,2022-07-22
+2289-43_tr_829,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Condominium Management Authority (Common Amenities Board),department,2022-07-22
+2289-43_tr_830,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Sri Lanka Land Development Corporation and its subsidiaries and related institutions,department,2022-07-22
+2289-43_tr_831,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,National Housing Development Authority,department,2022-07-22
+2289-43_tr_832,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Building Material Corporation Limited,department,2022-07-22
+2289-43_tr_833,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Department of Buildings,department,2022-07-22
+2289-43_tr_834,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Department of Government Factories,department,2022-07-22
+2289-43_tr_835,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Construction Industry Development Authority,department,2022-07-22
+2289-43_tr_836,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,State Engineering Corporation,department,2022-07-22
+2289-43_tr_837,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,National Equipment and Machinery Organization,department,2022-07-22
+2289-43_tr_838,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Ocean View Development (Pvt) Ltd.,department,2022-07-22
+2289-43_tr_839,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Marine Environment Protection Authority,department,2022-07-22
+2289-43_tr_840,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Department of Coast Conservation and Coastal Resource Management,department,2022-07-22
+2289-43_tr_841,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,New Villages Development Authority for Plantation Region,department,2022-07-22
+2289-43_tr_842,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Plantation Human Development Trust,department,2022-07-22
+2289-43_tr_843,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Saumyamoorthi Thondaman Memorial Foundation,department,2022-07-22
+2289-43_tr_844,,Ranil Wickremesinghe,Minister of Urban Development and Housing,Ranil Wickremesinghe,Estate Sector Self-Employment Revolving Fund,department,2022-07-22
+2289-43_tr_845,,Ranil Wickremesinghe,Minister of Foreign Affairs,Ranil Wickremesinghe,Diplomatic Missions in abroad,department,2022-07-22
+2289-43_tr_846,,Ranil Wickremesinghe,Minister of Foreign Affairs,Ranil Wickremesinghe,National Oceanic Affairs Committee Secretariat,department,2022-07-22
+2289-43_tr_847,,Ranil Wickremesinghe,Minister of Foreign Affairs,Ranil Wickremesinghe,Lakshman Kadirgamar Institute for International Relations and Strategic Studies,department,2022-07-22
+2289-43_tr_848,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Department of Buddhist Affairs,department,2022-07-22
+2289-43_tr_849,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Department of Hindu Religious and Cultural Affairs,department,2022-07-22
+2289-43_tr_850,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Department of Christian Religious Affairs,department,2022-07-22
+2289-43_tr_851,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Department of Muslim Religious and Cultural Affairs,department,2022-07-22
+2289-43_tr_852,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Department of National Museums,department,2022-07-22
+2289-43_tr_853,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Department of National Archives,department,2022-07-22
+2289-43_tr_854,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Department of Public Trustee,department,2022-07-22
+2289-43_tr_855,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Central Cultural Fund,department,2022-07-22
+2289-43_tr_856,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Buddhasasana Fund,department,2022-07-22
+2289-43_tr_857,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Buddhist Renaissance Fund,department,2022-07-22
+2289-43_tr_858,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Department of Cultural Affairs,department,2022-07-22
+2289-43_tr_859,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Department of Archaeology,department,2022-07-22
+2289-43_tr_860,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Tower Hall Theatre Foundation,department,2022-07-22
+2289-43_tr_861,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,National Arts Council,department,2022-07-22
+2289-43_tr_862,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Gramodaya Folk Arts Centre,department,2022-07-22
+2289-43_tr_863,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Galle Heritage Foundation,department,2022-07-22
+2289-43_tr_864,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,Mahinda Rajapaksa National Tele Cinema Park,department,2022-07-22
+2289-43_tr_865,,Ranil Wickremesinghe,"Minister of Buddhasasana, Religious and Cultural Affairs",Ranil Wickremesinghe,National Performing Arts Theatre (Nelum Pokuna),department,2022-07-22
+2289-43_tr_866,,Ranil Wickremesinghe,Minister of Power and Energy,Ranil Wickremesinghe,Ceylon Electricity Board and its subsidiary Companies,department,2022-07-22
+2289-43_tr_867,,Ranil Wickremesinghe,Minister of Power and Energy,Ranil Wickremesinghe,LTL Holdings (Pvt.) Ltd.,department,2022-07-22
+2289-43_tr_868,,Ranil Wickremesinghe,Minister of Power and Energy,Ranil Wickremesinghe,Ceylon Petroleum Corporation,department,2022-07-22
+2289-43_tr_869,,Ranil Wickremesinghe,Minister of Power and Energy,Ranil Wickremesinghe,Ceylon Petroleum Storage Terminal Ltd.,department,2022-07-22
+2289-43_tr_870,,Ranil Wickremesinghe,Minister of Power and Energy,Ranil Wickremesinghe,Sri Lanka Sustainable Energy Authority,department,2022-07-22
+2289-43_tr_871,,Ranil Wickremesinghe,Minister of Power and Energy,Ranil Wickremesinghe,Sri Lanka Atomic Energy Board,department,2022-07-22
+2289-43_tr_872,,Ranil Wickremesinghe,Minister of Power and Energy,Ranil Wickremesinghe,Sri Lanka Atomic Energy Regulatory Council,department,2022-07-22
+2289-43_tr_873,,Ranil Wickremesinghe,Minister of Environment,Ranil Wickremesinghe,Central Environmental Authority,department,2022-07-22
+2289-43_tr_874,,Ranil Wickremesinghe,Minister of Environment,Ranil Wickremesinghe,Geological Survey and Mines Bureau,department,2022-07-22
+2289-43_tr_875,,Ranil Wickremesinghe,Minister of Sports and Youth Affairs,Ranil Wickremesinghe,Department of Sports Development,department,2022-07-22
+2289-43_tr_876,,Ranil Wickremesinghe,Minister of Sports and Youth Affairs,Ranil Wickremesinghe,National Sports Council,department,2022-07-22
+2289-43_tr_877,,Ranil Wickremesinghe,Minister of Sports and Youth Affairs,Ranil Wickremesinghe,National Institute of Sports Science,department,2022-07-22
+2289-43_tr_878,,Ranil Wickremesinghe,Minister of Sports and Youth Affairs,Ranil Wickremesinghe,Sugathadasa National Sports Complex Authority,department,2022-07-22
+2289-43_tr_879,,Ranil Wickremesinghe,Minister of Sports and Youth Affairs,Ranil Wickremesinghe,Institute of Sports Medicine,department,2022-07-22
+2289-43_tr_880,,Ranil Wickremesinghe,Minister of Sports and Youth Affairs,Ranil Wickremesinghe,Sri Lanka Anti-doping Agency,department,2022-07-22
+2289-43_tr_881,,Ranil Wickremesinghe,Minister of Sports and Youth Affairs,Ranil Wickremesinghe,National Youth Services Council,department,2022-07-22
+2289-43_tr_882,,Ranil Wickremesinghe,Minister of Sports and Youth Affairs,Ranil Wickremesinghe,National Youth Corps,department,2022-07-22
+2289-43_tr_883,,Ranil Wickremesinghe,Minister of Sports and Youth Affairs,Ranil Wickremesinghe,National Centre for Leadership Development,department,2022-07-22
+2289-43_tr_884,,Ranil Wickremesinghe,Minister of Irrigation,Ranil Wickremesinghe,Department of Irrigation,department,2022-07-22
+2289-43_tr_885,,Ranil Wickremesinghe,Minister of Irrigation,Ranil Wickremesinghe,Central Engineering Consultancy Bureau and its subsidiaries and affiliated companies,department,2022-07-22
+2289-43_tr_886,,Ranil Wickremesinghe,Minister of Irrigation,Ranil Wickremesinghe,Engineering Council of Sri Lanka,department,2022-07-22
+2289-43_tr_887,,Ranil Wickremesinghe,Minister of Labour and Foreign Employment,Ranil Wickremesinghe,Department of Labour,department,2022-07-22
+2289-43_tr_888,,Ranil Wickremesinghe,Minister of Labour and Foreign Employment,Ranil Wickremesinghe,National Institute of Labour Studies,department,2022-07-22
+2289-43_tr_889,,Ranil Wickremesinghe,Minister of Labour and Foreign Employment,Ranil Wickremesinghe,National Institute for Occupational Safety and Health,department,2022-07-22
+2289-43_tr_890,,Ranil Wickremesinghe,Minister of Labour and Foreign Employment,Ranil Wickremesinghe,Office of the Commissioner of Workmen's Compensation,department,2022-07-22
+2289-43_tr_891,,Ranil Wickremesinghe,Minister of Labour and Foreign Employment,Ranil Wickremesinghe,National Productivity Secretariat,department,2022-07-22
+2289-43_tr_892,,Ranil Wickremesinghe,Minister of Labour and Foreign Employment,Ranil Wickremesinghe,Shrama Vasana Fund,department,2022-07-22
+2289-43_tr_893,,Ranil Wickremesinghe,Minister of Labour and Foreign Employment,Ranil Wickremesinghe,Department of Manpower and Employment,department,2022-07-22
+2289-43_tr_894,,Ranil Wickremesinghe,Minister of Labour and Foreign Employment,Ranil Wickremesinghe,Sri Lanka Foreign Employment Bureau,department,2022-07-22
+2289-43_tr_895,,Ranil Wickremesinghe,Minister of Labour and Foreign Employment,Ranil Wickremesinghe,Foreign Employment Agency of Sri Lanka (Pvt.) Ltd.,department,2022-07-22
+2289-43_tr_896,,Ranil Wickremesinghe,Minister of Public Security,Ranil Wickremesinghe,Sri Lanka Police,department,2022-07-22
+2289-43_tr_897,,Ranil Wickremesinghe,Minister of Public Security,Ranil Wickremesinghe,National Police Academy,department,2022-07-22
+2289-43_tr_898,,Ranil Wickremesinghe,Minister of Public Security,Ranil Wickremesinghe,Secretariat for Non-Governmental Organizations,department,2022-07-22
+2289-43_tr_899,,Ranil Wickremesinghe,"Minister of Trade, Commerce and Food Security",Ranil Wickremesinghe,Department of Commerce,department,2022-07-22
+2289-43_tr_900,,Ranil Wickremesinghe,"Minister of Trade, Commerce and Food Security",Ranil Wickremesinghe,Lanka Sathosa Ltd.,department,2022-07-22
+2289-43_tr_901,,Ranil Wickremesinghe,"Minister of Trade, Commerce and Food Security",Ranil Wickremesinghe,Lanka General Trading Company Ltd.,department,2022-07-22
+2289-43_tr_902,,Ranil Wickremesinghe,"Minister of Trade, Commerce and Food Security",Ranil Wickremesinghe,Regional Economic Centres,department,2022-07-22
+2289-43_tr_903,,Ranil Wickremesinghe,"Minister of Trade, Commerce and Food Security",Ranil Wickremesinghe,Sri Lanka Accreditation Board for Conformity Assessment,department,2022-07-22
+2289-43_tr_904,,Ranil Wickremesinghe,"Minister of Trade, Commerce and Food Security",Ranil Wickremesinghe,"Department of Measurement Units, Standards and Services",department,2022-07-22
+2289-43_tr_905,,Ranil Wickremesinghe,"Minister of Trade, Commerce and Food Security",Ranil Wickremesinghe,National Intellectual Property Office of Sri Lanka,department,2022-07-22
+2289-43_tr_906,,Ranil Wickremesinghe,"Minister of Trade, Commerce and Food Security",Ranil Wickremesinghe,Consumer Affairs Authority,department,2022-07-22
+2289-43_tr_907,,Ranil Wickremesinghe,"Minister of Trade, Commerce and Food Security",Ranil Wickremesinghe,Food Commissioner's Department,department,2022-07-22
