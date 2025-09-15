@@ -14,8 +14,6 @@ transaction_id,parent,parent_type,child,child_type,rel_type,date
 2412-08_tr_26,Minister of Justice and National Integration,minister,Sri Lanka Judges Institute,department,AS_DEPARTMENT,2024-11-25
 2412-08_tr_27,Minister of Justice and National Integration,minister,Non Judicial Officers Training Institute,department,AS_DEPARTMENT,2024-11-25
 2412-08_tr_29,"Minister of Education, Higher Education and Vocational Education",minister,South Asian Centre for Teacher Development (SACTD),department,AS_DEPARTMENT,2024-11-25
-2412-08_tr_33,"Minister of Trade, Commerce, Food Security and Cooperative Development",minister,Sri Lanka State Trading Corporation,department,AS_DEPARTMENT,2024-11-25
-2412-08_tr_34,"Minister of Trade, Commerce, Food Security and Cooperative Development",minister,Food Commissioner's Department,department,AS_DEPARTMENT,2024-11-25
 2412-08_tr_35,"Minister of Trade, Commerce, Food Security and Cooperative Development",minister,State Trading Co-operative Wholesale Co. Ltd,department,AS_DEPARTMENT,2024-11-25
 2412-08_tr_40,Minister of Health and Mass Media,minister,Online Safety Commission,department,AS_DEPARTMENT,2024-11-25
 2412-08_tr_166,Minister of Industry and Entrepreneurship Development,minister,Small Enterprise Development Division,department,AS_DEPARTMENT,2024-11-25

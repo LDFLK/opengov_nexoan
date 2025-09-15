@@ -196,5 +196,14 @@ docker run --interactive --tty --rm \
   neo4j-admin database load neo4j --from-path=/backups --overwrite-destination=true
 ```
 
+Gota & ranil
+```bash
+docker run --interactive --tty --rm \
+  --volume /var/lib/docker/volumes/neo4j_data/_data:/data \
+  --volume /Users/zaeema/Documents/neo4j_dump/orgchart-gota-ranil:/backups \
+  neo4j/neo4j-admin:5 \
+  neo4j-admin database load neo4j --from-path=/backups --overwrite-destination=true
+```
+
 
 
