@@ -177,3 +177,33 @@ The project structure:
 
 [Add your license information here]
 
+
+### To take a dump and reupload it to your local instance
+
+```bash
+docker run --rm \
+--volume=/var/lib/docker/volumes/neo4j_data/_data:/data \
+--volume=/Users/zaeema/Documents/neo4j_dump/orgchart:/backups \
+neo4j/neo4j-admin:latest \
+neo4j-admin database dump neo4j --to-path=/backups
+```
+
+```bash
+docker run --interactive --tty --rm \
+  --volume /var/lib/docker/volumes/neo4j_data/_data:/data \
+  --volume /Users/zaeema/Documents/neo4j_dump/orgchart-gota-2025-09-11:/backups \
+  neo4j/neo4j-admin:5 \
+  neo4j-admin database load neo4j --from-path=/backups --overwrite-destination=true
+```
+
+Gota & ranil
+```bash
+docker run --interactive --tty --rm \
+  --volume /var/lib/docker/volumes/neo4j_data/_data:/data \
+  --volume /Users/zaeema/Documents/neo4j_dump/orgchart-gota-ranil:/backups \
+  neo4j/neo4j-admin:5 \
+  neo4j-admin database load neo4j --from-path=/backups --overwrite-destination=true
+```
+
+
+

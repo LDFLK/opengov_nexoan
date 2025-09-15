@@ -1,0 +1,5 @@
+transaction_id,old_parent,new_parent,child,type,date,old_president_name,new_president_name
+2167-6_tr_01,State Minister of Defence,Minister of Defence,Department of Immigration and Emigration,department,2020-03-17,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2167-6_tr_02,State Minister of Renewable Energy & Power,Minister of Power & Energy,Lanka Electricity Company,department,2020-03-17,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2167-6_tr_03,State Minister of Renewable Energy & Power,Minister of Power & Energy,"Lanka Coal Company (Pvt.) Ltd.",department,2020-03-17,Gotabaya Rajapaksa,Gotabaya Rajapaksa
+2167-6_tr_04,State Minister of Renewable Energy & Power,Minister of Power & Energy,Sri Lanka Sustainable Energy Authority,department,2020-03-17,Gotabaya Rajapaksa,Gotabaya Rajapaksa

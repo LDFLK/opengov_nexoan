@@ -1,3 +1,0 @@
-transaction_id,parent,parent_type,child,child_type,rel_type,date
-2157-29_tr_01,Government of Sri Lanka,government,State Minister of Transport Services Management,minister,HAS_MINISTER,2020-01-09
-2157-29_tr_02,Government of Sri Lanka,government,State Minister of Railway Services,minister,HAS_MINISTER,2020-01-09

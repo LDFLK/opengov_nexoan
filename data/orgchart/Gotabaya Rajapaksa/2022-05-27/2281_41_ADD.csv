@@ -1,0 +1,6 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2281-41_tr_40,"Minister of Finance, Economic Stabilization and National Policies",minister,Department of Internal Trade,department,AS_DEPARTMENT,2022-05-27
+2281-41_tr_50,"Minister of Public Administration, Home Affairs, Provincial Councils & Local Government",minister,Local Government Service Pension Fund,department,AS_DEPARTMENT,2022-05-27
+2281-41_tr_51,"Minister of Public Administration, Home Affairs, Provincial Councils & Local Government",minister,Local Government Widows' and Orphans' Pension Fund,department,AS_DEPARTMENT,2022-05-27
+2281-41_tr_52,"Minister of Public Administration, Home Affairs, Provincial Councils & Local Government",minister,Local Government Widowers' and Orphans' Pension Fund,department,AS_DEPARTMENT,2022-05-27
+2281-41_tr_157,Minister of Plantation Industries,minister,Kithul Development Board,department,AS_DEPARTMENT,2022-05-27

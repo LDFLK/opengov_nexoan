@@ -275,6 +275,21 @@ func (c *Client) AddOrgEntity(transaction map[string]interface{}, entityCounters
 			return 0, fmt.Errorf("president name is required and must be a non-empty string when adding a department")
 		}
 
+		// Check if a department with the same name already exists
+		existingDepartmentResults, err := c.SearchEntities(&models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: "Organisation",
+				Minor: "department",
+			},
+			Name: child,
+		})
+		if err != nil {
+			return 0, fmt.Errorf("failed to search for existing department: %w", err)
+		}
+		if len(existingDepartmentResults) > 0 {
+			return 0, fmt.Errorf("department with name '%s' already exists", child)
+		}
+
 		// Use GetMinisterByPresident to ensure we get the correct minister under the correct president
 		ministerEntity, err := c.GetActiveMinisterByPresident(presidentName, parent, dateISO)
 		if err != nil {
@@ -334,6 +349,10 @@ func (c *Client) AddOrgEntity(transaction map[string]interface{}, entityCounters
 	}
 
 	// Update the parent entity to add the relationship to the child
+	// Use transaction ID and current timestamp to ensure unique relationship ID
+	currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
+	uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", parentID, createdChild.ID, currentTimestamp)
+
 	parentEntity := &models.Entity{
 		ID:         parentID,
 		Kind:       models.Kind{},
@@ -344,12 +363,12 @@ func (c *Client) AddOrgEntity(transaction map[string]interface{}, entityCounters
 		Attributes: []models.AttributeEntry{},
 		Relationships: []models.RelationshipEntry{
 			{
-				Key: fmt.Sprintf("%s_%s", parentID, createdChild.ID),
+				Key: uniqueRelationshipID,
 				Value: models.Relationship{
 					RelatedEntityID: createdChild.ID,
 					StartTime:       dateISO,
 					EndTime:         "",
-					ID:              fmt.Sprintf("%s_%s", parentID, createdChild.ID),
+					ID:              uniqueRelationshipID,
 					Name:            relType,
 				},
 			},
@@ -400,7 +419,7 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 			return fmt.Errorf("president name is required and must be a non-empty string when terminating minister relationships")
 		}
 
-		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		ministerEntity, err := c.GetActiveMinisterByPresident(presidentName, parent, dateISO)
 		if err != nil {
 			return fmt.Errorf("failed to get parent minister entity: %w", err)
 		}
@@ -435,7 +454,7 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 		// Child is a minister, parent is the president's name
 		presidentName := parent // parent contains the president's name
 
-		ministerEntity, err := c.GetMinisterByPresident(presidentName, child, dateISO)
+		ministerEntity, err := c.GetActiveMinisterByPresident(presidentName, child, dateISO)
 		if err != nil {
 			return fmt.Errorf("failed to get child minister entity: %w", err)
 		}
@@ -449,7 +468,7 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 		}
 
 		// First get the minister that should have this department
-		ministerEntity, err := c.GetMinisterByPresident(presidentName, parent, dateISO)
+		ministerEntity, err := c.GetActiveMinisterByPresident(presidentName, parent, dateISO)
 		if err != nil {
 			return fmt.Errorf("failed to get minister for department termination: %w", err)
 		}
@@ -574,6 +593,46 @@ func (c *Client) TerminateOrgEntity(transaction map[string]interface{}) error {
 		return fmt.Errorf("failed to terminate relationship: %w", err)
 	}
 
+	// If we're terminating a minister, also terminate any active people assigned to it
+	if childType == "minister" {
+		// Get all active people relationships from the minister
+		ministerPeopleRelations, err := c.GetRelatedEntities(childID, &models.Relationship{
+			Name: "AS_APPOINTED",
+		})
+		if err != nil {
+			return fmt.Errorf("failed to get minister's people relationships: %w", err)
+		}
+
+		// Find active people relationships (EndTime == "")
+		var activePeopleRelations []models.Relationship
+		for _, rel := range ministerPeopleRelations {
+			if rel.EndTime == "" {
+				activePeopleRelations = append(activePeopleRelations, rel)
+			}
+		}
+
+		// Terminate each active person relationship
+		for _, rel := range activePeopleRelations {
+			terminatePersonRel := &models.Entity{
+				ID: childID,
+				Relationships: []models.RelationshipEntry{
+					{
+						Key: rel.ID,
+						Value: models.Relationship{
+							EndTime: dateISO,
+							ID:      rel.ID,
+						},
+					},
+				},
+			}
+
+			_, err = c.UpdateEntity(childID, terminatePersonRel)
+			if err != nil {
+				return fmt.Errorf("failed to terminate person relationship: %w", err)
+			}
+		}
+	}
+
 	return nil
 }
 
@@ -660,16 +719,20 @@ func (c *Client) MoveDepartment(transaction map[string]interface{}) error {
 	newMinisterID := newMinisterEntity.ID
 
 	// Create new AS_DEPARTMENT relationship from new minister to department
+	// Use transaction ID and timestamp to ensure unique relationship ID
+	currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
+	uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", newMinisterID, departmentID, currentTimestamp)
+
 	newRelationship := &models.Entity{
 		ID: newMinisterID,
 		Relationships: []models.RelationshipEntry{
 			{
-				Key: fmt.Sprintf("%s_%s", newMinisterID, departmentID),
+				Key: uniqueRelationshipID,
 				Value: models.Relationship{
 					RelatedEntityID: departmentID,
 					StartTime:       dateISO,
 					EndTime:         "",
-					ID:              fmt.Sprintf("%s_%s", newMinisterID, departmentID),
+					ID:              uniqueRelationshipID,
 					Name:            "AS_DEPARTMENT",
 				},
 			},
@@ -784,6 +847,70 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 		}
 	}
 
+	// Find and move active person connected to old minister to new minister
+	// Get all active people relationships from the old minister
+	oldMinisterPeopleRelations, err := c.GetRelatedEntities(oldMinisterID, &models.Relationship{
+		Name: "AS_APPOINTED",
+	})
+	if err != nil {
+		return 0, fmt.Errorf("failed to get old minister's people relationships: %w", err)
+	}
+
+	// Find active people relationships (EndTime == "")
+	var activePeopleRelations []models.Relationship
+	for _, rel := range oldMinisterPeopleRelations {
+		if rel.EndTime == "" {
+			activePeopleRelations = append(activePeopleRelations, rel)
+		}
+	}
+
+	// Move each active person to the new minister
+	for _, rel := range activePeopleRelations {
+		// Create new relationship between new minister and person
+		currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
+		uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", newMinisterID, rel.RelatedEntityID, currentTimestamp)
+
+		newPersonRelationship := &models.Entity{
+			ID: newMinisterID,
+			Relationships: []models.RelationshipEntry{
+				{
+					Key: uniqueRelationshipID,
+					Value: models.Relationship{
+						RelatedEntityID: rel.RelatedEntityID,
+						StartTime:       dateISO,
+						EndTime:         "",
+						ID:              uniqueRelationshipID,
+						Name:            "AS_APPOINTED",
+					},
+				},
+			},
+		}
+
+		_, err = c.UpdateEntity(newMinisterID, newPersonRelationship)
+		if err != nil {
+			return 0, fmt.Errorf("failed to create new person relationship: %w", err)
+		}
+
+		// Terminate the old relationship directly using the relationship ID
+		terminateOldRelationship := &models.Entity{
+			ID: oldMinisterID,
+			Relationships: []models.RelationshipEntry{
+				{
+					Key: rel.ID,
+					Value: models.Relationship{
+						EndTime: dateISO,
+						ID:      rel.ID,
+					},
+				},
+			},
+		}
+
+		_, err = c.UpdateEntity(oldMinisterID, terminateOldRelationship)
+		if err != nil {
+			return 0, fmt.Errorf("failed to terminate old person relationship: %w", err)
+		}
+	}
+
 	// Terminate the old minister's relationship with the president directly
 	// We need to get the president ID first
 	presidentEntity, err := c.GetPresidentByGovernment(presidentName)
@@ -834,16 +961,20 @@ func (c *Client) RenameMinister(transaction map[string]interface{}, entityCounte
 	}
 
 	// Create RENAMED_TO relationship
+	// Use transaction ID and current timestamp to ensure unique relationship ID
+	currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
+	uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", oldMinisterID, newMinisterID, currentTimestamp)
+
 	renameRelationship := &models.Entity{
 		ID: oldMinisterID,
 		Relationships: []models.RelationshipEntry{
 			{
-				Key: fmt.Sprintf("%s_%s", oldMinisterID, newMinisterID),
+				Key: uniqueRelationshipID,
 				Value: models.Relationship{
 					RelatedEntityID: newMinisterID,
 					StartTime:       dateISO,
 					EndTime:         "",
-					ID:              fmt.Sprintf("%s_%s", oldMinisterID, newMinisterID),
+					ID:              uniqueRelationshipID,
 					Name:            "RENAMED_TO",
 				},
 			},
@@ -905,8 +1036,44 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 	if err != nil {
 		return 0, fmt.Errorf("failed to search for new department name: %w", err)
 	}
+
+	var newDepartmentID string
+	var newDepartmentCounter int
+
 	if len(existingDepartmentResults) > 0 {
-		return 0, fmt.Errorf("department with name '%s' already exists", newName)
+		// Check if the existing department has any active AS_DEPARTMENT relationships
+		existingDepartment := existingDepartmentResults[0]
+		existingDepartmentID := existingDepartment.ID
+
+		// Get all AS_DEPARTMENT relationships for this department
+		existingDepartmentRelations, err := c.GetRelatedEntities(existingDepartmentID, &models.Relationship{
+			Name: "AS_DEPARTMENT",
+		})
+		if err != nil {
+			return 0, fmt.Errorf("failed to get existing department relationships: %w", err)
+		}
+
+		// Check if any relationships are still active (EndTime == "")
+		hasActiveRelationships := false
+		for _, rel := range existingDepartmentRelations {
+			if rel.EndTime == "" {
+				hasActiveRelationships = true
+				break
+			}
+		}
+
+		if hasActiveRelationships {
+			// Department exists and has active relationships, cannot proceed
+			return 0, fmt.Errorf("department with name '%s' already exists and has active relationships", newName)
+		} else {
+			// Department exists but all relationships are terminated, we can reuse it
+			newDepartmentID = existingDepartment.ID
+			//newDepartmentCounter = 0 // No new entity created, just reusing existing
+		}
+	} else {
+		// Department doesn't exist, we'll create a new one
+		newDepartmentID = ""
+		//newDepartmentCounter = 0
 	}
 
 	// Get all active relationships coming into this department
@@ -951,42 +1118,73 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 	// 	return 0, fmt.Errorf("minister '%s' not found under president '%s'", ministerName, presidentName)
 	// }
 
-	// Create new department under the same minister
-	addEntityTransaction := map[string]interface{}{
-		"parent":         ministerName,
-		"child":          newName,
-		"date":           dateStr,
-		"parent_type":    "minister",
-		"child_type":     "department",
-		"rel_type":       relType,
-		"transaction_id": transactionID,
-		"president":      presidentName,
-	}
+	// Create new department or reuse existing inactive department
+	if newDepartmentID == "" {
+		// Create new department under the same minister
+		addEntityTransaction := map[string]interface{}{
+			"parent":         ministerName,
+			"child":          newName,
+			"date":           dateStr,
+			"parent_type":    "minister",
+			"child_type":     "department",
+			"rel_type":       relType,
+			"transaction_id": transactionID,
+			"president":      presidentName,
+		}
 
-	// Create the new department
-	newDepartmentCounter, err := c.AddOrgEntity(addEntityTransaction, entityCounters)
-	if err != nil {
-		return 0, fmt.Errorf("failed to create new department: %w", err)
-	}
+		// Create the new department
+		newDepartmentCounter, err = c.AddOrgEntity(addEntityTransaction, entityCounters)
+		if err != nil {
+			return 0, fmt.Errorf("failed to create new department: %w", err)
+		}
 
-	// Get the new department's ID
-	newDepartmentResults, err := c.SearchEntities(&models.SearchCriteria{
-		Kind: &models.Kind{
-			Major: "Organisation",
-			Minor: "department",
-		},
-		Name: newName,
-	})
-	if err != nil {
-		return 0, fmt.Errorf("failed to search for new department: %w", err)
+		// Get the new department's ID
+		newDepartmentResults, err := c.SearchEntities(&models.SearchCriteria{
+			Kind: &models.Kind{
+				Major: "Organisation",
+				Minor: "department",
+			},
+			Name: newName,
+		})
+		if err != nil {
+			return 0, fmt.Errorf("failed to search for new department: %w", err)
+		}
+		if len(newDepartmentResults) == 0 {
+			return 0, fmt.Errorf("new department not found: %s", newName)
+		}
+		if len(newDepartmentResults) > 1 {
+			return 0, fmt.Errorf("multiple departments found with name '%s'", newName)
+		}
+		newDepartmentID = newDepartmentResults[0].ID
+	} else {
+		// Reusing existing inactive department - create the relationship with the minister
+		// Generate a unique relationship ID
+		newDepartmentCounter = entityCounters["department"]
+		currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
+		uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", ministerID, newDepartmentID, currentTimestamp)
+
+		// Create the relationship between minister and the reactivated department
+		reactivateRelationship := &models.Entity{
+			ID: ministerID,
+			Relationships: []models.RelationshipEntry{
+				{
+					Key: uniqueRelationshipID,
+					Value: models.Relationship{
+						RelatedEntityID: newDepartmentID,
+						StartTime:       dateISO,
+						EndTime:         "",
+						ID:              uniqueRelationshipID,
+						Name:            relType,
+					},
+				},
+			},
+		}
+
+		_, err = c.UpdateEntity(ministerID, reactivateRelationship)
+		if err != nil {
+			return 0, fmt.Errorf("failed to create relationship with reactivated department: %w", err)
+		}
 	}
-	if len(newDepartmentResults) == 0 {
-		return 0, fmt.Errorf("new department not found: %s", newName)
-	}
-	if len(newDepartmentResults) > 1 {
-		return 0, fmt.Errorf("multiple departments found with name '%s'", newName)
-	}
-	newDepartmentID := newDepartmentResults[0].ID
 
 	// Terminate the old department's relationship with minister directly
 	// Get the specific existing relationship to this department
@@ -1031,16 +1229,20 @@ func (c *Client) RenameDepartment(transaction map[string]interface{}, entityCoun
 	}
 
 	// Create RENAMED_TO relationship
+	// Use transaction ID and current timestamp to ensure unique relationship ID
+	currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
+	uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", oldDepartmentID, newDepartmentID, currentTimestamp)
+
 	renameRelationship := &models.Entity{
 		ID: oldDepartmentID,
 		Relationships: []models.RelationshipEntry{
 			{
-				Key: fmt.Sprintf("%s_%s", oldDepartmentID, newDepartmentID),
+				Key: uniqueRelationshipID,
 				Value: models.Relationship{
 					RelatedEntityID: newDepartmentID,
 					StartTime:       dateISO,
 					EndTime:         "",
-					ID:              fmt.Sprintf("%s_%s", oldDepartmentID, newDepartmentID),
+					ID:              uniqueRelationshipID,
 					Name:            "RENAMED_TO",
 				},
 			},
@@ -1101,7 +1303,7 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 	}
 
 	// Get the new minister's ID
-	newMinisterEntity, err := c.GetMinisterByPresident(presidentName, newMinister, dateISO)
+	newMinisterEntity, err := c.GetActiveMinisterByPresident(presidentName, newMinister, dateISO)
 	if err != nil {
 		return 0, fmt.Errorf("failed to get new minister: %w", err)
 	}
@@ -1110,13 +1312,13 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 	// For each old minister
 	for _, oldMinister := range oldMinisters {
 		// Get the old minister's ID
-		oldMinisterEntity, err := c.GetMinisterByPresident(presidentName, oldMinister, dateISO)
+		oldMinisterEntity, err := c.GetActiveMinisterByPresident(presidentName, oldMinister, dateISO)
 		if err != nil {
 			return 0, fmt.Errorf("failed to get old minister: %w", err)
 		}
 		oldMinisterID := oldMinisterEntity.ID
 
-		// 2. Move old minister's departments to new minister
+		// 1. Move old minister's departments to new minister
 		oldRelations, err := c.GetRelatedEntities(oldMinisterID, &models.Relationship{
 			Name: "AS_DEPARTMENT",
 		})
@@ -1160,6 +1362,43 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 			}
 		}
 
+		// 2. Terminate any active people assigned to the old minister - assume when merged, the people are no longer assigned to the old ministers
+		oldMinisterPeopleRelations, err := c.GetRelatedEntities(oldMinisterID, &models.Relationship{
+			Name: "AS_APPOINTED",
+		})
+		if err != nil {
+			return 0, fmt.Errorf("failed to get old minister's people relationships: %w", err)
+		}
+
+		// Find active people relationships (EndTime == "")
+		var activePeopleRelations []models.Relationship
+		for _, rel := range oldMinisterPeopleRelations {
+			if rel.EndTime == "" {
+				activePeopleRelations = append(activePeopleRelations, rel)
+			}
+		}
+
+		// Terminate each active person relationship
+		for _, rel := range activePeopleRelations {
+			terminatePersonRel := &models.Entity{
+				ID: oldMinisterID,
+				Relationships: []models.RelationshipEntry{
+					{
+						Key: rel.ID,
+						Value: models.Relationship{
+							EndTime: dateISO,
+							ID:      rel.ID,
+						},
+					},
+				},
+			}
+
+			_, err = c.UpdateEntity(oldMinisterID, terminatePersonRel)
+			if err != nil {
+				return 0, fmt.Errorf("failed to terminate person relationship: %w", err)
+			}
+		}
+
 		// 3. Terminate gov -> old minister relationship
 		terminateGovTransaction := map[string]interface{}{
 			"parent":      presidentName,
@@ -1176,16 +1415,20 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 		}
 
 		// 4. Create old minister -> new minister MERGED_INTO relationship
+		// Use transaction ID and current timestamp to ensure unique relationship ID
+		currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
+		uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", oldMinisterID, newMinisterID, currentTimestamp)
+
 		mergedIntoRelationship := &models.Entity{
 			ID: oldMinisterID,
 			Relationships: []models.RelationshipEntry{
 				{
-					Key: fmt.Sprintf("%s_%s", oldMinisterID, newMinisterID),
+					Key: uniqueRelationshipID,
 					Value: models.Relationship{
 						RelatedEntityID: newMinisterID,
 						StartTime:       dateISO,
 						EndTime:         "",
-						ID:              fmt.Sprintf("%s_%s", oldMinisterID, newMinisterID),
+						ID:              uniqueRelationshipID,
 						Name:            "MERGED_INTO",
 					},
 				},
@@ -1322,6 +1565,10 @@ func (c *Client) AddPersonEntity(transaction map[string]interface{}, entityCount
 	}
 
 	// Update the parent entity to add the relationship to the child
+	// Use transaction ID and current timestamp to ensure unique relationship ID
+	currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
+	uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", parentID, childID, currentTimestamp)
+
 	parentEntity := &models.Entity{
 		ID:         parentID,
 		Kind:       models.Kind{},
@@ -1332,12 +1579,12 @@ func (c *Client) AddPersonEntity(transaction map[string]interface{}, entityCount
 		Attributes: []models.AttributeEntry{},
 		Relationships: []models.RelationshipEntry{
 			{
-				Key: fmt.Sprintf("%s_%s", parentID, childID),
+				Key: uniqueRelationshipID,
 				Value: models.Relationship{
 					RelatedEntityID: childID,
 					StartTime:       dateISO,
 					EndTime:         "",
-					ID:              fmt.Sprintf("%s_%s", parentID, childID),
+					ID:              uniqueRelationshipID,
 					Name:            relType,
 				},
 			},
@@ -1425,7 +1672,7 @@ func (c *Client) TerminatePersonEntity(transaction map[string]interface{}) error
 				// Check if this ministry is under the correct president and matches the parent name
 				if ministry.Kind.Minor == "minister" && ministry.Name == parent {
 					// Verify this minister is under the specified president
-					_, err = c.GetMinisterByPresident(presidentName, parent, dateISO)
+					_, err = c.GetActiveMinisterByPresident(presidentName, parent, dateISO)
 					if err == nil {
 						parentID = ministry.ID
 						// We found the ministry, now we need to get the relationship from ministry to person
@@ -1452,7 +1699,7 @@ func (c *Client) TerminatePersonEntity(transaction map[string]interface{}) error
 		}
 
 		if parentID == "" {
-			return fmt.Errorf("no active relationship found between person '%s' and ministry '%s' under president '%s'", child, parent, presidentName)
+			return fmt.Errorf("no active relationship found between person '%s' (ID: %s) and ministry '%s' under president '%s'", child, childID, parent, presidentName)
 		}
 	} else {
 		// For other parent types, use the original logic
@@ -1572,16 +1819,20 @@ func (c *Client) MovePerson(transaction map[string]interface{}) error {
 	childID := childResults[0].ID
 
 	// Create new relationship between new minister and person
+	// Use transaction ID and current timestamp to ensure unique relationship ID
+	currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
+	uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", newParentID, childID, currentTimestamp)
+
 	newRelationship := &models.Entity{
 		ID: newParentID,
 		Relationships: []models.RelationshipEntry{
 			{
-				Key: fmt.Sprintf("%s_%s", newParentID, childID),
+				Key: uniqueRelationshipID,
 				Value: models.Relationship{
 					RelatedEntityID: childID,
 					StartTime:       dateISO,
 					EndTime:         "",
-					ID:              fmt.Sprintf("%s_%s", newParentID, childID),
+					ID:              uniqueRelationshipID,
 					Name:            relType,
 				},
 			},
@@ -1711,23 +1962,27 @@ func (c *Client) MoveMinister(transaction map[string]interface{}) error {
 	oldParentID := oldPresidentEntity.ID
 
 	// Get the minister (child) entity ID connected to the old president
-	ministerEntity, err := c.GetMinisterByPresident(oldParent, child, dateISO)
+	ministerEntity, err := c.GetActiveMinisterByPresident(oldParent, child, dateISO)
 	if err != nil {
 		return fmt.Errorf("minister entity '%s' not found or not active under old president '%s' on date %s: %w", child, oldParent, dateStr, err)
 	}
 	childID := ministerEntity.ID
 
 	// Create new relationship between new president and minister
+	// Use transaction ID and current timestamp to ensure unique relationship ID
+	currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
+	uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", newParentID, childID, currentTimestamp)
+
 	newRelationship := &models.Entity{
 		ID: newParentID,
 		Relationships: []models.RelationshipEntry{
 			{
-				Key: fmt.Sprintf("%s_%s", newParentID, childID),
+				Key: uniqueRelationshipID,
 				Value: models.Relationship{
 					RelatedEntityID: childID,
 					StartTime:       dateISO,
 					EndTime:         "",
-					ID:              fmt.Sprintf("%s_%s", newParentID, childID),
+					ID:              uniqueRelationshipID,
 					Name:            "AS_MINISTER",
 				},
 			},
@@ -1759,17 +2014,19 @@ func (c *Client) MoveMinister(transaction map[string]interface{}) error {
 
 	// Only terminate if there is an active relationship
 	if activeRel != nil {
-		// Terminate the old relationship
-		terminateTransaction := map[string]interface{}{
-			"parent":      oldParent,
-			"child":       child,
-			"date":        dateStr,
-			"parent_type": "president",
-			"child_type":  "minister",
-			"rel_type":    "AS_MINISTER",
-		}
-
-		err = c.TerminateOrgEntity(terminateTransaction)
+		// Terminate the old relationship directly without cascading to people
+		_, err = c.UpdateEntity(oldParentID, &models.Entity{
+			ID: oldParentID,
+			Relationships: []models.RelationshipEntry{
+				{
+					Key: activeRel.ID,
+					Value: models.Relationship{
+						EndTime: dateISO,
+						ID:      activeRel.ID,
+					},
+				},
+			},
+		})
 		if err != nil {
 			return fmt.Errorf("failed to terminate old relationship: %w", err)
 		}
@@ -1903,6 +2160,10 @@ func (c *Client) AddDocumentEntity(transaction map[string]interface{}, entityCou
 	}
 
 	// Update the parent entity to add the relationship to the document
+	// Use transaction ID and current timestamp to ensure unique relationship ID
+	currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
+	uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", parentID, childID, currentTimestamp)
+
 	parentEntity := &models.Entity{
 		ID:         parentID,
 		Kind:       models.Kind{},
@@ -1913,12 +2174,12 @@ func (c *Client) AddDocumentEntity(transaction map[string]interface{}, entityCou
 		Attributes: []models.AttributeEntry{},
 		Relationships: []models.RelationshipEntry{
 			{
-				Key: fmt.Sprintf("%s_%s", parentID, childID),
+				Key: uniqueRelationshipID,
 				Value: models.Relationship{
 					RelatedEntityID: childID,
 					StartTime:       dateISO,
 					EndTime:         "",
-					ID:              fmt.Sprintf("%s_%s", parentID, childID),
+					ID:              uniqueRelationshipID,
 					Name:            "AS_DOCUMENT",
 				},
 			},

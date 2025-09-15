@@ -1,0 +1,5 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2283-34_tr_01,Gotabaya Rajapaksa,citizen,Minister of Technology and Investment Promotion,minister,AS_MINISTER,2022-06-09
+2283-34_tr_02,Gotabaya Rajapaksa,citizen,"Minister of Women, Child Affairs and Social Empowerment",minister,AS_MINISTER,2022-06-09
+2283-34_tr_22,"Minister of Women, Child Affairs and Social Empowerment",minister,National Secretariat for Early Childhood Development,department,AS_DEPARTMENT,2022-06-09
+2283-34_tr_24,"Minister of Women, Child Affairs and Social Empowerment",minister,Saubhagya Development Bureau,department,AS_DEPARTMENT,2022-06-09

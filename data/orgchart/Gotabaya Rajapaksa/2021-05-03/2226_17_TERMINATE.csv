@@ -1,0 +1,6 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2226-17_tr_02,"State Minister of Production, Supply and Regulation of Organic and Natural Fertilizer",minister,National Fertilizer Secretariat,department,AS_DEPARTMENT,2021-05-03
+2226-17_tr_03,"State Minister of Production, Supply and Regulation of Organic and Natural Fertilizer",minister,Ceylon Fertilizer Company Ltd.,department,AS_DEPARTMENT,2021-05-03
+2226-17_tr_04,"State Minister of Production, Supply and Regulation of Organic and Natural Fertilizer",minister,Colombo Commercial Fertilizer Company,department,AS_DEPARTMENT,2021-05-03
+2226-17_tr_05,"State Minister of Production, Supply and Regulation of Organic and Natural Fertilizer",minister,National Hunger Eradication Campaign Board of Sri Lanka,department,AS_DEPARTMENT,2021-05-03
+2226-17_tr_15,Gotabaya Rajapaksa,citizen,"State Minister of Development of Minor Crops Plantation including Sugarcane, Maize, Cashew, Pepper, Cinnamon, Cloves, Betel Related Industries and Export Promotion",minister,AS_MINISTER,2021-05-03

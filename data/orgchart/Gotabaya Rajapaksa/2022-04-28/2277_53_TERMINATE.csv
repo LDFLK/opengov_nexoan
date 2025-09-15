@@ -1,0 +1,13 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2277-53_tr_01,Presidential Secretariat - National Priority Programme,minister,Covid-19 Ministerial Task Force,department,AS_DEPARTMENT,2022-04-28
+2277-53_tr_19,Gotabaya Rajapaksa,citizen,Minister of Development Co-ordination and Monitoring,minister,AS_MINISTER,2022-04-28
+2277-53_tr_28,Gotabaya Rajapaksa,citizen,Minister of Economic Policies & Plan Implementation,minister,AS_MINISTER,2022-04-28
+2277-53_tr_40,Gotabaya Rajapaksa,citizen,"State Minister of Dhamma Schools, Pirivenas and Bhikkhu Education",minister,AS_MINISTER,2022-04-28
+2277-53_tr_47,Minister of Education,minister,Colleges of Education,department,AS_DEPARTMENT,2022-04-28
+2277-53_tr_60,Gotabaya Rajapaksa,citizen,"State Minister of Production, Supply and Regulation of Pharmaceuticals",minister,AS_MINISTER,2022-04-28
+2277-53_tr_63,State Minister of Promoting the Production of Organic fertilizer and Advanced Technology Agriculture,minister,Divisional Economic Centres,department,AS_DEPARTMENT,2022-04-28
+2277-53_tr_79,Gotabaya Rajapaksa,citizen,"State Minister of Company Estate Reforms, Tea and Rubber Estates Related Crops Cultivation and Factories Modernization and Tea and Rubber Export Promotion",minister,AS_MINISTER,2022-04-28
+2277-53_tr_98,Minister of Trade,minister,Lanka General Trading Company Ltd.,department,AS_DEPARTMENT,2022-04-28
+2277-53_tr_105,Gotabaya Rajapaksa,citizen,"State Minister of Primary Health Care, Epidemics and COVID Disease Control",minister,AS_MINISTER,2022-04-28
+2277-53_tr_106,Gotabaya Rajapaksa,citizen,"State Minister of Warehouse Facilities, Container Yards, Port Supply Facilities and Boats and Shipping Industry Development",minister,AS_MINISTER,2022-04-28
+2277-53_tr_120,Gotabaya Rajapaksa,citizen,"State Minister of Rural Housing, Construction and Building Material Industries",minister,AS_MINISTER,2022-04-28

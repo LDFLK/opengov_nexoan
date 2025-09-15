@@ -1,15 +1,19 @@
 #!/bin/bash
 
 # Load Ranil's people and presidency gazettes
-./orgchart -data "$(pwd)/data/documents/Ranil Wickremesinghe/person/" -init -type document
+./orgchart -data "$(pwd)/data/documents/Ranil Wickremesinghe/person/" -type document
 
 # Load Ranil's org gazettes
 ./orgchart -data "$(pwd)/data/documents/Ranil Wickremesinghe/organisation/" -type document
 
 # Load Ranil's presidency data
-./orgchart -data "$(pwd)/data/people/Ranil Wickremesinghe/2022-07-20/" -type person
+./orgchart -data "$(pwd)/data/people/Ranil Wickremesinghe/2022-07-20/2289-34-1/" -type person
 
-# Load Ranil's org data
+./orgchart -data "$(pwd)/data/orgchart/Ranil Wickremesinghe/2022-07-20/"
+
+./orgchart -data "$(pwd)/data/people/Ranil Wickremesinghe/2022-07-20/2289-34-2/" -type person
+
+# # Load Ranil's org data - terminate old ministers and departments and add new ministers
 ./orgchart -data "$(pwd)/data/orgchart/Ranil Wickremesinghe/2022-07-22/"
 
 ./orgchart -data "$(pwd)/data/people/Ranil Wickremesinghe/2022-07-26/" -type person

@@ -1,0 +1,65 @@
+transaction_id,parent,parent_type,child,child_type,rel_type,date
+2187-27_tr_01,Gotabaya Rajapaksa,citizen,"State Minister of Internal Security, Home Affairs and Disaster Management",minister,AS_MINISTER,2020-08-09
+2187-27_tr_03,Minister of Defence,minister,Api Wenuwen Api Fund,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_04,Minister of Defence,minister,National Authority for the implementation of Chemical Weapons Convention,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_05,Minister of Defence,minister,Department of Multi-purpose Development Task Force,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_09,"State Minister of Internal Security, Home Affairs and Disaster Management",minister,National Police Academy,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_23,Gotabaya Rajapaksa,citizen,State Minister of Money and Capital Market and State Enterprise Reforms,minister,AS_MINISTER,2020-08-09
+2187-27_tr_27,State Minister of Money and Capital Market and State Enterprise Reforms,minister,Housing Development Finance Corporation,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_28,State Minister of Money and Capital Market and State Enterprise Reforms,minister,State Mortgage and Investment Bank,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_29,State Minister of Money and Capital Market and State Enterprise Reforms,minister,Institutions coming under the Revival (Removal) of Underperforming Enterprises or Underutilized Assets Act vested to the Secretary to the Treasury,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_45,Gotabaya Rajapaksa,citizen,"State Minister of Samurdhi, Household Economy, Micro Finance, Self Employment, Business Development and Underutilized State Resources Development",minister,AS_MINISTER,2020-08-09
+2187-27_tr_48,"State Minister of Samurdhi, Household Economy, Micro Finance, Self Employment, Business Development and Underutilized State Resources Development",minister,Regional Development Bank,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_64,Gotabaya Rajapaksa,citizen,"State Minister of National Heritage, Performing Arts and Rural Arts Promotion",minister,AS_MINISTER,2020-08-09
+2187-27_tr_78,Gotabaya Rajapaksa,citizen,"State Minister of Rural Housing, Construction and Building Material Industries",minister,AS_MINISTER,2020-08-09
+2187-27_tr_79,Gotabaya Rajapaksa,citizen,State Minister of Estate Housing and Community Infrastructure,minister,AS_MINISTER,2020-08-09
+2187-27_tr_103,Minister of Justice,minister,National Authority for the Protection of Victims and Witnesses of Crime,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_104,Gotabaya Rajapaksa,citizen,State Minister of Prison Reforms and Prisoners' Rehabilitation,minister,AS_MINISTER,2020-08-09
+2187-27_tr_111,Gotabaya Rajapaksa,citizen,State Minister of Regional Cooperation,minister,AS_MINISTER,2020-08-09
+2187-27_tr_115,Gotabaya Rajapaksa,citizen,State Minister of Provincial Councils and Local Government,minister,AS_MINISTER,2020-08-09
+2187-27_tr_119,Gotabaya Rajapaksa,citizen,"State Minister of Women and Child Development, Pre-schools and Primary Education, School Infrastructure and Education Services",minister,AS_MINISTER,2020-08-09
+2187-27_tr_127,Gotabaya Rajapaksa,citizen,"State Minister of Education Reforms, Open Universities and Distance Learning Promotion",minister,AS_MINISTER,2020-08-09
+2187-27_tr_130,Gotabaya Rajapaksa,citizen,"State Minister of Skills Development, Vocational Education, Research and Innovation",minister,AS_MINISTER,2020-08-09
+2187-27_tr_154,Gotabaya Rajapaksa,citizen,"State Minister of Dhamma Schools, Bhikkhu Education, Piriven and Buddhist Universities",minister,AS_MINISTER,2020-08-09
+2187-27_tr_159,Minister of Health,minister,Private Medical Regulatory Council,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_162,Gotabaya Rajapaksa,citizen,"State Minister of Production, Supply and Regulation of Pharmaceuticals",minister,AS_MINISTER,2020-08-09
+2187-27_tr_163,Gotabaya Rajapaksa,citizen,"State Minister of Indigenous Medicine Promotion, Rural and Ayurvedic Hospitals Development and Community Health",minister,AS_MINISTER,2020-08-09
+2187-27_tr_175,Gotabaya Rajapaksa,citizen,Minister of Labour,minister,AS_MINISTER,2020-08-09
+2187-27_tr_182,Gotabaya Rajapaksa,citizen,State Minister of Foreign Employment Promotion and Market Diversification,minister,AS_MINISTER,2020-08-09
+2187-27_tr_186,Gotabaya Rajapaksa,citizen,Minister of Wildlife and Forest Conservation,minister,AS_MINISTER,2020-08-09
+2187-27_tr_187,Gotabaya Rajapaksa,citizen,"State Minister of Wildlife Protection, Adoption of safety measures including the construction of electrical fences and trenches and reforestation and forest resource development",minister,AS_MINISTER,2020-08-09
+2187-27_tr_196,Gotabaya Rajapaksa,citizen,"State Minister of Paddy and Grains, Organic Food, Vegetables, Fruits, Chilies, Onion and Potato Cultivation Promotion, Seed Production and Advanced Technology Agriculture",minister,AS_MINISTER,2020-08-09
+2187-27_tr_197,Gotabaya Rajapaksa,citizen,State Minister of Production and Supply of Fertilizer and Regulation of Chemical Fertilizer and Insecticide Use,minister,AS_MINISTER,2020-08-09
+2187-27_tr_198,Gotabaya Rajapaksa,citizen,"State Minister of Livestock, Farm Promotion and Dairy and Egg Related Industries",minister,AS_MINISTER,2020-08-09
+2187-27_tr_211,State Minister of Production and Supply of Fertilizer and Regulation of Chemical Fertilizer and Insecticide Use,minister,National Hunger Eradication Campaign Board of Sri Lanka,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_216,Gotabaya Rajapaksa,citizen,Minister of Irrigation,minister,AS_MINISTER,2020-08-09
+2187-27_tr_223,Gotabaya Rajapaksa,citizen,State Minister of Canals and Common Infrastructure Development in Settlements in Mahaweli Zones,minister,AS_MINISTER,2020-08-09
+2187-27_tr_224,Gotabaya Rajapaksa,citizen,"State Minister of Tanks, Reservoirs and Irrigation Development Related to Rural Paddy Fields",minister,AS_MINISTER,2020-08-09
+2187-27_tr_225,State Minister of Canals and Common Infrastructure Development in Settlements in Mahaweli Zones,minister,Mahaweli Authority of Sri Lanka,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_226,"State Minister of Tanks, Reservoirs and Irrigation Development Related to Rural Paddy Fields",minister,Affiliated Institutions of the Department of Agrarian Services and the Department of Irrigation,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_229,Gotabaya Rajapaksa,citizen,"State Minister of Land Management, State Enterprises Land and Property Development",minister,AS_MINISTER,2020-08-09
+2187-27_tr_233,Gotabaya Rajapaksa,citizen,"State Minister of Ornamental Fish, Inland Fish and Prawn Farming, Fishery Harbour Development, Multiday Fishing Activities and Fish Exports",minister,AS_MINISTER,2020-08-09
+2187-27_tr_243,Gotabaya Rajapaksa,citizen,"State Minister of Company Estate Reforms, Tea Estates related Crops, Tea Factories Modernization and Tea Export Promotion",minister,AS_MINISTER,2020-08-09
+2187-27_tr_246,Gotabaya Rajapaksa,citizen,"State Minister of Coconut, Kithul, Palmyrah and Rubber Cultivation Promotion and Related Industrial Product Manufacturing and Export Diversification",minister,AS_MINISTER,2020-08-09
+2187-27_tr_256,Gotabaya Rajapaksa,citizen,"State Minister of Development of Minor Crops Plantation including Sugarcane, Maize, Cashew, Pepper, Cinnamon, Cloves, Betel Related Industries and Export Promotion",minister,AS_MINISTER,2020-08-09
+2187-27_tr_264,Gotabaya Rajapaksa,citizen,Minister of Water Supply,minister,AS_MINISTER,2020-08-09
+2187-27_tr_266,Gotabaya Rajapaksa,citizen,State Minister of Rural and Divisional Drinking Water Supply Projects Development,minister,AS_MINISTER,2020-08-09
+2187-27_tr_271,Gotabaya Rajapaksa,citizen,"State Minister of Solar, Wind and Hydro Power Generation Projects Development",minister,AS_MINISTER,2020-08-09
+2187-27_tr_276,Gotabaya Rajapaksa,citizen,Minister of Energy,minister,AS_MINISTER,2020-08-09
+2187-27_tr_284,Gotabaya Rajapaksa,citizen,State Minister of Rural Roads and other Infrastructure,minister,AS_MINISTER,2020-08-09
+2187-27_tr_285,State Minister of Rural Roads and other Infrastructure,minister,Maga Naguma,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_287,Gotabaya Rajapaksa,citizen,"State Minister of Vehicle Regulation, Bus Transport Services and Train Compartments and Motor Car Industry",minister,AS_MINISTER,2020-08-09
+2187-27_tr_293,Gotabaya Rajapaksa,citizen,State Minister of Rural and School Sports Infrastructure Improvement,minister,AS_MINISTER,2020-08-09
+2187-27_tr_305,Gotabaya Rajapaksa,citizen,State Minister of Aviation and Export Zones Development,minister,AS_MINISTER,2020-08-09
+2187-27_tr_316,Gotabaya Rajapaksa,citizen,"State Minister of Cooperative Services, Marketing Development and Consumer Protection",minister,AS_MINISTER,2020-08-09
+2187-27_tr_323,Gotabaya Rajapaksa,citizen,"State Minister of Batik, Handloom and Local Apparel Products",minister,AS_MINISTER,2020-08-09
+2187-27_tr_326,Gotabaya Rajapaksa,citizen,State Minister of Gem and Jewellery related Industries,minister,AS_MINISTER,2020-08-09
+2187-27_tr_329,Gotabaya Rajapaksa,citizen,"State Minister of Rattan, Brass, Pottery, Furniture and Rural Industrial Promotion",minister,AS_MINISTER,2020-08-09
+2187-27_tr_334,Minister of Mass Media,minister,Department of Government Information,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_335,Minister of Mass Media,minister,Sri Lanka Foundation Institute,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_336,Gotabaya Rajapaksa,citizen,State Minister of Postal Services and Professional Development of Journalists,minister,AS_MINISTER,2020-08-09
+2187-27_tr_338,Gotabaya Rajapaksa,citizen,Institutions Operating with Guidance and Coordination at National Level for National Priorities,minister,AS_MINISTER,2020-08-09
+2187-27_tr_340,Institutions Operating with Guidance and Coordination at National Level for National Priorities,minister,Information and Communication Technology Agency and Allied Institutions,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_342,Institutions Operating with Guidance and Coordination at National Level for National Priorities,minister,Board of Investment of Sri Lanka,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_343,Institutions Operating with Guidance and Coordination at National Level for National Priorities,minister,Colombo Port City Project,department,AS_DEPARTMENT,2020-08-09
+2187-27_tr_346,Gotabaya Rajapaksa,citizen,"State Minister of Warehouse Facilities, Container Yards, Port Supply Facilities and Boats and Shipping Industry Development",minister,AS_MINISTER,2020-08-09
