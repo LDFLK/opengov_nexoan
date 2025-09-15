@@ -1318,7 +1318,7 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 		}
 		oldMinisterID := oldMinisterEntity.ID
 
-		// 2. Move old minister's departments to new minister
+		// 1. Move old minister's departments to new minister
 		oldRelations, err := c.GetRelatedEntities(oldMinisterID, &models.Relationship{
 			Name: "AS_DEPARTMENT",
 		})
@@ -1359,6 +1359,43 @@ func (c *Client) MergeMinisters(transaction map[string]interface{}, entityCounte
 			err = c.MoveDepartment(moveTransaction)
 			if err != nil {
 				return 0, fmt.Errorf("failed to move department: %w", err)
+			}
+		}
+
+		// 2. Terminate any active people assigned to the old minister - assume when merged, the people are no longer assigned to the old ministers
+		oldMinisterPeopleRelations, err := c.GetRelatedEntities(oldMinisterID, &models.Relationship{
+			Name: "AS_APPOINTED",
+		})
+		if err != nil {
+			return 0, fmt.Errorf("failed to get old minister's people relationships: %w", err)
+		}
+
+		// Find active people relationships (EndTime == "")
+		var activePeopleRelations []models.Relationship
+		for _, rel := range oldMinisterPeopleRelations {
+			if rel.EndTime == "" {
+				activePeopleRelations = append(activePeopleRelations, rel)
+			}
+		}
+
+		// Terminate each active person relationship
+		for _, rel := range activePeopleRelations {
+			terminatePersonRel := &models.Entity{
+				ID: oldMinisterID,
+				Relationships: []models.RelationshipEntry{
+					{
+						Key: rel.ID,
+						Value: models.Relationship{
+							EndTime: dateISO,
+							ID:      rel.ID,
+						},
+					},
+				},
+			}
+
+			_, err = c.UpdateEntity(oldMinisterID, terminatePersonRel)
+			if err != nil {
+				return 0, fmt.Errorf("failed to terminate person relationship: %w", err)
 			}
 		}
 
