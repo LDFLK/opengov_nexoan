@@ -11,6 +11,7 @@
 ./orgchart -data "$(pwd)/data/orgchart/Anura Kumara Dissanayake/2024-09-23/" # move all Ranil's ministries to Anura
 ./orgchart -data "$(pwd)/data/people/Anura Kumara Dissanayake/2024-09-23/2403-03-2" -type person # terminate all Ranil's old people, assign everything to Anura
 
+./orgchart -data "$(pwd)/data/people/Anura Kumara Dissanayake/2024-09-25/2403-37" -type person
 
 # terminate all the old Ranil's portfolios which were transferred to Anura and all the people assigned (all Anura)
 ./orgchart -data "$(pwd)/data/people/Anura Kumara Dissanayake/2024-09-25/2403-38-1" -type person # terminate Anura assigned to all the old mins

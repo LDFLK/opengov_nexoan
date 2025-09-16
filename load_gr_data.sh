@@ -6,6 +6,7 @@
 
 # Load Gota's presidency data
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2019-11-17/" -type person
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2019-11-21/" -type person
 
 # Load Gota's org data
 ./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2019-11-27/"
@@ -120,6 +121,9 @@
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-22/2276-64/2276-64-2" -type person
 
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-04/" -type person
+
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-09/" -type person
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-12/" -type person
 
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-14/" -type person
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-24/" -type person
