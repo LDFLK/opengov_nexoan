@@ -115,29 +115,28 @@
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-22/2276-63/" -type person
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-22/2276-64/" -type person
 
-./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-04-28"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-04-28/"
 
-./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-22/2276-63/2276-63-2" -type person
-./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-22/2276-64/2276-64-2" -type person
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-22/2276-63/2276-63-2/" -type person
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-04-22/2276-64/2276-64-2/" -type person
 
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-04/" -type person
-
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-09/" -type person
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-12/" -type person
 
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-14/" -type person
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-24/" -type person
-./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-26/2281-31" -type person
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-26/2281-31/" -type person
 
-./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-05-27"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-05-27/"
 
-./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-24/2281-09-02" -type person
-./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-26/2281-32" -type person
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-24/2281-09-02/" -type person
+./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-05-26/2281-32/" -type person
 
-./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-06-09"
-./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-06-27"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-06-09/"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-06-27/"
 
 ./orgchart -data "$(pwd)/data/people/Gotabaya Rajapaksa/2022-06-27/" -type person
 
-./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-07-07"
+./orgchart -data "$(pwd)/data/orgchart/Gotabaya Rajapaksa/2022-07-07/"
 
