@@ -4,6 +4,7 @@ import (
 	"encoding/csv"
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
 	"path/filepath"
 	"strings"
@@ -174,9 +175,9 @@ func findDocumentByName(client *api.Client, documentName string) (*models.Entity
 
 // createRelationship creates a relationship between two entities
 func createRelationship(client *api.Client, parentID, childID, relationshipType, startTime string) error {
-	// Generate unique relationship ID
-	currentTimestamp := strings.ReplaceAll(time.Now().Format(time.RFC3339), ":", "-")
-	uniqueRelationshipID := fmt.Sprintf("%s_%s_%s", parentID, childID, currentTimestamp)
+	// Generate unique relationship ID with random number- rand package automatically seeds with a random number
+	randomNum := rand.Intn(999999)
+	uniqueRelationshipID := fmt.Sprintf("%s_%s_%06d", parentID, childID, randomNum)
 
 	// Create the relationship entity update
 	parentEntity := &models.Entity{
@@ -202,9 +203,9 @@ func createRelationship(client *api.Client, parentID, childID, relationshipType,
 	}
 
 	// Update the parent entity to add the relationship
-	_, err := client.UpdateEntity(parentID, parentEntity)
-	if err != nil {
-		return fmt.Errorf("failed to update parent entity: %w", err)
+	_, updateErr := client.UpdateEntity(parentID, parentEntity)
+	if updateErr != nil {
+		return fmt.Errorf("failed to update parent entity: %w", updateErr)
 	}
 
 	return nil
